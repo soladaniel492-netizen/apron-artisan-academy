@@ -9,13 +9,13 @@ import { whatsappLink } from "@/lib/site";
 export const Route = createFileRoute("/catalogue")({
   head: () => ({
     meta: [
-      { title: "Catalogue — Chef Aprons & Culinary Items | Maison Tablier" },
+      { title: "Catalogue — Chef Aprons & Culinary Items | ChefStore NG" },
       {
         name: "description",
         content:
           "Browse our apron and culinary item catalogue with photos and prices, and order any piece directly on WhatsApp.",
       },
-      { property: "og:title", content: "Catalogue | Maison Tablier" },
+      { property: "og:title", content: "Catalogue | ChefStore NG" },
       {
         property: "og:description",
         content: "Aprons, knife rolls, chef whites and kitchen linens — order on WhatsApp.",
@@ -43,7 +43,7 @@ function CataloguePage() {
               sizing, colour and delivery in the chat.
             </p>
             <a
-              href={whatsappLink("Hello Maison Tablier, please send me your full catalogue.")}
+              href={whatsappLink("Hello ChefStore NG, please send me your full catalogue.")}
               target="_blank"
               rel="noreferrer noopener"
               className="mt-7 inline-block rounded-sm bg-primary px-8 py-3 text-xs tracking-[0.2em] text-primary-foreground uppercase"

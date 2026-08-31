@@ -8,13 +8,13 @@ export function whatsappLink(message: string) {
 
 export function orderLink(item: string, price?: string) {
   return whatsappLink(
-    `Hello Maison Tablier, I'd like to order: ${item}${price ? ` (${price})` : ""}.`,
+    `Hello ChefStore NG, I'd like to order: ${item}${price ? ` (${price})` : ""}.`,
   );
 }
 
 export const SOCIALS = [
-  { name: "Instagram", href: "https://instagram.com/maisontablier" },
-  { name: "Facebook", href: "https://facebook.com/maisontablier" },
-  { name: "LinkedIn", href: "https://linkedin.com/company/maisontablier" },
-  { name: "Threads", href: "https://threads.net/@maisontablier" },
+  { name: "Instagram", href: "https://instagram.com/chefstore.ng" },
+  { name: "Facebook", href: "https://facebook.com/chefstore.ng" },
+  { name: "LinkedIn", href: "https://linkedin.com/company/chefstore-ng" },
+  { name: "Threads", href: "https://threads.net/@chefstore.ng" },
 ] as const;

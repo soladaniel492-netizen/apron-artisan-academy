@@ -8,13 +8,13 @@ import { ADDRESS, whatsappLink } from "@/lib/site";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact & Studio Location | Maison Tablier" },
+      { title: "Contact & Studio Location | ChefStore NG" },
       {
         name: "description",
         content:
           "Visit our studio at Road 16, House 15, Efab Estate, Lokogoma, Abuja, or reach us on WhatsApp, phone and email.",
       },
-      { property: "og:title", content: "Contact | Maison Tablier" },
+      { property: "og:title", content: "Contact | ChefStore NG" },
       {
         property: "og:description",
         content: "Studio at Road 16, House 15, Efab Estate, Lokogoma, Abuja.",
@@ -56,7 +56,7 @@ function ContactPage() {
               </li>
               <li className="flex gap-3">
                 <Mail className="mt-0.5 h-5 w-5 shrink-0 text-primary" aria-hidden />
-                <span>hello@maisontablier.com</span>
+                <span>hello@chefstore.ng</span>
               </li>
               <li className="flex gap-3">
                 <Clock className="mt-0.5 h-5 w-5 shrink-0 text-primary" aria-hidden />
@@ -64,7 +64,7 @@ function ContactPage() {
               </li>
             </ul>
             <a
-              href={whatsappLink("Hello Maison Tablier, I'd like to visit the studio.")}
+              href={whatsappLink("Hello ChefStore NG, I'd like to visit the studio.")}
               target="_blank"
               rel="noreferrer noopener"
               className="mt-8 inline-flex items-center gap-2 rounded-sm bg-olive px-8 py-3 text-xs tracking-[0.2em] text-background uppercase"
@@ -107,7 +107,7 @@ function ContactPage() {
             <h2 className="font-display text-3xl">Find Us</h2>
             <div className="mt-6 overflow-hidden border border-border">
               <iframe
-                title="Map to Maison Tablier studio, Road 16 House 15 Efab Estate Lokogoma"
+                title="Map to ChefStore NG studio, Road 16 House 15 Efab Estate Lokogoma"
                 src="https://www.google.com/maps?q=Efab%20Estate%20Lokogoma%20Abuja&output=embed"
                 width="100%"
                 height="480"

@@ -37,13 +37,13 @@ const courses = [
 export const Route = createFileRoute("/training")({
   head: () => ({
     meta: [
-      { title: "Culinary Training & Classes | Maison Tablier" },
+      { title: "Culinary Training & Classes | ChefStore NG" },
       {
         name: "description",
         content:
           "Chef-led culinary training in Abuja: knife skills, sauce foundations, pro kitchen bootcamp and local cuisine masterclasses.",
       },
-      { property: "og:title", content: "Culinary Training | Maison Tablier" },
+      { property: "og:title", content: "Culinary Training | ChefStore NG" },
       {
         property: "og:description",
         content: "Hands-on cooking classes taught by working chefs.",
@@ -74,7 +74,7 @@ function TrainingPage() {
             </div>
             <img
               src={promoTraining}
-              alt="Chefs teaching in the Maison Tablier kitchen"
+              alt="Chefs teaching in the ChefStore NG kitchen"
               loading="lazy"
               width={1200}
               height={800}
@@ -96,7 +96,7 @@ function TrainingPage() {
                 </p>
                 <p className="mt-4 text-sm font-medium">{c.price}</p>
                 <a
-                  href={whatsappLink(`Hello Maison Tablier, I'd like to join: ${c.title}.`)}
+                  href={whatsappLink(`Hello ChefStore NG, I'd like to join: ${c.title}.`)}
                   target="_blank"
                   rel="noreferrer noopener"
                   className="mt-6 inline-flex items-center gap-2 rounded-sm bg-olive px-6 py-3 text-[11px] tracking-[0.2em] text-background uppercase"

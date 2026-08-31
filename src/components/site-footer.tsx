@@ -15,7 +15,7 @@ export function SiteFooter() {
     <footer className="bg-foreground text-background">
       <div className="mx-auto grid max-w-7xl gap-10 px-6 py-14 md:grid-cols-4">
         <div>
-          <p className="font-display text-2xl">Maison Tablier</p>
+          <p className="font-display text-2xl">ChefStore NG</p>
           <p className="mt-3 text-sm opacity-70">
             Aprons, culinary items and chef-led training. Made for the people
             behind the pass.
@@ -75,14 +75,14 @@ export function SiteFooter() {
         <div>
           <h3 className="text-xs tracking-[0.25em] uppercase opacity-60">Contact</h3>
           <ul className="mt-4 space-y-2 text-sm opacity-80">
-            <li>hello@maisontablier.com</li>
+            <li>hello@chefstore.ng</li>
             <li>+234 801 234 5678</li>
             <li>{ADDRESS}</li>
           </ul>
         </div>
       </div>
       <p className="border-t border-background/15 py-5 text-center text-xs opacity-60">
-        © {new Date().getFullYear()} Maison Tablier. All rights reserved.
+        © {new Date().getFullYear()} ChefStore NG. All rights reserved.
       </p>
     </footer>
   );
