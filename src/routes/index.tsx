@@ -73,7 +73,7 @@ function Index() {
         </div>
         <nav className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-6 py-5">
           <a href="#top" className="leading-none">
-            <span className="block font-display text-2xl font-700 tracking-wide">
+            <span className="block font-display text-2xl font-bold tracking-wide">
               Maison Tablier
             </span>
             <span className="block text-[10px] tracking-[0.35em] text-muted-foreground uppercase">
@@ -109,7 +109,7 @@ function Index() {
               <p className="text-xs tracking-[0.35em] text-primary uppercase">
                 Aprons for people who cook
               </p>
-              <h1 className="mt-6 font-display text-6xl leading-[0.95] font-700 md:text-7xl">
+              <h1 className="mt-6 font-display text-6xl leading-[0.95] font-bold md:text-7xl">
                 Elevate Your
                 <br />
                 <span className="italic text-primary">Kitchen.</span>
@@ -188,7 +188,7 @@ function Index() {
               <p className="text-xs tracking-[0.3em] text-primary uppercase">
                 Starter Kit
               </p>
-              <h2 className="mt-4 font-display text-5xl leading-tight font-700">
+              <h2 className="mt-4 font-display text-5xl leading-tight font-bold">
                 Apron + Knife Roll
                 <br />
                 30% Off
