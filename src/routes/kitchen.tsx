@@ -54,13 +54,13 @@ const dishes = [
 export const Route = createFileRoute("/kitchen")({
   head: () => ({
     meta: [
-      { title: "Our Kitchen — Local to Continental Dishes | Maison Tablier" },
+      { title: "Our Kitchen — Local to Continental Dishes | ChefStore NG" },
       {
         name: "description",
         content:
-          "From smoky jollof and egusi to seared salmon and hand-rolled pasta — the dishes cooked and taught in the Maison Tablier kitchen.",
+          "From smoky jollof and egusi to seared salmon and hand-rolled pasta — the dishes cooked and taught in the ChefStore NG kitchen.",
       },
-      { property: "og:title", content: "Our Kitchen | Maison Tablier" },
+      { property: "og:title", content: "Our Kitchen | ChefStore NG" },
       {
         property: "og:description",
         content: "Local Nigerian classics and continental plates from our kitchen.",
@@ -127,7 +127,7 @@ function KitchenPage() {
             </p>
             <a
               href={whatsappLink(
-                "Hello Maison Tablier, I'd like to talk about your kitchen menu / a private dinner.",
+                "Hello ChefStore NG, I'd like to talk about your kitchen menu / a private dinner.",
               )}
               target="_blank"
               rel="noreferrer noopener"
