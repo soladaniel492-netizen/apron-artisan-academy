@@ -21,13 +21,13 @@ import trend4 from "@/assets/trend-4.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "ChefStore NG — Chef Aprons, Culinary Items & Training" },
+      { title: "Chef Store — Chef Aprons, Culinary Items & Training" },
       {
         name: "description",
         content:
           "Handcrafted chef aprons and culinary items you can order on WhatsApp, plus chef-led culinary training in Abuja.",
       },
-      { property: "og:title", content: "ChefStore NG — Chef Aprons & Culinary Craft" },
+      { property: "og:title", content: "Chef Store — Chef Aprons & Culinary Craft" },
       {
         property: "og:description",
         content:
@@ -63,7 +63,7 @@ function Index() {
           <div className="mx-auto grid max-w-7xl items-center gap-8 px-6 py-12 md:grid-cols-2 md:py-16">
             <div>
               <p className="text-xs tracking-[0.35em] text-primary uppercase">
-                Aprons for people who cook
+                Chef wears · Uniforms · Accessories
               </p>
               <h1 className="mt-6 font-display text-6xl leading-[0.95] font-bold md:text-7xl">
                 Elevate Your
@@ -94,7 +94,7 @@ function Index() {
               <div className="absolute inset-x-6 top-10 bottom-0 rounded-t-full bg-sand" />
               <img
                 src={heroChef}
-                alt="Chef wearing a linen ChefStore NG apron"
+                alt="Chef wearing a linen Chef Store apron"
                 width={1408}
                 height={1504}
                 className="relative mx-auto w-full max-w-md object-cover"
@@ -103,7 +103,28 @@ function Index() {
           </div>
         </section>
 
+        {/* What we do */}
+        <section className="border-y border-border">
+          <ul className="mx-auto grid max-w-7xl gap-px bg-border px-0 sm:grid-cols-2 lg:grid-cols-5">
+            {[
+              "Chef Wears",
+              "Uniforms for Service Team",
+              "Chef Accessories",
+              "Customized T-Shirts",
+              "Nationwide Delivery",
+            ].map((s) => (
+              <li
+                key={s}
+                className="bg-background px-6 py-6 text-center text-[11px] tracking-[0.2em] uppercase"
+              >
+                {s}
+              </li>
+            ))}
+          </ul>
+        </section>
+
         {/* Catalogue preview */}
+
         <section className="mx-auto max-w-7xl px-6 py-16">
           <h2 className="text-center font-display text-3xl tracking-[0.15em] uppercase">
             Catalogue
@@ -154,7 +175,7 @@ function Index() {
               </p>
               <a
                 href={whatsappLink(
-                  "Hello ChefStore NG, I'd like the Starter Kit (Apron + Knife Roll) at 30% off.",
+                  "Hello Chef Store, I'd like the Starter Kit (Apron + Knife Roll) at 30% off.",
                 )}
                 target="_blank"
                 rel="noreferrer noopener"
@@ -194,7 +215,7 @@ function Index() {
                 </div>
                 <p className="mt-2 text-sm text-muted-foreground">{t.price}</p>
                 <a
-                  href={whatsappLink(`Hello ChefStore NG, I'd like to order the ${t.name}.`)}
+                  href={whatsappLink(`Hello Chef Store, I'd like to order the ${t.name}.`)}
                   target="_blank"
                   rel="noreferrer noopener"
                   className="mt-3 inline-block border border-foreground px-6 py-2 text-[10px] tracking-[0.2em] uppercase transition-colors hover:bg-foreground hover:text-background"
