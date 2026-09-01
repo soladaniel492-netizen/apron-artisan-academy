@@ -60,6 +60,41 @@ function CataloguePage() {
             ))}
           </div>
         </section>
+
+        <section className="bg-sand">
+          <div className="mx-auto grid max-w-7xl items-center gap-10 px-6 py-16 md:grid-cols-2">
+            <video
+              src={ceoVideo.url}
+              controls
+              loop
+              muted
+              playsInline
+              preload="metadata"
+              aria-label="Chef Store founder showing kitchen fits"
+              className="aspect-[9/16] w-full max-w-sm rounded-sm object-cover md:justify-self-center"
+            />
+            <div>
+              <p className="text-xs tracking-[0.3em] text-primary uppercase">
+                From our founder
+              </p>
+              <h2 className="mt-4 font-display text-4xl leading-tight font-bold">
+                Which one are you choosing?
+              </h2>
+              <p className="mt-4 max-w-md text-sm leading-relaxed text-muted-foreground">
+                Your kitchen fit deserves to look as good as it performs. Tell us
+                the colour, fabric and branding you want and we'll make it.
+              </p>
+              <a
+                href={whatsappLink("Hello Chef Store, I'd like a custom kitchen fit.")}
+                target="_blank"
+                rel="noreferrer noopener"
+                className="mt-7 inline-block rounded-sm bg-foreground px-8 py-3 text-xs tracking-[0.2em] text-background uppercase"
+              >
+                Customise yours
+              </a>
+            </div>
+          </div>
+        </section>
       </main>
       <SiteFooter />
     </div>
