@@ -63,7 +63,7 @@ function Index() {
           <div className="mx-auto grid max-w-7xl items-center gap-8 px-6 py-12 md:grid-cols-2 md:py-16">
             <div>
               <p className="text-xs tracking-[0.35em] text-primary uppercase">
-                Aprons for people who cook
+                Chef wears · Uniforms · Accessories
               </p>
               <h1 className="mt-6 font-display text-6xl leading-[0.95] font-bold md:text-7xl">
                 Elevate Your
