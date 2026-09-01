@@ -1,3 +1,4 @@
+import ceoVideo from "@/assets/ceo-kitchen-fit.mp4.asset.json";
 import { createFileRoute } from "@tanstack/react-router";
 
 import { CatalogueCard } from "@/components/catalogue-card";
