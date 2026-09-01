@@ -7,16 +7,16 @@ import { SiteHeader } from "@/components/site-header";
 import { catalogue } from "@/data/catalogue";
 import { whatsappLink } from "@/lib/site";
 
-import heroChef from "@/assets/hero-chef.jpg";
+import ceoHero from "@/assets/ceo-hero.mp4.asset.json";
 import promoTraining from "@/assets/promo-training.jpg";
 import dishJollof from "@/assets/dish-jollof.jpg";
 import dishSalmon from "@/assets/dish-salmon.jpg";
 import dishSuya from "@/assets/dish-suya.jpg";
 import dishPasta from "@/assets/dish-pasta.jpg";
-import trend1 from "@/assets/trend-1.jpg";
-import trend2 from "@/assets/trend-2.jpg";
-import trend3 from "@/assets/trend-3.jpg";
-import trend4 from "@/assets/trend-4.jpg";
+import trend1 from "@/assets/p-personalised.jpg.asset.json";
+import trend2 from "@/assets/p-burgundy.jpg.asset.json";
+import trend3 from "@/assets/p-denim-waist.jpg.asset.json";
+import trend4 from "@/assets/p-waitstaff.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -39,10 +39,10 @@ export const Route = createFileRoute("/")({
 });
 
 const trends = [
-  { name: "Denim Cross-Back", price: "₦34,000", img: trend1 },
-  { name: "Rust Linen Baker", price: "₦31,000", img: trend2 },
-  { name: "Charcoal Service", price: "₦24,000", img: trend3 },
-  { name: "Whites & Waist Set", price: "₦58,000", img: trend4 },
+  { name: "Personalised Bib Apron", price: "₦28,000", img: trend1.url },
+  { name: "Burgundy Twill Apron", price: "₦30,000", img: trend2.url },
+  { name: "Denim Waist Apron", price: "₦18,000", img: trend3.url },
+  { name: "Wait Staff Uniform Set", price: "₦38,000", img: trend4.url },
 ];
 
 const kitchenPreview = [
@@ -92,12 +92,15 @@ function Index() {
             </div>
             <div className="relative">
               <div className="absolute inset-x-6 top-10 bottom-0 rounded-t-full bg-sand" />
-              <img
-                src={heroChef}
-                alt="Chef wearing a linen Chef Store apron"
-                width={1408}
-                height={1504}
-                className="relative mx-auto w-full max-w-md object-cover"
+              <video
+                src={ceoHero.url}
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="metadata"
+                aria-label="Chef Store founder presenting chef uniforms, aprons and kitchen tools"
+                className="relative mx-auto aspect-[9/12] w-full max-w-md rounded-t-full object-cover"
               />
             </div>
           </div>
