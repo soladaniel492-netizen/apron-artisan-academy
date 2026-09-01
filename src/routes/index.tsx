@@ -103,7 +103,28 @@ function Index() {
           </div>
         </section>
 
+        {/* What we do */}
+        <section className="border-y border-border">
+          <ul className="mx-auto grid max-w-7xl gap-px bg-border px-0 sm:grid-cols-2 lg:grid-cols-5">
+            {[
+              "Chef Wears",
+              "Uniforms for Service Team",
+              "Chef Accessories",
+              "Customized T-Shirts",
+              "Nationwide Delivery",
+            ].map((s) => (
+              <li
+                key={s}
+                className="bg-background px-6 py-6 text-center text-[11px] tracking-[0.2em] uppercase"
+              >
+                {s}
+              </li>
+            ))}
+          </ul>
+        </section>
+
         {/* Catalogue preview */}
+
         <section className="mx-auto max-w-7xl px-6 py-16">
           <h2 className="text-center font-display text-3xl tracking-[0.15em] uppercase">
             Catalogue
