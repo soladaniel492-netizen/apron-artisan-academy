@@ -92,12 +92,15 @@ function Index() {
             </div>
             <div className="relative">
               <div className="absolute inset-x-6 top-10 bottom-0 rounded-t-full bg-sand" />
-              <img
-                src={heroChef}
-                alt="Chef wearing a linen Chef Store apron"
-                width={1408}
-                height={1504}
-                className="relative mx-auto w-full max-w-md object-cover"
+              <video
+                src={ceoHero.url}
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="metadata"
+                aria-label="Chef Store founder presenting chef uniforms, aprons and kitchen tools"
+                className="relative mx-auto aspect-[9/12] w-full max-w-md rounded-t-full object-cover"
               />
             </div>
           </div>
