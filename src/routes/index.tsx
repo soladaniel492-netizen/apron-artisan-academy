@@ -21,13 +21,13 @@ import trend4 from "@/assets/trend-4.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "ChefStore NG — Chef Aprons, Culinary Items & Training" },
+      { title: "Chef Store — Chef Aprons, Culinary Items & Training" },
       {
         name: "description",
         content:
           "Handcrafted chef aprons and culinary items you can order on WhatsApp, plus chef-led culinary training in Abuja.",
       },
-      { property: "og:title", content: "ChefStore NG — Chef Aprons & Culinary Craft" },
+      { property: "og:title", content: "Chef Store — Chef Aprons & Culinary Craft" },
       {
         property: "og:description",
         content:
@@ -94,7 +94,7 @@ function Index() {
               <div className="absolute inset-x-6 top-10 bottom-0 rounded-t-full bg-sand" />
               <img
                 src={heroChef}
-                alt="Chef wearing a linen ChefStore NG apron"
+                alt="Chef wearing a linen Chef Store apron"
                 width={1408}
                 height={1504}
                 className="relative mx-auto w-full max-w-md object-cover"
@@ -154,7 +154,7 @@ function Index() {
               </p>
               <a
                 href={whatsappLink(
-                  "Hello ChefStore NG, I'd like the Starter Kit (Apron + Knife Roll) at 30% off.",
+                  "Hello Chef Store, I'd like the Starter Kit (Apron + Knife Roll) at 30% off.",
                 )}
                 target="_blank"
                 rel="noreferrer noopener"
@@ -194,7 +194,7 @@ function Index() {
                 </div>
                 <p className="mt-2 text-sm text-muted-foreground">{t.price}</p>
                 <a
-                  href={whatsappLink(`Hello ChefStore NG, I'd like to order the ${t.name}.`)}
+                  href={whatsappLink(`Hello Chef Store, I'd like to order the ${t.name}.`)}
                   target="_blank"
                   rel="noreferrer noopener"
                   className="mt-3 inline-block border border-foreground px-6 py-2 text-[10px] tracking-[0.2em] uppercase transition-colors hover:bg-foreground hover:text-background"

@@ -77,7 +77,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "ChefStore NG — Chef Aprons & Culinary Craft" },
+      { title: "Chef Store — Chef Aprons & Culinary Craft" },
       {
         name: "description",
         content:

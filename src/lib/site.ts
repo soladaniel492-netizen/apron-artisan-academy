@@ -8,7 +8,7 @@ export function whatsappLink(message: string) {
 
 export function orderLink(item: string, price?: string) {
   return whatsappLink(
-    `Hello ChefStore NG, I'd like to order: ${item}${price ? ` (${price})` : ""}.`,
+    `Hello Chef Store, I'd like to order: ${item}${price ? ` (${price})` : ""}.`,
   );
 }
 

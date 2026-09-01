@@ -18,7 +18,7 @@ export function SiteHeader() {
       <nav className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-6 py-5">
         <Link to="/" className="leading-none">
           <span className="block font-display text-2xl font-bold tracking-wide">
-            ChefStore NG
+            Chef Store
           </span>
           <span className="block text-[10px] tracking-[0.35em] text-muted-foreground uppercase">
             Aprons &amp; Craft
