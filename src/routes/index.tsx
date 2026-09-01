@@ -39,10 +39,10 @@ export const Route = createFileRoute("/")({
 });
 
 const trends = [
-  { name: "Denim Cross-Back", price: "₦34,000", img: trend1 },
-  { name: "Rust Linen Baker", price: "₦31,000", img: trend2 },
-  { name: "Charcoal Service", price: "₦24,000", img: trend3 },
-  { name: "Whites & Waist Set", price: "₦58,000", img: trend4 },
+  { name: "Personalised Bib Apron", price: "₦28,000", img: trend1.url },
+  { name: "Burgundy Twill Apron", price: "₦30,000", img: trend2.url },
+  { name: "Denim Waist Apron", price: "₦18,000", img: trend3.url },
+  { name: "Wait Staff Uniform Set", price: "₦38,000", img: trend4.url },
 ];
 
 const kitchenPreview = [
