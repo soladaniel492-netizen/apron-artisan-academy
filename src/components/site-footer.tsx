@@ -1,7 +1,9 @@
 import { Link } from "@tanstack/react-router";
 import { AtSign, Facebook, Instagram, Linkedin } from "lucide-react";
 
+import logo from "@/assets/chef-store-logo.jpg.asset.json";
 import { ADDRESS, SOCIALS } from "@/lib/site";
+
 
 const icons = {
   Instagram,
