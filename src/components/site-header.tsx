@@ -13,17 +13,27 @@ export function SiteHeader() {
   return (
     <header>
       <div className="bg-clay py-2 text-center text-xs tracking-[0.2em] text-clay-foreground uppercase">
-        Free name stitching on every apron · Order on WhatsApp
+        Nationwide delivery across Nigeria · Order on WhatsApp
       </div>
       <nav className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-6 py-5">
-        <Link to="/" className="leading-none">
-          <span className="block font-display text-2xl font-bold tracking-wide">
-            Chef Store
-          </span>
-          <span className="block text-[10px] tracking-[0.35em] text-muted-foreground uppercase">
-            Aprons &amp; Craft
+        <Link to="/" className="flex items-center gap-3 leading-none">
+          <img
+            src={logo.url}
+            alt="Chef Store logo"
+            width={48}
+            height={48}
+            className="h-12 w-12 rounded-sm object-contain"
+          />
+          <span className="hidden sm:block">
+            <span className="block font-display text-2xl font-bold tracking-wide">
+              Chef Store
+            </span>
+            <span className="block text-[10px] tracking-[0.35em] text-muted-foreground uppercase">
+              Abuja, Nigeria
+            </span>
           </span>
         </Link>
+
         <ul className="hidden items-center gap-8 text-sm tracking-wide md:flex">
           {links.map((l) => (
             <li key={l.to}>
