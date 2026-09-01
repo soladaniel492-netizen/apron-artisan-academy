@@ -1,6 +1,9 @@
 import { Link } from "@tanstack/react-router";
 import { Search, ShoppingBag, User } from "lucide-react";
 
+import logo from "@/assets/chef-store-logo.jpg.asset.json";
+
+
 const links = [
   { label: "Home", to: "/" },
   { label: "Catalogue", to: "/catalogue" },
