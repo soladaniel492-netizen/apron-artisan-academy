@@ -7,7 +7,7 @@ import { SiteHeader } from "@/components/site-header";
 import { catalogue } from "@/data/catalogue";
 import { whatsappLink } from "@/lib/site";
 
-import heroChef from "@/assets/hero-chef.jpg";
+import ceoHero from "@/assets/ceo-hero.mp4.asset.json";
 import promoTraining from "@/assets/promo-training.jpg";
 import dishJollof from "@/assets/dish-jollof.jpg";
 import dishSalmon from "@/assets/dish-salmon.jpg";
