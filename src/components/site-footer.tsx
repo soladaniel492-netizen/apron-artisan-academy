@@ -15,11 +15,20 @@ export function SiteFooter() {
     <footer className="bg-foreground text-background">
       <div className="mx-auto grid max-w-7xl gap-10 px-6 py-14 md:grid-cols-4">
         <div>
-          <p className="font-display text-2xl">Chef Store</p>
+          <img
+            src={logo.url}
+            alt="Chef Store logo"
+            width={56}
+            height={56}
+            loading="lazy"
+            className="h-14 w-14 rounded-sm object-contain"
+          />
+          <p className="mt-3 font-display text-2xl">Chef Store</p>
           <p className="mt-3 text-sm opacity-70">
-            Aprons, culinary items and chef-led training. Made for the people
-            behind the pass.
+            Chef wears, service team uniforms, chef accessories and customized
+            t-shirts. Nationwide delivery from Abuja, Nigeria.
           </p>
+
           <div className="mt-5 flex items-center gap-4">
             {SOCIALS.map((s) => {
               const Icon = icons[s.name];
