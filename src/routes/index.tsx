@@ -13,10 +13,10 @@ import dishJollof from "@/assets/dish-jollof.jpg";
 import dishSalmon from "@/assets/dish-salmon.jpg";
 import dishSuya from "@/assets/dish-suya.jpg";
 import dishPasta from "@/assets/dish-pasta.jpg";
-import trend1 from "@/assets/trend-1.jpg";
-import trend2 from "@/assets/trend-2.jpg";
-import trend3 from "@/assets/trend-3.jpg";
-import trend4 from "@/assets/trend-4.jpg";
+import trend1 from "@/assets/p-personalised.jpg.asset.json";
+import trend2 from "@/assets/p-burgundy.jpg.asset.json";
+import trend3 from "@/assets/p-denim-waist.jpg.asset.json";
+import trend4 from "@/assets/p-waitstaff.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
