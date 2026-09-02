@@ -26,6 +26,12 @@
   --color-cream: var(--cream);
   --color-sand: var(--sand);
   --color-olive: var(--olive);
+  --color-teal-deep: var(--teal-deep);
+  --color-teal-bright: var(--teal-bright);
+  --animate-marquee: marquee 40s linear infinite;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-fade-up: fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-shimmer: shimmer 2.5s linear infinite;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
