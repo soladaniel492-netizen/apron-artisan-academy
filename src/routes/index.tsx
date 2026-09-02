@@ -2,17 +2,17 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { MessageCircle, Star } from "lucide-react";
 
 import { CatalogueCard } from "@/components/catalogue-card";
+import { PhotoCarousel } from "@/components/photo-carousel";
+import { PriceList } from "@/components/price-list";
+import { Reveal } from "@/components/reveal";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { catalogue } from "@/data/catalogue";
 import { whatsappLink } from "@/lib/site";
 
 import ceoHero from "@/assets/ceo-hero.mp4.asset.json";
-import promoTraining from "@/assets/promo-training.jpg";
-import dishJollof from "@/assets/dish-jollof.jpg";
-import dishSalmon from "@/assets/dish-salmon.jpg";
-import dishSuya from "@/assets/dish-suya.jpg";
-import dishPasta from "@/assets/dish-pasta.jpg";
+import apronConfidence from "@/assets/apron-confidence.mp4.asset.json";
+import platingKit from "@/assets/plating-kit.mp4.asset.json";
 import trend1 from "@/assets/p-personalised.jpg.asset.json";
 import trend2 from "@/assets/p-burgundy.jpg.asset.json";
 import trend3 from "@/assets/p-denim-waist.jpg.asset.json";
@@ -21,18 +21,20 @@ import trend4 from "@/assets/p-waitstaff.jpg.asset.json";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Chef Store — Chef Aprons, Culinary Items & Training" },
+      { title: "Chef Store — Chef Wears, Uniforms & Chef Accessories" },
       {
         name: "description",
         content:
-          "Handcrafted chef aprons and culinary items you can order on WhatsApp, plus chef-led culinary training in Abuja.",
+          "Chef wears, service team uniforms, chef accessories and customized t-shirts, made in Abuja with nationwide delivery. Order on WhatsApp.",
       },
-      { property: "og:title", content: "Chef Store — Chef Aprons & Culinary Craft" },
+      { property: "og:title", content: "Chef Store — Chef Wears & Uniforms" },
       {
         property: "og:description",
         content:
-          "Handcrafted aprons, culinary items and chef-led training. Order straight from WhatsApp.",
+          "Chef jackets, aprons, uniforms and accessories made to order in Abuja. Nationwide delivery.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Index,
@@ -45,11 +47,12 @@ const trends = [
   { name: "Wait Staff Uniform Set", price: "₦38,000", img: trend4.url },
 ];
 
-const kitchenPreview = [
-  { name: "Smoky Party Jollof", img: dishJollof },
-  { name: "Suya Skewers", img: dishSuya },
-  { name: "Seared Salmon", img: dishSalmon },
-  { name: "Hand-Rolled Tagliatelle", img: dishPasta },
+const services = [
+  "Chef Wears",
+  "Uniforms for Service Team",
+  "Chef Accessories",
+  "Customized T-Shirts",
+  "Nationwide Delivery",
 ];
 
 function Index() {
@@ -59,9 +62,9 @@ function Index() {
 
       <main>
         {/* Hero */}
-        <section className="bg-cream">
+        <section className="overflow-hidden bg-cream">
           <div className="mx-auto grid max-w-7xl items-center gap-8 px-6 py-12 md:grid-cols-2 md:py-16">
-            <div>
+            <div className="animate-fade-up">
               <p className="text-xs tracking-[0.35em] text-primary uppercase">
                 Chef wears · Uniforms · Accessories
               </p>
@@ -71,27 +74,28 @@ function Index() {
                 <span className="italic text-primary">Kitchen.</span>
               </h1>
               <p className="mt-6 max-w-sm text-sm leading-relaxed text-muted-foreground">
-                Heavy canvas, waxed leather and washed linen — cut, stitched and
-                tested in working kitchens. Plus culinary training that puts them
-                to use.
+                Chef jackets, aprons, service team uniforms and accessories —
+                cut, stitched and branded in Abuja, delivered nationwide.
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-4">
                 <Link
                   to="/catalogue"
-                  className="rounded-sm bg-primary px-8 py-3 text-xs tracking-[0.2em] text-primary-foreground uppercase transition-opacity hover:opacity-90"
+                  className="rounded-sm bg-primary px-8 py-3 text-xs tracking-[0.2em] text-primary-foreground uppercase transition-transform duration-300 hover:scale-105"
                 >
                   View Catalogue
                 </Link>
-                <Link
-                  to="/training"
-                  className="border-b border-foreground pb-1 text-xs tracking-[0.2em] uppercase"
+                <a
+                  href={whatsappLink("Hello Chef Store, I'd like to place an order.")}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="underline-sweep pb-1 text-xs tracking-[0.2em] uppercase"
                 >
-                  Book Training
-                </Link>
+                  Order on WhatsApp
+                </a>
               </div>
             </div>
-            <div className="relative">
-              <div className="absolute inset-x-6 top-10 bottom-0 rounded-t-full bg-sand" />
+            <div className="relative animate-fade-up [animation-delay:150ms]">
+              <div className="absolute inset-x-6 top-10 bottom-0 animate-float rounded-t-full bg-sand" />
               <video
                 src={ceoHero.url}
                 autoPlay
@@ -100,120 +104,124 @@ function Index() {
                 playsInline
                 preload="metadata"
                 aria-label="Chef Store founder presenting chef uniforms, aprons and kitchen tools"
-                className="relative mx-auto aspect-[9/12] w-full max-w-md rounded-t-full object-cover"
+                className="relative mx-auto aspect-[9/12] w-full max-w-md rounded-t-full object-cover shadow-2xl"
               />
             </div>
           </div>
         </section>
 
-        {/* What we do */}
-        <section className="border-y border-border">
-          <ul className="mx-auto grid max-w-7xl gap-px bg-border px-0 sm:grid-cols-2 lg:grid-cols-5">
-            {[
-              "Chef Wears",
-              "Uniforms for Service Team",
-              "Chef Accessories",
-              "Customized T-Shirts",
-              "Nationwide Delivery",
-            ].map((s) => (
-              <li
-                key={s}
-                className="bg-background px-6 py-6 text-center text-[11px] tracking-[0.2em] uppercase"
+        {/* Services marquee */}
+        <section className="overflow-hidden border-y border-border bg-clay py-4">
+          <div className="flex w-max animate-marquee gap-12 pr-12">
+            {[...services, ...services, ...services, ...services].map((s, i) => (
+              <span
+                key={`${s}-${i}`}
+                className="flex items-center gap-12 text-[11px] tracking-[0.3em] text-clay-foreground uppercase"
               >
                 {s}
-              </li>
-            ))}
-          </ul>
-        </section>
-
-        {/* Catalogue preview */}
-
-        <section className="mx-auto max-w-7xl px-6 py-16">
-          <h2 className="text-center font-display text-3xl tracking-[0.15em] uppercase">
-            Catalogue
-          </h2>
-          <div className="mx-auto mt-2 h-px w-16 bg-primary" />
-          <p className="mx-auto mt-4 max-w-lg text-center text-sm text-muted-foreground">
-            Aprons and culinary items with prices — tap any piece to order it in
-            one WhatsApp message.
-          </p>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {catalogue.slice(0, 4).map((item) => (
-              <CatalogueCard key={item.name} item={item} />
+                <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+              </span>
             ))}
           </div>
-          <div className="mt-10 text-center">
+        </section>
+
+        {/* Carousel */}
+        <PhotoCarousel />
+
+        {/* Catalogue preview */}
+        <section className="mx-auto max-w-7xl px-6 py-16">
+          <Reveal>
+            <h2 className="text-center font-display text-3xl tracking-[0.15em] uppercase">
+              Catalogue
+            </h2>
+            <div className="mx-auto mt-2 h-px w-16 bg-primary" />
+            <p className="mx-auto mt-4 max-w-lg text-center text-sm text-muted-foreground">
+              Every piece is made to order — tap any item to send us one WhatsApp
+              message.
+            </p>
+          </Reveal>
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {catalogue.slice(0, 4).map((item, i) => (
+              <Reveal key={item.name} delay={i * 90}>
+                <CatalogueCard item={item} />
+              </Reveal>
+            ))}
+          </div>
+          <Reveal className="mt-10 text-center" delay={120}>
             <Link
               to="/catalogue"
-              className="inline-block border border-foreground px-8 py-3 text-xs tracking-[0.2em] uppercase transition-colors hover:bg-foreground hover:text-background"
+              className="inline-block border border-foreground px-8 py-3 text-xs tracking-[0.2em] uppercase transition-colors duration-300 hover:bg-foreground hover:text-background"
             >
               See the full catalogue
             </Link>
-          </div>
+          </Reveal>
         </section>
 
-        {/* Promo */}
+        {/* Promo — apron film */}
         <section className="bg-sand">
-          <div className="mx-auto grid max-w-7xl items-center gap-8 px-6 py-14 md:grid-cols-2">
-            <img
-              src={promoTraining}
-              alt="Chefs plating dishes during a culinary session"
-              loading="lazy"
-              width={1200}
-              height={800}
-              className="w-full object-cover"
-            />
-            <div>
+          <div className="mx-auto grid max-w-7xl items-center gap-10 px-6 py-16 md:grid-cols-2">
+            <Reveal>
+              <video
+                src={apronConfidence.url}
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="metadata"
+                aria-label="Chef Store aprons in use"
+                className="aspect-[9/16] w-full max-w-sm rounded-sm object-cover shadow-xl md:justify-self-center"
+              />
+            </Reveal>
+            <Reveal delay={120}>
               <p className="text-xs tracking-[0.3em] text-primary uppercase">
-                Starter Kit
+                Made for the line
               </p>
-              <h2 className="mt-4 font-display text-5xl leading-tight font-bold">
-                Apron + Knife Roll
+              <h2 className="mt-4 font-display text-4xl leading-tight font-bold md:text-5xl">
+                The right apron doesn't
                 <br />
-                30% Off
+                just complete your look.
               </h2>
-              <p className="mt-4 max-w-md text-sm text-muted-foreground">
-                Everything a new cook needs on day one: a cross-back apron, a
-                four-piece tool set and a rolled canvas carrier.
+              <p className="mt-4 max-w-md text-sm leading-relaxed text-muted-foreground">
+                It helps you work with confidence, comfort and control —
+                adjustable straps, leather trims, deep pockets and fabric that
+                survives real service.
               </p>
               <a
-                href={whatsappLink(
-                  "Hello Chef Store, I'd like the Starter Kit (Apron + Knife Roll) at 30% off.",
-                )}
+                href={whatsappLink("Hello Chef Store, I'd like to order an apron.")}
                 target="_blank"
                 rel="noreferrer noopener"
-                className="mt-7 inline-flex items-center gap-2 rounded-sm bg-foreground px-8 py-3 text-xs tracking-[0.2em] text-background uppercase"
+                className="mt-7 inline-flex items-center gap-2 rounded-sm bg-clay px-8 py-3 text-xs tracking-[0.2em] text-clay-foreground uppercase transition-transform duration-300 hover:scale-105"
               >
                 <MessageCircle className="h-4 w-4" aria-hidden />
-                Order the Kit
+                Order yours
               </a>
-            </div>
+            </Reveal>
           </div>
         </section>
 
         {/* Trends */}
         <section className="mx-auto max-w-7xl px-6 py-16">
-          <h2 className="text-center font-display text-3xl tracking-[0.15em] uppercase">
-            Worn in the Kitchen
-          </h2>
-          <div className="mx-auto mt-2 h-px w-16 bg-primary" />
+          <Reveal>
+            <h2 className="text-center font-display text-3xl tracking-[0.15em] uppercase">
+              Worn in the Kitchen
+            </h2>
+            <div className="mx-auto mt-2 h-px w-16 bg-primary" />
+          </Reveal>
           <div className="mt-10 grid grid-cols-2 gap-6 lg:grid-cols-4">
-            {trends.map((t) => (
-              <article key={t.name} className="text-center">
-                <div className="overflow-hidden bg-secondary">
+            {trends.map((t, i) => (
+              <Reveal key={t.name} delay={i * 90} className="text-center">
+                <div className="hover-lift overflow-hidden bg-secondary">
                   <img
                     src={t.img}
                     alt={t.name}
                     loading="lazy"
-                    width={600}
-                    height={800}
-                    className="h-full w-full object-cover"
+                    className="h-72 w-full object-cover object-top transition-transform duration-700 hover:scale-105"
                   />
                 </div>
                 <h3 className="mt-4 font-display text-lg">{t.name}</h3>
                 <div className="mt-1 flex items-center justify-center gap-1 text-primary">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <Star key={i} className="h-3 w-3 fill-current" aria-hidden />
+                  {Array.from({ length: 5 }).map((_, s) => (
+                    <Star key={s} className="h-3 w-3 fill-current" aria-hidden />
                   ))}
                 </div>
                 <p className="mt-2 text-sm text-muted-foreground">{t.price}</p>
@@ -221,74 +229,82 @@ function Index() {
                   href={whatsappLink(`Hello Chef Store, I'd like to order the ${t.name}.`)}
                   target="_blank"
                   rel="noreferrer noopener"
-                  className="mt-3 inline-block border border-foreground px-6 py-2 text-[10px] tracking-[0.2em] uppercase transition-colors hover:bg-foreground hover:text-background"
+                  className="mt-3 inline-block border border-foreground px-6 py-2 text-[10px] tracking-[0.2em] uppercase transition-colors duration-300 hover:bg-foreground hover:text-background"
                 >
                   Order on WhatsApp
                 </a>
-              </article>
+              </Reveal>
             ))}
           </div>
         </section>
 
-        {/* Our kitchen preview */}
-        <section className="bg-cream">
-          <div className="mx-auto max-w-7xl px-6 py-16">
-            <h2 className="text-center font-display text-3xl tracking-[0.15em] uppercase">
-              Our Kitchen
-            </h2>
-            <div className="mx-auto mt-2 h-px w-16 bg-primary" />
-            <p className="mx-auto mt-4 max-w-lg text-center text-sm text-muted-foreground">
-              Local Nigerian classics and continental plates, cooked and taught in
-              our own kitchen.
+        {/* Price list */}
+        <div className="bg-cream">
+          <PriceList />
+        </div>
+
+        {/* Plating kit */}
+        <section className="mx-auto grid max-w-7xl items-center gap-10 px-6 py-16 md:grid-cols-2">
+          <Reveal>
+            <p className="text-xs tracking-[0.3em] text-primary uppercase">
+              Chef Accessories
             </p>
-            <div className="mt-10 grid grid-cols-2 gap-6 lg:grid-cols-4">
-              {kitchenPreview.map((d) => (
-                <figure key={d.name}>
-                  <img
-                    src={d.img}
-                    alt={d.name}
-                    loading="lazy"
-                    width={800}
-                    height={800}
-                    className="aspect-square w-full object-cover"
-                  />
-                  <figcaption className="mt-3 font-display text-lg">{d.name}</figcaption>
-                </figure>
-              ))}
-            </div>
-            <div className="mt-10 text-center">
-              <Link
-                to="/kitchen"
-                className="inline-block rounded-sm bg-primary px-8 py-3 text-xs tracking-[0.2em] text-primary-foreground uppercase"
-              >
-                Explore our kitchen
-              </Link>
-            </div>
-          </div>
+            <h2 className="mt-4 font-display text-4xl leading-tight font-bold md:text-5xl">
+              Precision on the plate
+            </h2>
+            <p className="mt-4 max-w-md text-sm leading-relaxed text-muted-foreground">
+              Our professional chef plating kit is made for chefs who believe
+              presentation is part of the cooking — tweezers, spoons, brushes and
+              moulds in one roll.
+            </p>
+            <Link
+              to="/kitchen"
+              className="mt-7 inline-block rounded-sm bg-teal-deep px-8 py-3 text-xs tracking-[0.2em] text-clay-foreground uppercase transition-transform duration-300 hover:scale-105"
+            >
+              Into our kitchen
+            </Link>
+          </Reveal>
+          <Reveal delay={120}>
+            <video
+              src={platingKit.url}
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="metadata"
+              aria-label="Professional chef plating kit"
+              className="aspect-[9/16] w-full max-w-sm rounded-sm object-cover shadow-xl md:justify-self-center"
+            />
+          </Reveal>
         </section>
 
         {/* Newsletter */}
-        <section className="mx-auto max-w-3xl px-6 py-16 text-center">
-          <h2 className="font-display text-4xl">From the Journal</h2>
-          <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-            Recipes, fabric notes and kitchen craft — one letter a month, no
-            filler.
-          </p>
-          <form
-            className="mt-8 flex flex-col gap-3 sm:flex-row"
-            onSubmit={(e) => e.preventDefault()}
-          >
-            <input
-              type="email"
-              required
-              placeholder="Your email address"
-              aria-label="Email address"
-              className="flex-1 border border-border bg-card px-4 py-3 text-sm outline-none focus:border-primary"
-            />
-            <button className="rounded-sm bg-primary px-8 py-3 text-xs tracking-[0.2em] text-primary-foreground uppercase">
-              Subscribe
-            </button>
-          </form>
+        <section className="bg-clay">
+          <div className="mx-auto max-w-3xl px-6 py-16 text-center">
+            <Reveal>
+              <h2 className="font-display text-4xl text-clay-foreground">
+                Stay in the loop
+              </h2>
+              <p className="mt-4 text-sm leading-relaxed text-clay-foreground/75">
+                New drops, restocks and price updates — one message a month.
+              </p>
+              <form
+                className="mt-8 flex flex-col gap-3 sm:flex-row"
+                onSubmit={(e) => e.preventDefault()}
+              >
+                <input
+                  type="email"
+                  required
+                  placeholder="Your email address"
+                  aria-label="Email address"
+                  className="flex-1 border border-clay-foreground/25 bg-transparent px-4 py-3 text-sm text-clay-foreground outline-none transition-colors focus:border-primary"
+                />
+                <button className="rounded-sm bg-primary px-8 py-3 text-xs tracking-[0.2em] text-primary-foreground uppercase transition-transform duration-300 hover:scale-105">
+                  Subscribe
+                </button>
+              </form>
+            </Reveal>
+          </div>
         </section>
       </main>
 
