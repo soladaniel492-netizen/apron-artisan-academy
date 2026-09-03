@@ -29,7 +29,7 @@ export function CatalogueCard({ item }: { item: CatalogueItem }) {
           href={orderLink(item.name, item.price)}
           target="_blank"
           rel="noreferrer noopener"
-          className="mt-4 inline-flex items-center justify-center gap-2 rounded-sm bg-olive px-6 py-3 text-[11px] tracking-[0.2em] text-background uppercase transition-opacity hover:opacity-90"
+          className="mt-4 inline-flex items-center justify-center gap-2 rounded-sm bg-teal-deep px-6 py-3 text-[11px] tracking-[0.2em] text-clay-foreground uppercase transition-opacity hover:opacity-90"
         >
           <MessageCircle className="h-4 w-4" aria-hidden />
           Order on WhatsApp

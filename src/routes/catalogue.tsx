@@ -89,7 +89,7 @@ function CataloguePage() {
                 href={whatsappLink("Hello Chef Store, I'd like a custom kitchen fit.")}
                 target="_blank"
                 rel="noreferrer noopener"
-                className="mt-7 inline-block rounded-sm bg-foreground px-8 py-3 text-xs tracking-[0.2em] text-background uppercase"
+                className="mt-7 inline-block rounded-sm bg-foreground px-8 py-3 text-xs tracking-[0.2em] text-clay-foreground uppercase"
               >
                 Customise yours
               </a>
