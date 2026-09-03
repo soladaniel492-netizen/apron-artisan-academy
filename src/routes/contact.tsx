@@ -67,7 +67,7 @@ function ContactPage() {
               href={whatsappLink("Hello Chef Store, I'd like to visit the studio.")}
               target="_blank"
               rel="noreferrer noopener"
-              className="mt-8 inline-flex items-center gap-2 rounded-sm bg-olive px-8 py-3 text-xs tracking-[0.2em] text-background uppercase"
+              className="mt-8 inline-flex items-center gap-2 rounded-sm bg-teal-deep px-8 py-3 text-xs tracking-[0.2em] text-clay-foreground uppercase"
             >
               <MessageCircle className="h-4 w-4" aria-hidden />
               Chat on WhatsApp

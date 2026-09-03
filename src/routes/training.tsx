@@ -5,7 +5,8 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { whatsappLink } from "@/lib/site";
 
-import promoTraining from "@/assets/promo-training.jpg";
+import ceoKitchenFit from "@/assets/ceo-kitchen-fit.mp4.asset.json";
+import { Reveal } from "@/components/reveal";
 
 const courses = [
   {
@@ -60,7 +61,7 @@ function TrainingPage() {
       <main>
         <section className="bg-cream">
           <div className="mx-auto grid max-w-7xl items-center gap-8 px-6 py-14 md:grid-cols-2">
-            <div>
+            <div className="animate-fade-up">
               <p className="text-xs tracking-[0.35em] text-primary uppercase">
                 Training
               </p>
@@ -72,13 +73,15 @@ function TrainingPage() {
                 restaurant. You cook every session — no watching from a stool.
               </p>
             </div>
-            <img
-              src={promoTraining}
-              alt="Chefs teaching in the Chef Store kitchen"
-              loading="lazy"
-              width={1200}
-              height={800}
-              className="w-full object-cover"
+            <video
+              src={ceoKitchenFit.url}
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="metadata"
+              aria-label="Chef Store founder in a kitchen fit"
+              className="aspect-[9/16] w-full max-w-sm rounded-sm object-cover shadow-xl md:justify-self-center"
             />
           </div>
         </section>
@@ -86,7 +89,7 @@ function TrainingPage() {
         <section className="mx-auto max-w-7xl px-6 py-14">
           <div className="grid gap-6 md:grid-cols-2">
             {courses.map((c) => (
-              <article key={c.title} className="border border-border bg-card p-8">
+              <Reveal key={c.title} as="article" className="hover-lift border border-border bg-card p-8">
                 <p className="text-[10px] tracking-[0.25em] text-primary uppercase">
                   {c.meta}
                 </p>
@@ -99,12 +102,12 @@ function TrainingPage() {
                   href={whatsappLink(`Hello Chef Store, I'd like to join: ${c.title}.`)}
                   target="_blank"
                   rel="noreferrer noopener"
-                  className="mt-6 inline-flex items-center gap-2 rounded-sm bg-olive px-6 py-3 text-[11px] tracking-[0.2em] text-background uppercase"
+                  className="mt-6 inline-flex items-center gap-2 rounded-sm bg-teal-deep px-6 py-3 text-[11px] tracking-[0.2em] text-clay-foreground uppercase transition-transform duration-300 hover:scale-105"
                 >
                   <MessageCircle className="h-4 w-4" aria-hidden />
                   Reserve on WhatsApp
                 </a>
-              </article>
+              </Reveal>
             ))}
           </div>
         </section>
