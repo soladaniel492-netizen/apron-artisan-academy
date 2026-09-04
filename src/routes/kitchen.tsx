@@ -135,7 +135,7 @@ function KitchenPage() {
                 className="aspect-[9/16] w-full max-w-sm rounded-sm object-cover shadow-xl md:justify-self-center"
               />
             </Reveal>
-            <Reveal delay={120}>
+            <Reveal delay={380}>
               <h2 className="font-display text-4xl md:text-5xl">
                 Cook it, or let us cook it
               </h2>

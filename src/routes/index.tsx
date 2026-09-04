@@ -142,12 +142,12 @@ function Index() {
           </Reveal>
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {catalogue.slice(0, 4).map((item, i) => (
-              <Reveal key={item.name} delay={i * 90}>
+              <Reveal key={item.name} delay={i * 170}>
                 <CatalogueCard item={item} />
               </Reveal>
             ))}
           </div>
-          <Reveal className="mt-10 text-center" delay={120}>
+          <Reveal className="mt-10 text-center" delay={420}>
             <Link
               to="/catalogue"
               className="inline-block border border-foreground px-8 py-3 text-xs tracking-[0.2em] uppercase transition-colors duration-300 hover:bg-foreground hover:text-background"
@@ -172,7 +172,7 @@ function Index() {
                 className="aspect-[9/16] w-full max-w-sm rounded-sm object-cover shadow-xl md:justify-self-center"
               />
             </Reveal>
-            <Reveal delay={120}>
+            <Reveal delay={420}>
               <p className="text-xs tracking-[0.3em] text-primary uppercase">
                 Made for the line
               </p>
@@ -209,7 +209,7 @@ function Index() {
           </Reveal>
           <div className="mt-10 grid grid-cols-2 gap-6 lg:grid-cols-4">
             {trends.map((t, i) => (
-              <Reveal key={t.name} delay={i * 90} className="text-center">
+              <Reveal key={t.name} delay={i * 170} className="text-center">
                 <div className="hover-lift overflow-hidden bg-secondary">
                   <img
                     src={t.img}
@@ -264,7 +264,7 @@ function Index() {
               Into our kitchen
             </Link>
           </Reveal>
-          <Reveal delay={120}>
+          <Reveal delay={420}>
             <video
               src={platingKit.url}
               autoPlay

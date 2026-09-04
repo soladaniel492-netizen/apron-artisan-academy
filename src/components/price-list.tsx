@@ -23,7 +23,7 @@ export function PriceList() {
         </div>
         <div className="divide-y divide-border bg-card">
           {chefWearsPricing.map((g, gi) => (
-            <Reveal key={g.group} delay={gi * 80} className="px-6 py-6 sm:px-10">
+            <Reveal key={g.group} delay={gi * 200} className="px-6 py-6 sm:px-10">
               <h3 className="font-display text-2xl text-primary">{g.group}</h3>
               <ul className="mt-3 space-y-2">
                 {g.items.map((it) => (
@@ -43,7 +43,7 @@ export function PriceList() {
         </div>
       </div>
 
-      <Reveal className="mt-8 text-center" delay={120}>
+      <Reveal className="mt-8 text-center" delay={400}>
         <p className="text-sm text-muted-foreground">
           Aprons, uniforms, accessories and customized t-shirts are quoted on
           request — message us for the current rate.
