@@ -19,8 +19,8 @@
  */
 
 @theme inline {
-  --font-display: "Cormorant Garamond", Georgia, serif;
-  --font-sans: "Karla", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Instrument Serif", "Times New Roman", Georgia, serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --color-clay: var(--clay);
   --color-clay-foreground: var(--clay-foreground);
   --color-cream: var(--cream);
@@ -162,6 +162,14 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: -0.011em;
+  }
+
+  h1,
+  h2,
+  h3 {
+    letter-spacing: -0.02em;
   }
 }
 
@@ -187,12 +195,15 @@
 
 @utility reveal {
   opacity: 0;
-  transform: translateY(28px);
+  filter: blur(10px);
+  transform: translateY(38px) scale(0.98);
   transition:
-    opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
-    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    opacity 1.15s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 1.15s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1.15s cubic-bezier(0.16, 1, 0.3, 1);
   &[data-visible="true"] {
     opacity: 1;
+    filter: blur(0);
     transform: none;
   }
 }
