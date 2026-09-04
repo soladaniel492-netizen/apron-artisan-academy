@@ -77,7 +77,7 @@ function KitchenPage() {
               <h1 className="mt-4 font-display text-5xl font-bold md:text-6xl">
                 From Local Pots to
                 <br />
-                <span className="italic text-primary">Continental Plates</span>
+                <span className="text-primary">Continental Plates</span>
               </h1>
               <p className="mt-5 max-w-md text-sm leading-relaxed text-muted-foreground">
                 Our kitchen runs on two traditions at once: the deep, slow
