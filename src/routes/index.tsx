@@ -71,7 +71,7 @@ function Index() {
               <h1 className="mt-6 font-display text-6xl leading-[0.95] font-bold md:text-7xl">
                 Elevate Your
                 <br />
-                <span className="italic text-primary">Kitchen.</span>
+                <span className="text-primary">Kitchen.</span>
               </h1>
               <p className="mt-6 max-w-sm text-sm leading-relaxed text-muted-foreground">
                 Chef jackets, aprons, service team uniforms and accessories —
