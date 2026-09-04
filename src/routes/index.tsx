@@ -64,23 +64,34 @@ function Index() {
         {/* Hero */}
         <section className="overflow-hidden bg-cream">
           <div className="mx-auto grid max-w-7xl items-center gap-8 px-6 py-12 md:grid-cols-2 md:py-16">
-            <div className="animate-fade-up">
-              <p className="text-xs tracking-[0.35em] text-primary uppercase">
+            <div>
+              <p className="hero-eyebrow text-xs tracking-[0.35em] text-primary uppercase">
                 Chef wears · Uniforms · Accessories
               </p>
               <h1 className="mt-6 font-display text-6xl leading-[0.95] font-bold md:text-7xl">
-                Elevate Your
+                <span className="sr-only">Elevate Your Kitchen.</span>
+                <AnimatedLine text="Elevate Your" start={0.25} />
                 <br />
-                <span className="text-primary">Kitchen.</span>
+                <span className="relative inline-block text-primary">
+                  <AnimatedLine text="Kitchen." start={0.75} />
+                  <span
+                    aria-hidden
+                    className="hero-underline absolute -bottom-1 left-0 block h-[3px] w-full bg-primary"
+                    style={{ animationDelay: "1.5s" }}
+                  />
+                </span>
               </h1>
-              <p className="mt-6 max-w-sm text-sm leading-relaxed text-muted-foreground">
+              <p
+                className="hero-wipe mt-6 max-w-sm text-sm leading-relaxed text-muted-foreground"
+                style={{ animationDelay: "1.35s" }}
+              >
                 Chef jackets, aprons, service team uniforms and accessories —
                 cut, stitched and branded in Abuja, delivered nationwide.
               </p>
-              <div className="mt-8 flex flex-wrap items-center gap-4">
+              <div className="mt-8 flex animate-fade-up flex-wrap items-center gap-4 [animation-delay:1.7s]">
                 <Link
                   to="/catalogue"
-                  className="rounded-sm bg-primary px-8 py-3 text-xs tracking-[0.2em] text-primary-foreground uppercase transition-transform duration-300 hover:scale-105"
+                  className="hero-sheen rounded-sm bg-primary px-8 py-3 text-xs tracking-[0.2em] text-primary-foreground uppercase transition-transform duration-300 hover:scale-105"
                 >
                   View Catalogue
                 </Link>
