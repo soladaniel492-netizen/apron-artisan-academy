@@ -5,6 +5,7 @@ import crossback from "@/assets/p-crossback.jpg.asset.json";
 import personalised from "@/assets/p-personalised.jpg.asset.json";
 import leatherDetails from "@/assets/p-leather-details.jpg.asset.json";
 import burgundy from "@/assets/p-burgundy.jpg.asset.json";
+import denimRed from "@/assets/denim-red-aprons.jpg.asset.json";
 
 export type CatalogueItem = {
   name: string;
@@ -70,5 +71,13 @@ export const catalogue: CatalogueItem[] = [
     detail:
       "Soft cotton tee printed or embroidered with your restaurant's logo.",
     img: teamSet.url,
+  },
+  {
+    name: "Denim & Twill Bib Set",
+    price: "₦34,000",
+    category: "Aprons",
+    detail:
+      "A matched pair — raw denim and deep red twill, both with leather strap tabs.",
+    img: denimRed.url,
   },
 ];
