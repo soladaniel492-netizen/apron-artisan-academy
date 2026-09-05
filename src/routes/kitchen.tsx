@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { MessageCircle } from "lucide-react";
 
+import { FoodStrip } from "@/components/food-strip";
 import { Reveal } from "@/components/reveal";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
@@ -8,39 +9,79 @@ import { whatsappLink } from "@/lib/site";
 
 import platingSet from "@/assets/plating-set.mp4.asset.json";
 import platingKit from "@/assets/plating-kit.mp4.asset.json";
+import kitchenPass from "@/assets/kitchen-pass.jpg.asset.json";
+import jollof from "@/assets/dish-jollof.jpg.asset.json";
+import egusi from "@/assets/dish-egusi.jpg.asset.json";
+import suya from "@/assets/dish-suya.jpg.asset.json";
+import salmon from "@/assets/dish-salmon.jpg.asset.json";
+import pasta from "@/assets/dish-pasta.jpg.asset.json";
+import peri from "@/assets/dish-perigrill.jpg.asset.json";
+import zobo from "@/assets/drink-zobo.jpg.asset.json";
+import chapman from "@/assets/drink-chapman.jpg.asset.json";
 
-const dishes = [
+const menu = [
   {
-    name: "Smoky Party Jollof",
-    origin: "Local",
-    detail: "Long-grain rice cooked over firewood heat with grilled chicken.",
+    course: "Continental",
+    blurb:
+      "European technique, precise seasoning and clean plating — the dishes we teach and serve.",
+    dishes: [
+      {
+        name: "Seared Salmon, Beurre Blanc",
+        img: salmon.url,
+        detail: "Crisp-skin salmon with asparagus and a classic butter sauce.",
+      },
+      {
+        name: "Hand-Rolled Tagliatelle",
+        img: pasta.url,
+        detail: "Fresh egg pasta with slow-cooked tomato and basil sugo.",
+      },
+      {
+        name: "Peri Peri Grill Platter",
+        img: peri.url,
+        detail: "Flame-grilled chicken with plantain and a bright herb salad.",
+      },
+    ],
   },
   {
-    name: "Egusi & Pounded Yam",
-    origin: "Local",
-    detail: "Melon seed stew with assorted meats and hand-pounded yam.",
+    course: "Local",
+    blurb:
+      "Deep, slow Nigerian flavours cooked the way they are meant to be cooked.",
+    dishes: [
+      {
+        name: "Smoky Party Jollof",
+        img: jollof.url,
+        detail: "Long-grain rice cooked over firewood heat with grilled chicken.",
+      },
+      {
+        name: "Egusi & Pounded Yam",
+        img: egusi.url,
+        detail: "Melon seed stew with assorted meats and hand-pounded yam.",
+      },
+      {
+        name: "Suya Skewers",
+        img: suya.url,
+        detail: "Yaji-rubbed beef, charcoal grilled, with onion and pepper.",
+      },
+    ],
   },
   {
-    name: "Suya Skewers",
-    origin: "Local",
-    detail: "Yaji-rubbed beef, charcoal grilled, served with onion and pepper.",
-  },
-  {
-    name: "Seared Salmon, Beurre Blanc",
-    origin: "Continental",
-    detail: "Crisp-skin salmon with asparagus and a classic butter sauce.",
-  },
-  {
-    name: "Hand-Rolled Tagliatelle",
-    origin: "Continental",
-    detail: "Fresh egg pasta with slow-cooked tomato and basil sugo.",
-  },
-  {
-    name: "Peri Peri Grill Platter",
-    origin: "Fusion",
-    detail: "Flame-grilled chicken with plantain and a bright herb salad.",
+    course: "Drinks",
+    blurb: "House pours, chilled and made fresh for every service.",
+    dishes: [
+      {
+        name: "Chilled Zobo",
+        img: zobo.url,
+        detail: "Hibiscus steeped with spice, served over ice with mint.",
+      },
+      {
+        name: "Chapman",
+        img: chapman.url,
+        detail: "The classic Nigerian cooler with citrus and cucumber.",
+      },
+    ],
   },
 ];
+
 
 export const Route = createFileRoute("/kitchen")({
   head: () => ({
@@ -100,26 +141,77 @@ function KitchenPage() {
           </div>
         </section>
 
-        <section className="mx-auto max-w-7xl px-6 py-14">
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {dishes.map((d, i) => (
-              <Reveal
-                key={d.name}
-                delay={i * 80}
-                className="hover-lift group relative overflow-hidden border border-border bg-card p-8"
-              >
-                <span className="absolute top-0 left-0 h-full w-1 origin-top scale-y-0 bg-primary transition-transform duration-500 group-hover:scale-y-100" />
-                <p className="text-[10px] tracking-[0.25em] text-teal-deep uppercase">
-                  {d.origin}
-                </p>
-                <h2 className="mt-2 font-display text-3xl">{d.name}</h2>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                  {d.detail}
+        <FoodStrip />
+
+        <section className="mx-auto max-w-7xl px-6 py-16">
+          {menu.map((group, gi) => (
+            <div key={group.course} className={gi > 0 ? "mt-20" : ""}>
+              <Reveal className="flex flex-wrap items-end justify-between gap-4 border-b border-border pb-5">
+                <div>
+                  <p className="text-[10px] tracking-[0.35em] text-teal-deep uppercase">
+                    Menu {String(gi + 1).padStart(2, "0")}
+                  </p>
+                  <h2 className="mt-2 font-display text-4xl md:text-5xl">
+                    {group.course}
+                  </h2>
+                </div>
+                <p className="max-w-sm text-sm leading-relaxed text-muted-foreground">
+                  {group.blurb}
                 </p>
               </Reveal>
-            ))}
+
+              <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                {group.dishes.map((d, i) => (
+                  <Reveal
+                    key={d.name}
+                    delay={i * 180}
+                    className="hover-lift group overflow-hidden rounded-sm border border-border bg-card"
+                  >
+                    <div className="relative aspect-4/3 overflow-hidden">
+                      <img
+                        src={d.img}
+                        alt={d.name}
+                        loading="lazy"
+                        className="h-full w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-clay/50 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                    </div>
+                    <div className="p-6">
+                      <p className="text-[10px] tracking-[0.25em] text-primary uppercase">
+                        {group.course}
+                      </p>
+                      <h3 className="mt-2 font-display text-2xl">{d.name}</h3>
+                      <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                        {d.detail}
+                      </p>
+                    </div>
+                  </Reveal>
+                ))}
+              </div>
+            </div>
+          ))}
+        </section>
+
+        <section className="relative overflow-hidden">
+          <img
+            src={kitchenPass.url}
+            alt="Chefs plating on the kitchen pass"
+            loading="lazy"
+            className="h-[380px] w-full object-cover md:h-[460px]"
+          />
+          <div className="absolute inset-0 bg-clay/60" />
+          <div className="absolute inset-0 mx-auto flex max-w-7xl flex-col justify-center px-6">
+            <Reveal>
+              <p className="text-[10px] tracking-[0.35em] text-primary uppercase">
+                On the pass
+              </p>
+              <h2 className="mt-3 max-w-xl font-display text-4xl text-clay-foreground md:text-6xl">
+                Every plate leaves the pass finished
+              </h2>
+            </Reveal>
           </div>
         </section>
+
 
         <section className="bg-sand">
           <div className="mx-auto grid max-w-7xl items-center gap-10 px-6 py-16 md:grid-cols-2">
