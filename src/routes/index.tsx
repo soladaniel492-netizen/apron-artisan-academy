@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { MessageCircle, Star } from "lucide-react";
 
+import { AnimatedLine } from "@/components/animated-line";
 import { CatalogueCard } from "@/components/catalogue-card";
 import { PhotoCarousel } from "@/components/photo-carousel";
 import { PriceList } from "@/components/price-list";
