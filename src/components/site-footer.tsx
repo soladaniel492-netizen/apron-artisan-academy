@@ -15,7 +15,7 @@ const icons = {
 export function SiteFooter() {
   return (
     <footer className="bg-foreground text-background">
-      <div className="mx-auto grid max-w-7xl gap-10 px-6 py-14 md:grid-cols-4">
+      <div className="mx-auto grid max-w-7xl items-start gap-10 px-6 py-14 md:grid-cols-[1.5fr_1fr_1fr_1fr]">
         <div>
           <img
             src={logo.url}
@@ -31,7 +31,7 @@ export function SiteFooter() {
             t-shirts. Nationwide delivery from Abuja, Nigeria.
           </p>
 
-          <div className="mt-5 flex items-center gap-4">
+          <div className="mt-5 flex flex-wrap items-center gap-3">
             {SOCIALS.map((s) => {
               const Icon = icons[s.name];
               return (
@@ -41,7 +41,7 @@ export function SiteFooter() {
                   target="_blank"
                   rel="noreferrer noopener"
                   aria-label={s.name}
-                  className="rounded-sm border border-background/25 p-2 transition-colors hover:bg-background hover:text-foreground"
+                  className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-sm border border-background/25 leading-none transition-colors hover:bg-background hover:text-foreground"
                 >
                   <Icon className="h-4 w-4" aria-hidden />
                 </a>
