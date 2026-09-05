@@ -141,26 +141,77 @@ function KitchenPage() {
           </div>
         </section>
 
-        <section className="mx-auto max-w-7xl px-6 py-14">
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {dishes.map((d, i) => (
-              <Reveal
-                key={d.name}
-                delay={i * 80}
-                className="hover-lift group relative overflow-hidden border border-border bg-card p-8"
-              >
-                <span className="absolute top-0 left-0 h-full w-1 origin-top scale-y-0 bg-primary transition-transform duration-500 group-hover:scale-y-100" />
-                <p className="text-[10px] tracking-[0.25em] text-teal-deep uppercase">
-                  {d.origin}
-                </p>
-                <h2 className="mt-2 font-display text-3xl">{d.name}</h2>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                  {d.detail}
+        <FoodStrip />
+
+        <section className="mx-auto max-w-7xl px-6 py-16">
+          {menu.map((group, gi) => (
+            <div key={group.course} className={gi > 0 ? "mt-20" : ""}>
+              <Reveal className="flex flex-wrap items-end justify-between gap-4 border-b border-border pb-5">
+                <div>
+                  <p className="text-[10px] tracking-[0.35em] text-teal-deep uppercase">
+                    Menu {String(gi + 1).padStart(2, "0")}
+                  </p>
+                  <h2 className="mt-2 font-display text-4xl md:text-5xl">
+                    {group.course}
+                  </h2>
+                </div>
+                <p className="max-w-sm text-sm leading-relaxed text-muted-foreground">
+                  {group.blurb}
                 </p>
               </Reveal>
-            ))}
+
+              <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                {group.dishes.map((d, i) => (
+                  <Reveal
+                    key={d.name}
+                    delay={i * 180}
+                    className="hover-lift group overflow-hidden rounded-sm border border-border bg-card"
+                  >
+                    <div className="relative aspect-4/3 overflow-hidden">
+                      <img
+                        src={d.img}
+                        alt={d.name}
+                        loading="lazy"
+                        className="h-full w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-clay/50 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                    </div>
+                    <div className="p-6">
+                      <p className="text-[10px] tracking-[0.25em] text-primary uppercase">
+                        {group.course}
+                      </p>
+                      <h3 className="mt-2 font-display text-2xl">{d.name}</h3>
+                      <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                        {d.detail}
+                      </p>
+                    </div>
+                  </Reveal>
+                ))}
+              </div>
+            </div>
+          ))}
+        </section>
+
+        <section className="relative overflow-hidden">
+          <img
+            src={kitchenPass.url}
+            alt="Chefs plating on the kitchen pass"
+            loading="lazy"
+            className="h-[380px] w-full object-cover md:h-[460px]"
+          />
+          <div className="absolute inset-0 bg-clay/60" />
+          <div className="absolute inset-0 mx-auto flex max-w-7xl flex-col justify-center px-6">
+            <Reveal>
+              <p className="text-[10px] tracking-[0.35em] text-primary uppercase">
+                On the pass
+              </p>
+              <h2 className="mt-3 max-w-xl font-display text-4xl text-clay-foreground md:text-6xl">
+                Every plate leaves the pass finished
+              </h2>
+            </Reveal>
           </div>
         </section>
+
 
         <section className="bg-sand">
           <div className="mx-auto grid max-w-7xl items-center gap-10 px-6 py-16 md:grid-cols-2">
