@@ -9,13 +9,15 @@ import { whatsappLink } from "@/lib/site";
 
 import platingSet from "@/assets/plating-set.mp4.asset.json";
 import platingKit from "@/assets/plating-kit.mp4.asset.json";
-import kitchenPass from "@/assets/kitchen-pass.jpg.asset.json";
-import jollof from "@/assets/dish-jollof.jpg.asset.json";
-import egusi from "@/assets/dish-egusi.jpg.asset.json";
-import suya from "@/assets/dish-suya.jpg.asset.json";
+import kitchenPass from "@/assets/kitchen-pass-new.jpg.asset.json";
+import egusi from "@/assets/local-egusi.jpg.asset.json";
+import efoRiro from "@/assets/local-efo-riro.jpg.asset.json";
+import jollofPlantain from "@/assets/local-jollof-plantain.jpg.asset.json";
+import jollofPan from "@/assets/local-jollof-pan.jpg.asset.json";
+import egusiPacks from "@/assets/local-egusi-packs.jpg.asset.json";
+import noodles from "@/assets/dish-noodles.jpg.asset.json";
+import grilledChicken from "@/assets/dish-grilled-chicken.jpg.asset.json";
 import salmon from "@/assets/dish-salmon.jpg.asset.json";
-import pasta from "@/assets/dish-pasta.jpg.asset.json";
-import peri from "@/assets/dish-perigrill.jpg.asset.json";
 import zobo from "@/assets/drink-zobo.jpg.asset.json";
 import chapman from "@/assets/drink-chapman.jpg.asset.json";
 
@@ -23,22 +25,22 @@ const menu = [
   {
     course: "Continental",
     blurb:
-      "European technique, precise seasoning and clean plating — the dishes we teach and serve.",
+      "European and Asian technique, precise seasoning and clean plating — the dishes we teach and serve.",
     dishes: [
+      {
+        name: "Chilli Garlic Stir-Fry Noodles",
+        img: noodles.url,
+        detail: "Wok-tossed noodles with spring onion, tomato and chilli oil.",
+      },
+      {
+        name: "Herb Roasted Chicken",
+        img: grilledChicken.url,
+        detail: "Marinated drumsticks roasted with garlic, lime and coriander.",
+      },
       {
         name: "Seared Salmon, Beurre Blanc",
         img: salmon.url,
         detail: "Crisp-skin salmon with asparagus and a classic butter sauce.",
-      },
-      {
-        name: "Hand-Rolled Tagliatelle",
-        img: pasta.url,
-        detail: "Fresh egg pasta with slow-cooked tomato and basil sugo.",
-      },
-      {
-        name: "Peri Peri Grill Platter",
-        img: peri.url,
-        detail: "Flame-grilled chicken with plantain and a bright herb salad.",
       },
     ],
   },
@@ -48,19 +50,29 @@ const menu = [
       "Deep, slow Nigerian flavours cooked the way they are meant to be cooked.",
     dishes: [
       {
-        name: "Smoky Party Jollof",
-        img: jollof.url,
-        detail: "Long-grain rice cooked over firewood heat with grilled chicken.",
-      },
-      {
-        name: "Egusi & Pounded Yam",
+        name: "Egusi & Assorted Meat",
         img: egusi.url,
-        detail: "Melon seed stew with assorted meats and hand-pounded yam.",
+        detail: "Melon seed stew simmered with assorted meats, ponmo and shaki.",
       },
       {
-        name: "Suya Skewers",
-        img: suya.url,
-        detail: "Yaji-rubbed beef, charcoal grilled, with onion and pepper.",
+        name: "Efo Riro",
+        img: efoRiro.url,
+        detail: "Rich spinach stew with peppers, locust bean and assorted cuts.",
+      },
+      {
+        name: "Jollof, Plantain & Grilled Chicken",
+        img: jollofPlantain.url,
+        detail: "Smoky party jollof plated with sweet plantain and peppered chicken.",
+      },
+      {
+        name: "Party Jollof in the Pan",
+        img: jollofPan.url,
+        detail: "Long-grain rice cooked over firewood heat with tender beef.",
+      },
+      {
+        name: "Egusi Packs to Go",
+        img: egusiPacks.url,
+        detail: "Bulk trays prepped for events, parties and weekly meal plans.",
       },
     ],
   },
