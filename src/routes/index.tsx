@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { MessageCircle, Star } from "lucide-react";
 
+import { AnimatedLine } from "@/components/animated-line";
 import { CatalogueCard } from "@/components/catalogue-card";
 import { PhotoCarousel } from "@/components/photo-carousel";
 import { PriceList } from "@/components/price-list";
@@ -55,25 +56,6 @@ const services = [
   "Nationwide Delivery",
 ];
 
-function AnimatedLine({ text, start }: { text: string; start: number }) {
-  return (
-    <span aria-hidden className="inline-block">
-      {text.split("").map((ch, i) =>
-        ch === " " ? (
-          <span key={i}>&nbsp;</span>
-        ) : (
-          <span
-            key={i}
-            className="hero-char"
-            style={{ animationDelay: `${start + i * 0.045}s` }}
-          >
-            {ch}
-          </span>
-        ),
-      )}
-    </span>
-  );
-}
 
 function Index() {
   return (
