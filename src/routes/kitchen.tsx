@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { MessageCircle } from "lucide-react";
 
+import { FoodStrip } from "@/components/food-strip";
 import { Reveal } from "@/components/reveal";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
@@ -8,39 +9,79 @@ import { whatsappLink } from "@/lib/site";
 
 import platingSet from "@/assets/plating-set.mp4.asset.json";
 import platingKit from "@/assets/plating-kit.mp4.asset.json";
+import kitchenPass from "@/assets/kitchen-pass.jpg.asset.json";
+import jollof from "@/assets/dish-jollof.jpg.asset.json";
+import egusi from "@/assets/dish-egusi.jpg.asset.json";
+import suya from "@/assets/dish-suya.jpg.asset.json";
+import salmon from "@/assets/dish-salmon.jpg.asset.json";
+import pasta from "@/assets/dish-pasta.jpg.asset.json";
+import peri from "@/assets/dish-perigrill.jpg.asset.json";
+import zobo from "@/assets/drink-zobo.jpg.asset.json";
+import chapman from "@/assets/drink-chapman.jpg.asset.json";
 
-const dishes = [
+const menu = [
   {
-    name: "Smoky Party Jollof",
-    origin: "Local",
-    detail: "Long-grain rice cooked over firewood heat with grilled chicken.",
+    course: "Continental",
+    blurb:
+      "European technique, precise seasoning and clean plating — the dishes we teach and serve.",
+    dishes: [
+      {
+        name: "Seared Salmon, Beurre Blanc",
+        img: salmon.url,
+        detail: "Crisp-skin salmon with asparagus and a classic butter sauce.",
+      },
+      {
+        name: "Hand-Rolled Tagliatelle",
+        img: pasta.url,
+        detail: "Fresh egg pasta with slow-cooked tomato and basil sugo.",
+      },
+      {
+        name: "Peri Peri Grill Platter",
+        img: peri.url,
+        detail: "Flame-grilled chicken with plantain and a bright herb salad.",
+      },
+    ],
   },
   {
-    name: "Egusi & Pounded Yam",
-    origin: "Local",
-    detail: "Melon seed stew with assorted meats and hand-pounded yam.",
+    course: "Local",
+    blurb:
+      "Deep, slow Nigerian flavours cooked the way they are meant to be cooked.",
+    dishes: [
+      {
+        name: "Smoky Party Jollof",
+        img: jollof.url,
+        detail: "Long-grain rice cooked over firewood heat with grilled chicken.",
+      },
+      {
+        name: "Egusi & Pounded Yam",
+        img: egusi.url,
+        detail: "Melon seed stew with assorted meats and hand-pounded yam.",
+      },
+      {
+        name: "Suya Skewers",
+        img: suya.url,
+        detail: "Yaji-rubbed beef, charcoal grilled, with onion and pepper.",
+      },
+    ],
   },
   {
-    name: "Suya Skewers",
-    origin: "Local",
-    detail: "Yaji-rubbed beef, charcoal grilled, served with onion and pepper.",
-  },
-  {
-    name: "Seared Salmon, Beurre Blanc",
-    origin: "Continental",
-    detail: "Crisp-skin salmon with asparagus and a classic butter sauce.",
-  },
-  {
-    name: "Hand-Rolled Tagliatelle",
-    origin: "Continental",
-    detail: "Fresh egg pasta with slow-cooked tomato and basil sugo.",
-  },
-  {
-    name: "Peri Peri Grill Platter",
-    origin: "Fusion",
-    detail: "Flame-grilled chicken with plantain and a bright herb salad.",
+    course: "Drinks",
+    blurb: "House pours, chilled and made fresh for every service.",
+    dishes: [
+      {
+        name: "Chilled Zobo",
+        img: zobo.url,
+        detail: "Hibiscus steeped with spice, served over ice with mint.",
+      },
+      {
+        name: "Chapman",
+        img: chapman.url,
+        detail: "The classic Nigerian cooler with citrus and cucumber.",
+      },
+    ],
   },
 ];
+
 
 export const Route = createFileRoute("/kitchen")({
   head: () => ({
