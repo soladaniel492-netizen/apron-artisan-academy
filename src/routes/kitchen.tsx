@@ -2,24 +2,25 @@ import { createFileRoute } from "@tanstack/react-router";
 import { MessageCircle } from "lucide-react";
 
 import { FoodStrip } from "@/components/food-strip";
+import { KitchenPass } from "@/components/kitchen-pass";
 import { Reveal } from "@/components/reveal";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { whatsappLink } from "@/lib/site";
 
-import platingSet from "@/assets/plating-set.mp4.asset.json";
 import platingKit from "@/assets/plating-kit.mp4.asset.json";
-import kitchenPass from "@/assets/kitchen-pass-new.jpg.asset.json";
 import egusi from "@/assets/local-egusi.jpg.asset.json";
 import efoRiro from "@/assets/local-efo-riro.jpg.asset.json";
 import jollofPlantain from "@/assets/local-jollof-plantain.jpg.asset.json";
 import jollofPan from "@/assets/local-jollof-pan.jpg.asset.json";
-import egusiPacks from "@/assets/local-egusi-packs.jpg.asset.json";
 import noodles from "@/assets/dish-noodles.jpg.asset.json";
 import grilledChicken from "@/assets/dish-grilled-chicken.jpg.asset.json";
 import salmon from "@/assets/dish-salmon.jpg.asset.json";
+import pasta from "@/assets/dish-pasta.jpg.asset.json";
 import zobo from "@/assets/drink-zobo.jpg.asset.json";
 import chapman from "@/assets/drink-chapman.jpg.asset.json";
+import kunu from "@/assets/drink-kunu.jpg.asset.json";
+import punch from "@/assets/drink-punch.jpg.asset.json";
 
 const menu = [
   {
@@ -41,6 +42,11 @@ const menu = [
         name: "Seared Salmon, Beurre Blanc",
         img: salmon.url,
         detail: "Crisp-skin salmon with asparagus and a classic butter sauce.",
+      },
+      {
+        name: "Hand-Rolled Tagliatelle",
+        img: pasta.url,
+        detail: "Fresh egg pasta with slow-cooked tomato and basil sugo.",
       },
     ],
   },
@@ -69,11 +75,6 @@ const menu = [
         img: jollofPan.url,
         detail: "Long-grain rice cooked over firewood heat with tender beef.",
       },
-      {
-        name: "Egusi Packs to Go",
-        img: egusiPacks.url,
-        detail: "Bulk trays prepped for events, parties and weekly meal plans.",
-      },
     ],
   },
   {
@@ -89,6 +90,16 @@ const menu = [
         name: "Chapman",
         img: chapman.url,
         detail: "The classic Nigerian cooler with citrus and cucumber.",
+      },
+      {
+        name: "Kunu Aya",
+        img: kunu.url,
+        detail: "Tiger nut milk blended with dates, chilled and smooth.",
+      },
+      {
+        name: "House Fruit Punch",
+        img: punch.url,
+        detail: "Pineapple, citrus and mint over ice — made fresh daily.",
       },
     ],
   },
@@ -121,35 +132,22 @@ function KitchenPage() {
     <div className="min-h-screen bg-background font-sans text-foreground">
       <SiteHeader />
       <main>
-        <section className="bg-cream">
-          <div className="mx-auto grid max-w-7xl items-center gap-10 px-6 py-16 md:grid-cols-2">
-            <div className="animate-fade-up">
-              <p className="text-xs tracking-[0.35em] text-primary uppercase">
-                Our Kitchen
-              </p>
-              <h1 className="mt-4 font-display text-5xl font-bold md:text-6xl">
-                From Local Pots to
-                <br />
-                <span className="text-primary">Continental Plates</span>
-              </h1>
-              <p className="mt-5 max-w-md text-sm leading-relaxed text-muted-foreground">
-                Our kitchen runs on two traditions at once: the deep, slow
-                flavours of Nigerian cooking and the technique-driven discipline
-                of European kitchens — plated with our own chef tools.
-              </p>
-            </div>
-            <div className="animate-fade-up [animation-delay:150ms]">
-              <video
-                src={platingSet.url}
-                autoPlay
-                loop
-                muted
-                playsInline
-                preload="metadata"
-                aria-label="Chef Store plating set in use"
-                className="aspect-[9/16] w-full max-w-sm rounded-sm object-cover shadow-xl md:justify-self-center"
-              />
-            </div>
+        <section className="relative overflow-hidden bg-cream">
+          <div className="mx-auto max-w-3xl px-6 py-24 text-center md:py-32">
+            <p className="animate-fade-up text-[10px] tracking-[0.5em] text-primary uppercase">
+              Our Kitchen
+            </p>
+            <h1 className="mt-6 animate-fade-up font-display text-5xl leading-[1.05] font-bold [animation-delay:200ms] md:text-7xl">
+              From Local Pots to
+              <br />
+              <span className="text-primary">Continental Plates</span>
+            </h1>
+            <p className="mx-auto mt-7 max-w-xl animate-fade-up text-sm leading-relaxed text-muted-foreground [animation-delay:500ms]">
+              Two traditions in one kitchen: the deep, slow flavours of Nigerian
+              cooking and the technique-driven discipline of European service —
+              plated with our own chef tools.
+            </p>
+            <div className="mx-auto mt-10 h-px w-24 animate-fade-up bg-primary [animation-delay:800ms]" />
           </div>
         </section>
 
@@ -172,28 +170,33 @@ function KitchenPage() {
                 </p>
               </Reveal>
 
-              <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
                 {group.dishes.map((d, i) => (
                   <Reveal
                     key={d.name}
-                    delay={i * 180}
-                    className="hover-lift group overflow-hidden rounded-sm border border-border bg-card"
+                    delay={i * 160}
+                    className="group overflow-hidden rounded-sm bg-card shadow-[0_1px_0_0_var(--color-border)] transition-all duration-700 ease-out hover:-translate-y-2 hover:shadow-2xl"
                   >
-                    <div className="relative aspect-4/3 overflow-hidden">
+                    <div className="relative aspect-[3/4] overflow-hidden">
                       <img
                         src={d.img}
                         alt={d.name}
                         loading="lazy"
-                        className="h-full w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-110"
+                        className="h-full w-full scale-[1.12] object-cover transition-transform duration-[1600ms] ease-out group-hover:scale-[1.28]"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-clay/50 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-clay/90 via-clay/20 to-transparent" />
+                      <div className="absolute inset-0 bg-primary/25 opacity-0 mix-blend-multiply transition-opacity duration-700 group-hover:opacity-100" />
+                      <div className="absolute right-4 bottom-0 left-4 translate-y-2 pb-5 transition-transform duration-700 ease-out group-hover:translate-y-0">
+                        <p className="text-[9px] tracking-[0.35em] text-clay-foreground/70 uppercase">
+                          {group.course}
+                        </p>
+                        <h3 className="mt-2 font-display text-2xl leading-tight text-clay-foreground">
+                          {d.name}
+                        </h3>
+                      </div>
                     </div>
-                    <div className="p-6">
-                      <p className="text-[10px] tracking-[0.25em] text-primary uppercase">
-                        {group.course}
-                      </p>
-                      <h3 className="mt-2 font-display text-2xl">{d.name}</h3>
-                      <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                    <div className="border-t border-border/60 px-5 py-5">
+                      <p className="text-sm leading-relaxed text-muted-foreground">
                         {d.detail}
                       </p>
                     </div>
@@ -204,25 +207,8 @@ function KitchenPage() {
           ))}
         </section>
 
-        <section className="relative overflow-hidden">
-          <img
-            src={kitchenPass.url}
-            alt="Chefs plating on the kitchen pass"
-            loading="lazy"
-            className="h-[380px] w-full object-cover md:h-[460px]"
-          />
-          <div className="absolute inset-0 bg-clay/60" />
-          <div className="absolute inset-0 mx-auto flex max-w-7xl flex-col justify-center px-6">
-            <Reveal>
-              <p className="text-[10px] tracking-[0.35em] text-primary uppercase">
-                On the pass
-              </p>
-              <h2 className="mt-3 max-w-xl font-display text-4xl text-clay-foreground md:text-6xl">
-                Every plate leaves the pass finished
-              </h2>
-            </Reveal>
-          </div>
-        </section>
+        <KitchenPass />
+
 
 
         <section className="bg-sand">
