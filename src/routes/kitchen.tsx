@@ -170,28 +170,33 @@ function KitchenPage() {
                 </p>
               </Reveal>
 
-              <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
                 {group.dishes.map((d, i) => (
                   <Reveal
                     key={d.name}
-                    delay={i * 180}
-                    className="hover-lift group overflow-hidden rounded-sm border border-border bg-card"
+                    delay={i * 160}
+                    className="group overflow-hidden rounded-sm bg-card shadow-[0_1px_0_0_var(--color-border)] transition-all duration-700 ease-out hover:-translate-y-2 hover:shadow-2xl"
                   >
-                    <div className="relative aspect-4/3 overflow-hidden">
+                    <div className="relative aspect-[3/4] overflow-hidden">
                       <img
                         src={d.img}
                         alt={d.name}
                         loading="lazy"
-                        className="h-full w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-110"
+                        className="h-full w-full scale-[1.12] object-cover transition-transform duration-[1600ms] ease-out group-hover:scale-[1.28]"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-clay/50 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-clay/90 via-clay/20 to-transparent" />
+                      <div className="absolute inset-0 bg-primary/25 opacity-0 mix-blend-multiply transition-opacity duration-700 group-hover:opacity-100" />
+                      <div className="absolute right-4 bottom-0 left-4 translate-y-2 pb-5 transition-transform duration-700 ease-out group-hover:translate-y-0">
+                        <p className="text-[9px] tracking-[0.35em] text-clay-foreground/70 uppercase">
+                          {group.course}
+                        </p>
+                        <h3 className="mt-2 font-display text-2xl leading-tight text-clay-foreground">
+                          {d.name}
+                        </h3>
+                      </div>
                     </div>
-                    <div className="p-6">
-                      <p className="text-[10px] tracking-[0.25em] text-primary uppercase">
-                        {group.course}
-                      </p>
-                      <h3 className="mt-2 font-display text-2xl">{d.name}</h3>
-                      <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                    <div className="border-t border-border/60 px-5 py-5">
+                      <p className="text-sm leading-relaxed text-muted-foreground">
                         {d.detail}
                       </p>
                     </div>
