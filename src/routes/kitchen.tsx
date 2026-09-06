@@ -132,35 +132,22 @@ function KitchenPage() {
     <div className="min-h-screen bg-background font-sans text-foreground">
       <SiteHeader />
       <main>
-        <section className="bg-cream">
-          <div className="mx-auto grid max-w-7xl items-center gap-10 px-6 py-16 md:grid-cols-2">
-            <div className="animate-fade-up">
-              <p className="text-xs tracking-[0.35em] text-primary uppercase">
-                Our Kitchen
-              </p>
-              <h1 className="mt-4 font-display text-5xl font-bold md:text-6xl">
-                From Local Pots to
-                <br />
-                <span className="text-primary">Continental Plates</span>
-              </h1>
-              <p className="mt-5 max-w-md text-sm leading-relaxed text-muted-foreground">
-                Our kitchen runs on two traditions at once: the deep, slow
-                flavours of Nigerian cooking and the technique-driven discipline
-                of European kitchens — plated with our own chef tools.
-              </p>
-            </div>
-            <div className="animate-fade-up [animation-delay:150ms]">
-              <video
-                src={platingSet.url}
-                autoPlay
-                loop
-                muted
-                playsInline
-                preload="metadata"
-                aria-label="Chef Store plating set in use"
-                className="aspect-[9/16] w-full max-w-sm rounded-sm object-cover shadow-xl md:justify-self-center"
-              />
-            </div>
+        <section className="relative overflow-hidden bg-cream">
+          <div className="mx-auto max-w-3xl px-6 py-24 text-center md:py-32">
+            <p className="animate-fade-up text-[10px] tracking-[0.5em] text-primary uppercase">
+              Our Kitchen
+            </p>
+            <h1 className="mt-6 animate-fade-up font-display text-5xl leading-[1.05] font-bold [animation-delay:200ms] md:text-7xl">
+              From Local Pots to
+              <br />
+              <span className="text-primary">Continental Plates</span>
+            </h1>
+            <p className="mx-auto mt-7 max-w-xl animate-fade-up text-sm leading-relaxed text-muted-foreground [animation-delay:500ms]">
+              Two traditions in one kitchen: the deep, slow flavours of Nigerian
+              cooking and the technique-driven discipline of European service —
+              plated with our own chef tools.
+            </p>
+            <div className="mx-auto mt-10 h-px w-24 animate-fade-up bg-primary [animation-delay:800ms]" />
           </div>
         </section>
 
