@@ -73,32 +73,32 @@ export function PhotoCarousel() {
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
-      <div className="relative h-[420px] sm:h-[520px] md:h-[600px]">
+      <div className="relative h-[340px] sm:h-[480px] md:h-[600px]">
         {slides.map((s, i) => (
           <figure
             key={s.img}
             aria-hidden={i !== index}
-            className={`absolute inset-0 transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] ${
-              i === index
-                ? "scale-100 opacity-100"
-                : "pointer-events-none scale-105 opacity-0"
+            className={`absolute inset-0 overflow-hidden transition-opacity duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] ${
+              i === index ? "opacity-100" : "pointer-events-none opacity-0"
             }`}
           >
             <img
               src={s.img}
               alt={s.title}
               loading={i === 0 ? "eager" : "lazy"}
-              className="h-full w-full object-cover object-top"
+              className={`h-full w-full object-cover object-top transition-transform duration-[6000ms] ease-out ${
+                i === index ? "scale-110" : "scale-100"
+              }`}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-clay/85 via-clay/25 to-transparent" />
-            <figcaption className="absolute right-0 bottom-0 left-0 p-6 md:p-12">
+            <figcaption className="absolute right-0 bottom-0 left-0 p-5 pb-12 sm:p-8 md:p-12">
               <p className="text-[10px] tracking-[0.35em] text-primary uppercase">
                 Chef Store Originals
               </p>
-              <h3 className="mt-3 max-w-xl font-display text-3xl text-clay-foreground md:text-5xl">
+              <h3 className="mt-3 max-w-xl font-display text-2xl text-clay-foreground sm:text-3xl md:text-5xl">
                 {s.title}
               </h3>
-              <p className="mt-2 max-w-md text-sm text-clay-foreground/80">
+              <p className="mt-2 max-w-md text-xs text-clay-foreground/80 sm:text-sm">
                 {s.caption}
               </p>
             </figcaption>
