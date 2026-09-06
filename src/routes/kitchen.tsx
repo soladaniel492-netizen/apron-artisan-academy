@@ -75,11 +75,6 @@ const menu = [
         img: jollofPan.url,
         detail: "Long-grain rice cooked over firewood heat with tender beef.",
       },
-      {
-        name: "Egusi Packs to Go",
-        img: egusiPacks.url,
-        detail: "Bulk trays prepped for events, parties and weekly meal plans.",
-      },
     ],
   },
   {
@@ -95,6 +90,16 @@ const menu = [
         name: "Chapman",
         img: chapman.url,
         detail: "The classic Nigerian cooler with citrus and cucumber.",
+      },
+      {
+        name: "Kunu Aya",
+        img: kunu.url,
+        detail: "Tiger nut milk blended with dates, chilled and smooth.",
+      },
+      {
+        name: "House Fruit Punch",
+        img: punch.url,
+        detail: "Pineapple, citrus and mint over ice — made fresh daily.",
       },
     ],
   },
