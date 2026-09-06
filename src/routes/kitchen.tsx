@@ -207,25 +207,8 @@ function KitchenPage() {
           ))}
         </section>
 
-        <section className="relative overflow-hidden">
-          <img
-            src={kitchenPass.url}
-            alt="Chefs plating on the kitchen pass"
-            loading="lazy"
-            className="h-[380px] w-full object-cover md:h-[460px]"
-          />
-          <div className="absolute inset-0 bg-clay/60" />
-          <div className="absolute inset-0 mx-auto flex max-w-7xl flex-col justify-center px-6">
-            <Reveal>
-              <p className="text-[10px] tracking-[0.35em] text-primary uppercase">
-                On the pass
-              </p>
-              <h2 className="mt-3 max-w-xl font-display text-4xl text-clay-foreground md:text-6xl">
-                Every plate leaves the pass finished
-              </h2>
-            </Reveal>
-          </div>
-        </section>
+        <KitchenPass />
+
 
 
         <section className="bg-sand">
