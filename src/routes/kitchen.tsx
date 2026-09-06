@@ -43,6 +43,11 @@ const menu = [
         img: salmon.url,
         detail: "Crisp-skin salmon with asparagus and a classic butter sauce.",
       },
+      {
+        name: "Hand-Rolled Tagliatelle",
+        img: pasta.url,
+        detail: "Fresh egg pasta with slow-cooked tomato and basil sugo.",
+      },
     ],
   },
   {
