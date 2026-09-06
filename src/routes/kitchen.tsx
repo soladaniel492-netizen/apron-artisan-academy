@@ -2,24 +2,25 @@ import { createFileRoute } from "@tanstack/react-router";
 import { MessageCircle } from "lucide-react";
 
 import { FoodStrip } from "@/components/food-strip";
+import { KitchenPass } from "@/components/kitchen-pass";
 import { Reveal } from "@/components/reveal";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { whatsappLink } from "@/lib/site";
 
-import platingSet from "@/assets/plating-set.mp4.asset.json";
 import platingKit from "@/assets/plating-kit.mp4.asset.json";
-import kitchenPass from "@/assets/kitchen-pass-new.jpg.asset.json";
 import egusi from "@/assets/local-egusi.jpg.asset.json";
 import efoRiro from "@/assets/local-efo-riro.jpg.asset.json";
 import jollofPlantain from "@/assets/local-jollof-plantain.jpg.asset.json";
 import jollofPan from "@/assets/local-jollof-pan.jpg.asset.json";
-import egusiPacks from "@/assets/local-egusi-packs.jpg.asset.json";
 import noodles from "@/assets/dish-noodles.jpg.asset.json";
 import grilledChicken from "@/assets/dish-grilled-chicken.jpg.asset.json";
 import salmon from "@/assets/dish-salmon.jpg.asset.json";
+import pasta from "@/assets/dish-pasta.jpg.asset.json";
 import zobo from "@/assets/drink-zobo.jpg.asset.json";
 import chapman from "@/assets/drink-chapman.jpg.asset.json";
+import kunu from "@/assets/drink-kunu.jpg.asset.json";
+import punch from "@/assets/drink-punch.jpg.asset.json";
 
 const menu = [
   {
