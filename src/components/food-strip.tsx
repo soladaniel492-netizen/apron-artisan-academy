@@ -1,19 +1,19 @@
-import jollof from "@/assets/dish-jollof.jpg.asset.json";
-import egusi from "@/assets/dish-egusi.jpg.asset.json";
-import suya from "@/assets/dish-suya.jpg.asset.json";
-import salmon from "@/assets/dish-salmon.jpg.asset.json";
-import pasta from "@/assets/dish-pasta.jpg.asset.json";
-import peri from "@/assets/dish-perigrill.jpg.asset.json";
-import zobo from "@/assets/drink-zobo.jpg.asset.json";
+import jollofPlantain from "@/assets/local-jollof-plantain.jpg.asset.json";
+import egusi from "@/assets/local-egusi.jpg.asset.json";
+import efoRiro from "@/assets/local-efo-riro.jpg.asset.json";
+import jollofPan from "@/assets/local-jollof-pan.jpg.asset.json";
+import noodles from "@/assets/dish-noodles.jpg.asset.json";
+import grilledChicken from "@/assets/dish-grilled-chicken.jpg.asset.json";
+import egusiPacks from "@/assets/local-egusi-packs.jpg.asset.json";
 
 const strip = [
-  { img: jollof.url, label: "Party Jollof" },
-  { img: egusi.url, label: "Egusi & Yam" },
-  { img: suya.url, label: "Suya Skewers" },
-  { img: salmon.url, label: "Seared Salmon" },
-  { img: pasta.url, label: "Tagliatelle" },
-  { img: peri.url, label: "Peri Peri Grill" },
-  { img: zobo.url, label: "Chilled Zobo" },
+  { img: jollofPlantain.url, label: "Jollof & Plantain" },
+  { img: egusi.url, label: "Egusi" },
+  { img: efoRiro.url, label: "Efo Riro" },
+  { img: jollofPan.url, label: "Party Jollof" },
+  { img: noodles.url, label: "Stir-Fry Noodles" },
+  { img: grilledChicken.url, label: "Roast Chicken" },
+  { img: egusiPacks.url, label: "Event Trays" },
 ];
 
 export function FoodStrip() {
@@ -31,7 +31,7 @@ export function FoodStrip() {
               src={s.img}
               alt={s.label}
               loading="lazy"
-              className="h-full w-full object-cover transition-transform duration-[1400ms] ease-out hover:scale-110"
+              className="h-full w-full scale-105 object-cover transition-transform duration-[1400ms] ease-out hover:scale-115"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-clay/85 via-transparent to-transparent" />
             <figcaption className="absolute bottom-4 left-4 text-xs tracking-[0.25em] text-clay-foreground uppercase">
