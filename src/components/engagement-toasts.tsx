@@ -56,7 +56,7 @@ export function EngagementToasts() {
     let timer: number;
 
     const show = () => {
-      const nudge = NUDGES[step.current % NUDGES.length];
+      const nudge = NUDGES[step.current % NUDGES.length]!;
       step.current += 1;
       toast(nudge.title, {
         description: nudge.description,
