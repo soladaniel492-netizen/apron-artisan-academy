@@ -2,13 +2,15 @@ import { MessageCircle } from "lucide-react";
 
 import type { CatalogueItem } from "@/data/catalogue";
 import { orderLink } from "@/lib/site";
+import { useMedia } from "@/lib/media";
 
 export function CatalogueCard({ item }: { item: CatalogueItem }) {
+  const media = useMedia();
   return (
     <article className="group hover-lift flex h-full flex-col overflow-hidden rounded-lg border border-border bg-card">
       <div className="relative overflow-hidden bg-secondary">
         <img
-          src={item.img}
+          src={media(item.img)}
           alt={item.name}
           loading="lazy"
           width={700}

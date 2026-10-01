@@ -1,10 +1,11 @@
 import { MessageCircle } from "lucide-react";
 
 import { Reveal } from "@/components/reveal";
-import { chefWearsPricing } from "@/data/pricing";
+import { usePriceGroups } from "@/lib/media";
 import { whatsappLink } from "@/lib/site";
 
 export function PriceList() {
+  const chefWearsPricing = usePriceGroups();
   return (
     <section className="mx-auto max-w-5xl px-6 py-16">
       <Reveal className="text-center">
