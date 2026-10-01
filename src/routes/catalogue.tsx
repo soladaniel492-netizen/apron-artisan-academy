@@ -5,7 +5,7 @@ import { CatalogueCard } from "@/components/catalogue-card";
 import { Reveal } from "@/components/reveal";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
-import { catalogue } from "@/data/catalogue";
+import { useProducts, useMedia } from "@/lib/media";
 import { whatsappLink } from "@/lib/site";
 
 export const Route = createFileRoute("/catalogue")({

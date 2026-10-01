@@ -8,7 +8,7 @@ import { PriceList } from "@/components/price-list";
 import { Reveal } from "@/components/reveal";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
-import { catalogue } from "@/data/catalogue";
+import { useProducts, useMedia } from "@/lib/media";
 import { whatsappLink } from "@/lib/site";
 
 import ceoHero from "@/assets/ceo-hero.mp4.asset.json";
