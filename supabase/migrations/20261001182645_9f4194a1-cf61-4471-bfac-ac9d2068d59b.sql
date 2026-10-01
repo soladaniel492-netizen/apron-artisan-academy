@@ -1,0 +1,2 @@
+drop policy "Public read site-media files" on storage.objects;
+create policy "Admins read site-media" on storage.objects for select to authenticated using (bucket_id = 'site-media' and public.has_role(auth.uid(), 'admin'));
