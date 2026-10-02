@@ -1,3 +1,4 @@
+import { useMedia } from "@/lib/media";
 import { Link } from "@tanstack/react-router";
 import { Search, ShoppingBag, User } from "lucide-react";
 
@@ -13,6 +14,7 @@ const links = [
 ] as const;
 
 export function SiteHeader() {
+  const media = useMedia();
   return (
     <header>
       <div className="bg-clay py-2 text-center text-xs tracking-[0.2em] text-clay-foreground uppercase">
@@ -21,7 +23,7 @@ export function SiteHeader() {
       <nav className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-6 py-5">
         <Link to="/" className="flex items-center gap-3 leading-none">
           <img
-            src={logo.url}
+            src={media(logo.url)}
             alt="Chef Store logo"
             width={48}
             height={48}

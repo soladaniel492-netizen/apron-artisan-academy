@@ -1,3 +1,4 @@
+import { useMedia } from "@/lib/media";
 import { useEffect, useState } from "react";
 
 import kitchenPass from "@/assets/kitchen-pass-new.jpg.asset.json";
@@ -50,6 +51,7 @@ const slides = [
 ];
 
 export function KitchenPass() {
+  const media = useMedia();
   const [i, setI] = useState(0);
 
   useEffect(() => {
@@ -70,7 +72,7 @@ export function KitchenPass() {
           style={{ opacity: idx === i ? 1 : 0 }}
         >
           <img
-            src={s.img}
+            src={media(s.img)}
             alt={s.alt}
             loading="lazy"
             className="h-full w-full object-cover"

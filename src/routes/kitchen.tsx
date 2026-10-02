@@ -1,3 +1,4 @@
+import { useMedia } from "@/lib/media";
 import { createFileRoute } from "@tanstack/react-router";
 import { MessageCircle } from "lucide-react";
 
@@ -128,6 +129,7 @@ export const Route = createFileRoute("/kitchen")({
 });
 
 function KitchenPage() {
+  const media = useMedia();
   return (
     <div className="min-h-screen bg-background font-sans text-foreground">
       <SiteHeader />
@@ -179,7 +181,7 @@ function KitchenPage() {
                   >
                     <div className="relative aspect-[3/4] overflow-hidden">
                       <img
-                        src={d.img}
+                        src={media(d.img)}
                         alt={d.name}
                         loading="lazy"
                         className="h-full w-full scale-[1.12] object-cover transition-transform duration-[1600ms] ease-out group-hover:scale-[1.28]"
@@ -215,7 +217,7 @@ function KitchenPage() {
           <div className="mx-auto grid max-w-7xl items-center gap-10 px-6 py-16 md:grid-cols-2">
             <Reveal>
               <video
-                src={platingKit.url}
+                src={media(platingKit.url)}
                 autoPlay
                 loop
                 muted

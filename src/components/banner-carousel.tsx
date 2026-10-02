@@ -1,3 +1,4 @@
+import { useMedia } from "@/lib/media";
 import { useEffect, useState } from "react";
 
 export type BannerSlide = {
@@ -21,6 +22,7 @@ export function BannerCarousel({
   children?: React.ReactNode;
 }) {
   const [index, setIndex] = useState(0);
+  const media = useMedia();
 
   useEffect(() => {
     if (slides.length < 2) return;
@@ -36,7 +38,7 @@ export function BannerCarousel({
       {slides.map((s, i) => (
         <img
           key={s.img}
-          src={s.img}
+          src={media(s.img)}
           alt={s.alt}
           loading={i === 0 ? "eager" : "lazy"}
           aria-hidden={i !== index}

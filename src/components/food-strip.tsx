@@ -1,3 +1,4 @@
+import { useMedia } from "@/lib/media";
 import jollofPlantain from "@/assets/local-jollof-plantain.jpg.asset.json";
 import egusi from "@/assets/local-egusi.jpg.asset.json";
 import efoRiro from "@/assets/local-efo-riro.jpg.asset.json";
@@ -17,6 +18,7 @@ const strip = [
 ];
 
 export function FoodStrip() {
+  const media = useMedia();
   const loop = [...strip, ...strip];
 
   return (
@@ -28,7 +30,7 @@ export function FoodStrip() {
             className="relative h-[260px] w-[220px] shrink-0 overflow-hidden sm:h-[340px] sm:w-[300px]"
           >
             <img
-              src={s.img}
+              src={media(s.img)}
               alt={s.label}
               loading="lazy"
               className="h-full w-full scale-105 object-cover transition-transform duration-[1400ms] ease-out hover:scale-115"

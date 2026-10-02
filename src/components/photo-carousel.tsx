@@ -1,3 +1,4 @@
+import { useMedia } from "@/lib/media";
 import { useCallback, useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -54,6 +55,7 @@ const slides = [
 ];
 
 export function PhotoCarousel() {
+  const media = useMedia();
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
 
@@ -83,7 +85,7 @@ export function PhotoCarousel() {
             }`}
           >
             <img
-              src={s.img}
+              src={media(s.img)}
               alt={s.title}
               loading={i === 0 ? "eager" : "lazy"}
               className={`h-full w-full object-cover object-top transition-transform duration-[6000ms] ease-out ${

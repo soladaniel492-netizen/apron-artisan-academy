@@ -1,3 +1,4 @@
+import { useMedia } from "@/lib/media";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { MessageCircle, Star } from "lucide-react";
 
@@ -58,6 +59,7 @@ const services = [
 
 
 function Index() {
+  const media = useMedia();
   const catalogue = useProducts();
   return (
     <div className="min-h-screen bg-background font-sans text-foreground">
@@ -111,7 +113,7 @@ function Index() {
             <div className="relative animate-fade-up [animation-delay:150ms]">
               <div className="absolute inset-x-6 top-10 bottom-0 animate-float rounded-t-full bg-sand" />
               <video
-                src={ceoHero.url}
+                src={media(ceoHero.url)}
                 autoPlay
                 loop
                 muted
@@ -176,7 +178,7 @@ function Index() {
           <div className="mx-auto grid max-w-7xl items-center gap-10 px-6 py-16 md:grid-cols-2">
             <Reveal>
               <video
-                src={apronConfidence.url}
+                src={media(apronConfidence.url)}
                 autoPlay
                 loop
                 muted
@@ -226,7 +228,7 @@ function Index() {
               <Reveal key={t.name} delay={i * 170} className="text-center">
                 <div className="hover-lift overflow-hidden bg-secondary">
                   <img
-                    src={t.img}
+                    src={media(t.img)}
                     alt={t.name}
                     loading="lazy"
                     className="h-72 w-full object-cover object-top transition-transform duration-700 hover:scale-105"
@@ -280,7 +282,7 @@ function Index() {
           </Reveal>
           <Reveal delay={420}>
             <video
-              src={platingKit.url}
+              src={media(platingKit.url)}
               autoPlay
               loop
               muted

@@ -1,3 +1,4 @@
+import { useMedia } from "@/lib/media";
 import ceoVideo from "@/assets/ceo-kitchen-fit.mp4.asset.json";
 import { createFileRoute } from "@tanstack/react-router";
 
@@ -28,6 +29,7 @@ export const Route = createFileRoute("/catalogue")({
 });
 
 function CataloguePage() {
+  const media = useMedia();
   const catalogue = useProducts();
   return (
     <div className="min-h-screen bg-background font-sans text-foreground">
@@ -69,7 +71,7 @@ function CataloguePage() {
         <section className="bg-sand">
           <Reveal className="mx-auto grid max-w-7xl items-center gap-10 px-6 py-16 md:grid-cols-2">
             <video
-              src={ceoVideo.url}
+              src={media(ceoVideo.url)}
               controls
               loop
               muted
