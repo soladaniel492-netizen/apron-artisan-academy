@@ -1,3 +1,4 @@
+import { useMedia } from "@/lib/media";
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowUpRight, ClipboardList, MessageCircle } from "lucide-react";
 
@@ -75,6 +76,7 @@ export const Route = createFileRoute("/training")({
 });
 
 function TrainingPage() {
+  const media = useMedia();
   return (
     <div className="min-h-screen overflow-x-clip bg-background font-sans text-foreground">
       <SiteHeader />
@@ -244,7 +246,7 @@ function TrainingPage() {
             </div>
             <Reveal className="justify-self-center">
               <video
-                src={ceoKitchenFit.url}
+                src={media(ceoKitchenFit.url)}
                 autoPlay
                 loop
                 muted
@@ -289,7 +291,7 @@ function TrainingPage() {
             </div>
             <Reveal className="hover-lift overflow-hidden">
               <img
-                src={personalised.url}
+                src={media(personalised.url)}
                 alt="Personalised Chef Store bib apron with embroidered name"
                 loading="lazy"
                 className="h-[420px] w-full object-cover object-top"
