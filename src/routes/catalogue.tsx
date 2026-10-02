@@ -5,7 +5,7 @@ import { CatalogueCard } from "@/components/catalogue-card";
 import { Reveal } from "@/components/reveal";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
-import { useProducts, useMedia } from "@/lib/media";
+import { useProducts } from "@/lib/media";
 import { whatsappLink } from "@/lib/site";
 
 export const Route = createFileRoute("/catalogue")({
@@ -28,6 +28,7 @@ export const Route = createFileRoute("/catalogue")({
 });
 
 function CataloguePage() {
+  const catalogue = useProducts();
   return (
     <div className="min-h-screen bg-background font-sans text-foreground">
       <SiteHeader />
