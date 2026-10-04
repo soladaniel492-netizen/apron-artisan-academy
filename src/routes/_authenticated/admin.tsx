@@ -168,7 +168,7 @@ function PicturesTab() {
             <div key={a.key} className="overflow-hidden rounded-lg border border-border bg-card">
               <Preview url={current ?? a.url} type={a.type} />
               <div className="space-y-2 p-3">
-                <p className="truncate text-xs font-medium">{a.key}</p>
+                <p className="truncate text-xs font-medium">{a.key.replace(/-/g, " ")}</p>
                 {current && <p className="text-[10px] text-primary uppercase">Replaced</p>}
                 <div className="flex flex-wrap gap-2">
                   <UploadButton
@@ -209,7 +209,12 @@ function ProductsTab() {
   const qc = useQueryClient();
   const { data = [] } = useQuery({
     queryKey: ["products"],
-    queryFn: async () => (await supabase.from("products").select("*").order("sort")).data ?? [],
+    queryFn: async () => ((await supabase.from("products").select("*").order("sort")).data ?? []).map((p) => ({
+      ...p,
+      name: p.name.replace(/\s*[‐‑‒–—-]\s*/g, " "),
+      category: p.category.replace(/\s*[‐‑‒–—-]\s*/g, " "),
+      detail: p.detail.replace(/\s*[‐‑‒–—-]\s*/g, " "),
+    })),
   });
   const refresh = () => qc.invalidateQueries({ queryKey: ["products"] });
 
@@ -295,7 +300,11 @@ function PricesTab() {
   const qc = useQueryClient();
   const { data = [] } = useQuery({
     queryKey: ["price_items"],
-    queryFn: async () => (await supabase.from("price_items").select("*").order("sort")).data ?? [],
+    queryFn: async () => ((await supabase.from("price_items").select("*").order("sort")).data ?? []).map((r) => ({
+      ...r,
+      group_name: r.group_name.replace(/\s*[‐‑‒–—-]\s*/g, " "),
+      name: r.name.replace(/\s*[‐‑‒–—-]\s*/g, " "),
+    })),
   });
   const refresh = () => qc.invalidateQueries({ queryKey: ["price_items"] });
   return (
