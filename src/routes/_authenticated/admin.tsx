@@ -14,6 +14,8 @@ export const Route = createFileRoute("/_authenticated/admin")({
       { name: "description", content: "Manage Chef Store pictures, products and prices." },
       { property: "og:title", content: "Admin | Chef Store" },
       { property: "og:description", content: "Chef Store admin dashboard." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { name: "robots", content: "noindex" },
     ],
   }),

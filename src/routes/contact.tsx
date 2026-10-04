@@ -19,6 +19,8 @@ export const Route = createFileRoute("/contact")({
         property: "og:description",
         content: "Studio at Road 16, House 15, Efab Estate, Lokogoma, Abuja.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: ContactPage,

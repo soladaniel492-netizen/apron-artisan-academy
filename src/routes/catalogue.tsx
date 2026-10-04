@@ -23,6 +23,8 @@ export const Route = createFileRoute("/catalogue")({
         property: "og:description",
         content: "Aprons, knife rolls, chef whites and kitchen linens. Order on WhatsApp.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: CataloguePage,

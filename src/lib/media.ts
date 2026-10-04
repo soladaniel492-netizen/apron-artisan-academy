@@ -51,7 +51,18 @@ export function useProducts(): CatalogueItem[] {
       return data;
     },
   });
-  return data && data.length ? data : catalogue;
+  return data && data.length
+    ? data.map((item) => ({
+        ...item,
+        name: withoutDashes(item.name),
+        category: withoutDashes(item.category),
+        detail: withoutDashes(item.detail),
+      }))
+    : catalogue;
+}
+
+function withoutDashes(text: string) {
+  return text.replace(/\s*[‐‑‒–—-]\s*/g, " ").replace(/\s+/g, " ").trim();
 }
 
 export function usePriceGroups(): PriceGroup[] {
@@ -67,8 +78,9 @@ export function usePriceGroups(): PriceGroup[] {
   const groups: PriceGroup[] = [];
   for (const row of data) {
     let g = groups.find((x) => x.group === row.group_name);
-    if (!g) groups.push((g = { group: row.group_name, items: [] }));
-    g.items.push({ name: row.name, price: row.price });
+    const group = withoutDashes(row.group_name);
+    if (!g) groups.push((g = { group, items: [] }));
+    g.items.push({ name: withoutDashes(row.name), price: row.price });
   }
   return groups;
 }
