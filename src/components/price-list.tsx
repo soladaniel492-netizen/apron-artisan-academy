@@ -46,8 +46,8 @@ export function PriceList() {
 
       <Reveal className="mt-8 text-center" delay={400}>
         <p className="text-sm text-muted-foreground">
-          Aprons, uniforms, accessories and customized t-shirts are quoted on
-          request — message us for the current rate.
+          Aprons, uniforms, accessories and customized T shirts are quoted on
+          request. Message us for the current rate.
         </p>
         <a
           href={whatsappLink("Hello Chef Store, please send me your full price list.")}

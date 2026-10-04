@@ -41,11 +41,11 @@ export const catalogue: CatalogueItem[] = [
     img: denimWaist.url,
   },
   {
-    name: "Cross-Back Apron",
+    name: "Cross Back Apron",
     price: "₦32,000",
     category: "Aprons",
     detail:
-      "Comfort-fit cross-back straps that keep the weight off your neck all shift.",
+      "Comfortable crossed straps that keep the weight off your neck all shift.",
     img: crossback.url,
   },
   {
@@ -61,13 +61,13 @@ export const catalogue: CatalogueItem[] = [
     price: "₦38,000",
     category: "Uniforms for Service Team",
     detail:
-      "Branded tee with a denim waist apron — styled for front-of-house teams.",
+      "Branded tee with a denim waist apron, styled for service teams.",
     img: waitstaff.url,
   },
   {
-    name: "Customized Branded T-Shirt",
+    name: "Customized Branded T Shirt",
     price: "₦14,000",
-    category: "Customized T-Shirts",
+    category: "Customized T Shirts",
     detail:
       "Soft cotton tee printed or embroidered with your restaurant's logo.",
     img: teamSet.url,
@@ -77,7 +77,7 @@ export const catalogue: CatalogueItem[] = [
     price: "₦34,000",
     category: "Aprons",
     detail:
-      "A matched pair — raw denim and deep red twill, both with leather strap tabs.",
+      "A matched pair of raw denim and deep red twill, both with leather strap tabs.",
     img: denimRed.url,
   },
 ];

@@ -22,7 +22,7 @@ const NUDGES: Nudge[] = [
   },
   {
     title: "Nationwide delivery",
-    description: "We ship from Abuja to every state — usually 2–4 working days.",
+    description: "We ship from Abuja to every state, usually within 2 to 4 working days.",
     action: { label: "Check delivery", message: "Hello Chef Store, how soon can you deliver to my location?" },
   },
   {
@@ -32,7 +32,7 @@ const NUDGES: Nudge[] = [
   },
   {
     title: "Culinary training",
-    description: "Small classes with working chefs — seats are limited each intake.",
+    description: "Small classes with working chefs. Seats are limited each intake.",
     action: { label: "Reserve a seat", message: "Hello Chef Store, I'd like to join the next training class." },
   },
   {

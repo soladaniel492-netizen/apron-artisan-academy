@@ -30,7 +30,7 @@ export function SiteFooter() {
           <p className="mt-3 font-display text-2xl">Chef Store</p>
           <p className="mt-3 text-sm opacity-70">
             Chef wears, service team uniforms, chef accessories and customized
-            t-shirts. Nationwide delivery from Abuja, Nigeria.
+            T shirts. Nationwide delivery from Abuja, Nigeria.
           </p>
 
           <div className="mt-5 flex flex-wrap items-center gap-3">

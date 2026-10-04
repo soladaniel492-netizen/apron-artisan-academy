@@ -12,7 +12,7 @@ import { whatsappLink } from "@/lib/site";
 export const Route = createFileRoute("/catalogue")({
   head: () => ({
     meta: [
-      { title: "Catalogue — Chef Aprons & Culinary Items | Chef Store" },
+      { title: "Catalogue | Chef Aprons & Culinary Items | Chef Store" },
       {
         name: "description",
         content:
@@ -21,8 +21,10 @@ export const Route = createFileRoute("/catalogue")({
       { property: "og:title", content: "Catalogue | Chef Store" },
       {
         property: "og:description",
-        content: "Aprons, knife rolls, chef whites and kitchen linens — order on WhatsApp.",
+        content: "Aprons, knife rolls, chef whites and kitchen linens. Order on WhatsApp.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: CataloguePage,

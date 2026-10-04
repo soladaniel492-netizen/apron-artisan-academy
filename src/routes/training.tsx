@@ -49,7 +49,7 @@ const courses = [
 
 const steps = [
   { n: "01", t: "Pick a class", d: "Choose the track that matches where you are." },
-  { n: "02", t: "Fill the form", d: "Register through the Google Form — takes two minutes." },
+  { n: "02", t: "Fill the form", d: "Register through the Google Form. It takes two minutes." },
   { n: "03", t: "Get your slot", d: "We confirm on WhatsApp with dates and kit list." },
   { n: "04", t: "Cook every session", d: "You are on the line from day one, never on a stool." },
 ];
@@ -61,12 +61,12 @@ export const Route = createFileRoute("/training")({
       {
         name: "description",
         content:
-          "Chef-led culinary training in Abuja: knife skills, sauce foundations, pro kitchen bootcamp and local cuisine masterclasses. Register online.",
+          "Culinary training led by chefs in Abuja: knife skills, sauce foundations, pro kitchen bootcamp and local cuisine masterclasses. Register online.",
       },
       { property: "og:title", content: "Culinary Training | Chef Store" },
       {
         property: "og:description",
-        content: "Hands-on cooking classes taught by working chefs in Abuja.",
+        content: "Practical cooking classes taught by working chefs in Abuja.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -154,7 +154,7 @@ function TrainingPage() {
               </p>
             </ScrollGrow>
             <Reveal className="mt-10 max-w-md text-sm leading-relaxed text-muted-foreground">
-              Every class is built on the same loop — you cook it, we correct it,
+              Every class is built on the same loop: you cook it, we correct it,
               you cook it again until your hands know it without you thinking.
             </Reveal>
           </div>

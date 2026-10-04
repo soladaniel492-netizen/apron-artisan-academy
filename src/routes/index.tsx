@@ -23,13 +23,13 @@ import trend4 from "@/assets/p-waitstaff.jpg.asset.json";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Chef Store — Chef Wears, Uniforms & Chef Accessories" },
+      { title: "Chef Store | Chef Wears, Uniforms & Chef Accessories" },
       {
         name: "description",
         content:
-          "Chef wears, service team uniforms, chef accessories and customized t-shirts, made in Abuja with nationwide delivery. Order on WhatsApp.",
+          "Chef wears, service team uniforms, chef accessories and customized T shirts, made in Abuja with nationwide delivery. Order on WhatsApp.",
       },
-      { property: "og:title", content: "Chef Store — Chef Wears & Uniforms" },
+      { property: "og:title", content: "Chef Store | Chef Wears & Uniforms" },
       {
         property: "og:description",
         content:
@@ -53,7 +53,7 @@ const services = [
   "Chef Wears",
   "Uniforms for Service Team",
   "Chef Accessories",
-  "Customized T-Shirts",
+  "Customized T Shirts",
   "Nationwide Delivery",
 ];
 
@@ -90,7 +90,7 @@ function Index() {
                 className="hero-wipe mt-6 max-w-sm text-sm leading-relaxed text-muted-foreground"
                 style={{ animationDelay: "1.35s" }}
               >
-                Chef jackets, aprons, service team uniforms and accessories —
+                Chef jackets, aprons, service team uniforms and accessories,
                 cut, stitched and branded in Abuja, delivered nationwide.
               </p>
               <div className="mt-8 flex animate-fade-up flex-wrap items-center gap-4 [animation-delay:1.7s]">
@@ -152,7 +152,7 @@ function Index() {
             </h2>
             <div className="mx-auto mt-2 h-px w-16 bg-primary" />
             <p className="mx-auto mt-4 max-w-lg text-center text-sm text-muted-foreground">
-              Every piece is made to order — tap any item to send us one WhatsApp
+              Every piece is made to order. Tap any item to send us one WhatsApp
               message.
             </p>
           </Reveal>
@@ -198,7 +198,7 @@ function Index() {
                 just complete your look.
               </h2>
               <p className="mt-4 max-w-md text-sm leading-relaxed text-muted-foreground">
-                It helps you work with confidence, comfort and control —
+                It helps you work with confidence, comfort and control:
                 adjustable straps, leather trims, deep pockets and fabric that
                 survives real service.
               </p>
@@ -270,7 +270,7 @@ function Index() {
             </h2>
             <p className="mt-4 max-w-md text-sm leading-relaxed text-muted-foreground">
               Our professional chef plating kit is made for chefs who believe
-              presentation is part of the cooking — tweezers, spoons, brushes and
+              presentation is part of the cooking: tweezers, spoons, brushes and
               moulds in one roll.
             </p>
             <Link
@@ -302,7 +302,7 @@ function Index() {
                 Stay in the loop
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-clay-foreground/75">
-                New drops, restocks and price updates — one message a month.
+                New drops, restocks and price updates. One message a month.
               </p>
               <form
                 className="mt-8 flex flex-col gap-3 sm:flex-row"
