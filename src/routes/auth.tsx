@@ -7,9 +7,9 @@ import { supabase } from "@/integrations/supabase/client";
 export const Route = createFileRoute("/auth")({
   head: () => ({
     meta: [
-      { title: "Admin Sign In — Chef Store" },
+      { title: "Admin Sign In | Chef Store" },
       { name: "description", content: "Sign in to manage Chef Store pictures, products and prices." },
-      { property: "og:title", content: "Admin Sign In — Chef Store" },
+      { property: "og:title", content: "Admin Sign In | Chef Store" },
       { property: "og:description", content: "Chef Store admin access." },
       { name: "robots", content: "noindex" },
     ],

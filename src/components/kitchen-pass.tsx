@@ -13,7 +13,7 @@ const slides = [
     alt: "Fresh produce prepped on the kitchen counter",
     eyebrow: "On the pass",
     line: "Good food starts long before the fire",
-    sub: "Everything is prepped fresh — no shortcuts, no yesterday's produce.",
+    sub: "Everything is prepped fresh. No shortcuts, no yesterday's produce.",
     tint: "from-teal-deep/80 via-clay/70 to-clay/90",
   },
   {
@@ -21,7 +21,7 @@ const slides = [
     alt: "Party jollof rice finishing in a cast iron pan",
     eyebrow: "Heat & patience",
     line: "Flavour is built slowly, layer by layer",
-    sub: "Smoke, stock and timing — the difference between food and a meal.",
+    sub: "Smoke, stock and timing make the difference between food and a meal.",
     tint: "from-primary/75 via-clay/70 to-clay/90",
   },
   {

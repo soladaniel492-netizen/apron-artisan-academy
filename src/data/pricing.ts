@@ -7,7 +7,7 @@ export const chefWearsPricing: PriceGroup[] = [
   {
     group: "Jackets",
     items: [
-      { name: "Double-breasted Chef Jacket with removeable buttons", price: "NGN 30,000" },
+      { name: "Double breasted Chef Jacket with removable buttons", price: "NGN 30,000" },
       { name: "Custom Chef Jacket", price: "NGN 25,000" },
     ],
   },

@@ -10,9 +10,9 @@ import { siteAssets, useMediaMap, mediaQueryKey, uploadMedia } from "@/lib/media
 export const Route = createFileRoute("/_authenticated/admin")({
   head: () => ({
     meta: [
-      { title: "Admin — Chef Store" },
+      { title: "Admin | Chef Store" },
       { name: "description", content: "Manage Chef Store pictures, products and prices." },
-      { property: "og:title", content: "Admin — Chef Store" },
+      { property: "og:title", content: "Admin | Chef Store" },
       { property: "og:description", content: "Chef Store admin dashboard." },
       { name: "robots", content: "noindex" },
     ],

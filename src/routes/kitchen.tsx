@@ -27,12 +27,12 @@ const menu = [
   {
     course: "Continental",
     blurb:
-      "European and Asian technique, precise seasoning and clean plating — the dishes we teach and serve.",
+      "European and Asian technique, precise seasoning and clean plating. The dishes we teach and serve.",
     dishes: [
       {
-        name: "Chilli Garlic Stir-Fry Noodles",
+        name: "Chilli Garlic Stir Fry Noodles",
         img: noodles.url,
-        detail: "Wok-tossed noodles with spring onion, tomato and chilli oil.",
+        detail: "Wok tossed noodles with spring onion, tomato and chilli oil.",
       },
       {
         name: "Herb Roasted Chicken",
@@ -42,12 +42,12 @@ const menu = [
       {
         name: "Seared Salmon, Beurre Blanc",
         img: salmon.url,
-        detail: "Crisp-skin salmon with asparagus and a classic butter sauce.",
+        detail: "Crisp skin salmon with asparagus and a classic butter sauce.",
       },
       {
-        name: "Hand-Rolled Tagliatelle",
+        name: "Hand Rolled Tagliatelle",
         img: pasta.url,
-        detail: "Fresh egg pasta with slow-cooked tomato and basil sugo.",
+        detail: "Fresh egg pasta with slow cooked tomato and basil sugo.",
       },
     ],
   },
@@ -74,7 +74,7 @@ const menu = [
       {
         name: "Party Jollof in the Pan",
         img: jollofPan.url,
-        detail: "Long-grain rice cooked over firewood heat with tender beef.",
+        detail: "Long grain rice cooked over firewood heat with tender beef.",
       },
     ],
   },
@@ -100,7 +100,7 @@ const menu = [
       {
         name: "House Fruit Punch",
         img: punch.url,
-        detail: "Pineapple, citrus and mint over ice — made fresh daily.",
+        detail: "Pineapple, citrus and mint over ice, made fresh daily.",
       },
     ],
   },
@@ -110,11 +110,11 @@ const menu = [
 export const Route = createFileRoute("/kitchen")({
   head: () => ({
     meta: [
-      { title: "Our Kitchen — Local to Continental Dishes | Chef Store" },
+      { title: "Our Kitchen | Local to Continental Dishes | Chef Store" },
       {
         name: "description",
         content:
-          "From smoky jollof and egusi to seared salmon and hand-rolled pasta — the dishes cooked and plated in the Chef Store kitchen.",
+          "From smoky jollof and egusi to seared salmon and hand rolled pasta, discover dishes cooked and plated in the Chef Store kitchen.",
       },
       { property: "og:title", content: "Our Kitchen | Chef Store" },
       {
@@ -146,7 +146,7 @@ function KitchenPage() {
             </h1>
             <p className="mx-auto mt-7 max-w-xl animate-fade-up text-sm leading-relaxed text-muted-foreground [animation-delay:500ms]">
               Two traditions in one kitchen: the deep, slow flavours of Nigerian
-              cooking and the technique-driven discipline of European service —
+              cooking and the technique driven discipline of European service,
               plated with our own chef tools.
             </p>
             <div className="mx-auto mt-10 h-px w-24 animate-fade-up bg-primary [animation-delay:800ms]" />
@@ -233,7 +233,7 @@ function KitchenPage() {
               </h2>
               <p className="mt-4 max-w-md text-sm leading-relaxed text-muted-foreground">
                 Book a private dinner, an event menu, or a plating kit of your
-                own — tweezers, spoons, brushes and moulds in one roll.
+                own: tweezers, spoons, brushes and moulds in one roll.
               </p>
               <a
                 href={whatsappLink(

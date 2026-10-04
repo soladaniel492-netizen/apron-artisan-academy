@@ -12,7 +12,7 @@ const strip = [
   { img: egusi.url, label: "Egusi" },
   { img: efoRiro.url, label: "Efo Riro" },
   { img: jollofPan.url, label: "Party Jollof" },
-  { img: noodles.url, label: "Stir-Fry Noodles" },
+  { img: noodles.url, label: "Stir Fry Noodles" },
   { img: grilledChicken.url, label: "Roast Chicken" },
   { img: egusiPacks.url, label: "Event Trays" },
 ];

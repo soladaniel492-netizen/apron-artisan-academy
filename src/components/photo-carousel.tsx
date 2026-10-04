@@ -15,7 +15,7 @@ const slides = [
   {
     img: teamSet.url,
     title: "Uniforms for Service Teams",
-    caption: "Branded tees and denim waist aprons for front-of-house crews.",
+    caption: "Branded tees and denim waist aprons for service teams.",
   },
   {
     img: waitstaff.url,
@@ -25,7 +25,7 @@ const slides = [
   {
     img: personalised.url,
     title: "Personalised Chef Aprons",
-    caption: "Your name embroidered, adjustable straps, leather-trimmed pockets.",
+    caption: "Your name embroidered, adjustable straps, pockets trimmed with leather.",
   },
   {
     img: burgundy.url,
@@ -35,11 +35,11 @@ const slides = [
   {
     img: denimRed.url,
     title: "Denim & Twill Bibs",
-    caption: "Cross-back comfort with leather strap tabs.",
+    caption: "Comfortable crossed straps with leather tabs.",
   },
   {
     img: crossback.url,
-    title: "Cross-Back Comfort",
+    title: "Comfortable Crossed Straps",
     caption: "Weight off your neck through a full service.",
   },
   {

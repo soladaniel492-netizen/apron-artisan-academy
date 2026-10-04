@@ -60,7 +60,7 @@ function ContactPage() {
               </li>
               <li className="flex gap-3">
                 <Clock className="mt-0.5 h-5 w-5 shrink-0 text-primary" aria-hidden />
-                <span>Mon – Sat, 9am – 6pm</span>
+                <span>Monday to Saturday, 9am to 6pm</span>
               </li>
             </ul>
             <a
