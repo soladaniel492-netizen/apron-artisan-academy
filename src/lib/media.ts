@@ -77,8 +77,8 @@ export function usePriceGroups(): PriceGroup[] {
   if (!data || !data.length) return chefWearsPricing;
   const groups: PriceGroup[] = [];
   for (const row of data) {
-    let g = groups.find((x) => x.group === row.group_name);
     const group = withoutDashes(row.group_name);
+    let g = groups.find((x) => x.group === group);
     if (!g) groups.push((g = { group, items: [] }));
     g.items.push({ name: withoutDashes(row.name), price: row.price });
   }
