@@ -158,7 +158,7 @@ const PAGE_GROUPS: { page: string; keys: string[] }[] = [
   { page: "Home page", keys: ["ceo-hero.mp4", "apron-confidence.mp4", "plating-kit.mp4", "p-personalised.jpg", "p-burgundy.jpg", "p-denim-waist.jpg", "p-crossback.jpg", "p-leather-details.jpg", "p-waitstaff.jpg", "p-team-set.jpg", "denim-red-aprons.jpg"] },
   { page: "Catalogue page", keys: ["ceo-kitchen-fit.mp4", "p-personalised.jpg", "p-burgundy.jpg", "p-denim-waist.jpg", "p-crossback.jpg", "p-leather-details.jpg", "p-waitstaff.jpg", "p-team-set.jpg", "denim-red-aprons.jpg"] },
   { page: "Kitchen page", keys: ["local-egusi.jpg", "local-efo-riro.jpg", "local-jollof-pan.jpg", "local-jollof-plantain.jpg", "local-egusi-packs.jpg", "dish-grilled-chicken.jpg", "dish-noodles.jpg", "dish-pasta.jpg", "dish-salmon.jpg", "drink-chapman.jpg", "drink-kunu.jpg", "drink-punch.jpg", "drink-zobo.jpg", "kitchen-pass-new.jpg", "plating-kit.mp4"] },
-  { page: "Training page", keys: ["p-team-set.jpg", "p-waitstaff.jpg", "p-personalised.jpg", "ceo-kitchen-fit.mp4"] },
+  { page: "Training page", keys: ["training-program-flyer.jpg", "p-team-set.jpg", "p-waitstaff.jpg", "ceo-kitchen-fit.mp4"] },
 ];
 
 function PicturesTab() {

@@ -9,6 +9,12 @@ type Nudge = {
   action: { label: string; message: string };
 };
 
+const WELCOME: Nudge = {
+  title: "Welcome to Chef Store",
+  description: "Chef wears, uniforms and training from Abuja, delivered nationwide. We're here if you need help.",
+  action: { label: "Say hello", message: "Hello Chef Store, I just visited your website." },
+};
+
 const NUDGES: Nudge[] = [
   {
     title: "Need your name on your apron?",
@@ -42,9 +48,13 @@ const NUDGES: Nudge[] = [
   },
 ];
 
+const FIRST_DELAY = 4000;
+/** 30 seconds apart = at most two messages per minute. */
+const INTERVAL = 30000;
+
 /**
- * Friendly, rotating customer-service nudges.
- * Edit the NUDGES list above to change what customers see.
+ * Gentle customer-service messages: a welcome first, then at most two per minute.
+ * Edit WELCOME and NUDGES above to change what customers see.
  */
 export function EngagementToasts() {
   const step = useRef(0);
@@ -57,26 +67,25 @@ export function EngagementToasts() {
 
     const show = () => {
       const path = window.location.pathname;
-      if (path.startsWith("/admin") || path.startsWith("/auth")) {
+      if (!path.startsWith("/admin") && !path.startsWith("/auth")) {
+        const nudge = step.current === 0 ? WELCOME : NUDGES[(step.current - 1) % NUDGES.length]!;
+        step.current += 1;
+        toast(nudge.title, {
+          description: nudge.description,
+          duration: 7000,
+          action: {
+            label: nudge.action.label,
+            onClick: () =>
+              window.open(whatsappLink(nudge.action.message), "_blank", "noopener,noreferrer"),
+          },
+        });
+      } else {
         toast.dismiss();
-        timer = window.setTimeout(show, 24000);
-        return;
       }
-      const nudge = NUDGES[step.current % NUDGES.length]!;
-      step.current += 1;
-      toast(nudge.title, {
-        description: nudge.description,
-        duration: 8000,
-        action: {
-          label: nudge.action.label,
-          onClick: () =>
-            window.open(whatsappLink(nudge.action.message), "_blank", "noopener,noreferrer"),
-        },
-      });
-      timer = window.setTimeout(show, 24000);
+      timer = window.setTimeout(show, INTERVAL);
     };
 
-    timer = window.setTimeout(show, 9000);
+    timer = window.setTimeout(show, FIRST_DELAY);
     return () => window.clearTimeout(timer);
   }, []);
 
