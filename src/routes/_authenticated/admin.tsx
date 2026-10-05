@@ -153,22 +153,47 @@ function Preview({ url, type }: { url: string; type: string }) {
   );
 }
 
+const PAGE_GROUPS: { page: string; keys: string[] }[] = [
+  { page: "Every page (header and footer)", keys: ["chef-store-logo.jpg"] },
+  { page: "Home page", keys: ["ceo-hero.mp4", "apron-confidence.mp4", "plating-kit.mp4", "p-personalised.jpg", "p-burgundy.jpg", "p-denim-waist.jpg", "p-crossback.jpg", "p-leather-details.jpg", "p-waitstaff.jpg", "p-team-set.jpg", "denim-red-aprons.jpg"] },
+  { page: "Catalogue page", keys: ["ceo-kitchen-fit.mp4", "p-personalised.jpg", "p-burgundy.jpg", "p-denim-waist.jpg", "p-crossback.jpg", "p-leather-details.jpg", "p-waitstaff.jpg", "p-team-set.jpg", "denim-red-aprons.jpg"] },
+  { page: "Kitchen page", keys: ["local-egusi.jpg", "local-efo-riro.jpg", "local-jollof-pan.jpg", "local-jollof-plantain.jpg", "local-egusi-packs.jpg", "dish-grilled-chicken.jpg", "dish-noodles.jpg", "dish-pasta.jpg", "dish-salmon.jpg", "drink-chapman.jpg", "drink-kunu.jpg", "drink-punch.jpg", "drink-zobo.jpg", "kitchen-pass-new.jpg", "plating-kit.mp4"] },
+  { page: "Training page", keys: ["p-team-set.jpg", "p-waitstaff.jpg", "p-personalised.jpg", "ceo-kitchen-fit.mp4"] },
+];
+
 function PicturesTab() {
-  const qc = useQueryClient();
   const { data: map = {} } = useMediaMap();
+  const byKey = Object.fromEntries(siteAssets.map((a) => [a.key, a]));
+  const used = new Set(PAGE_GROUPS.flatMap((g) => g.keys));
+  const others = siteAssets.filter((a) => !used.has(a.key)).map((a) => a.key);
+  const groups = others.length ? [...PAGE_GROUPS, { page: "Other pictures", keys: others }] : PAGE_GROUPS;
+  return (
+    <div className="space-y-12">
+      <p className="text-sm text-muted-foreground">
+        Pictures are grouped by the page they appear on. Replacing one updates it everywhere it is used.
+      </p>
+      {groups.map((g) => (
+        <section key={g.page}>
+          <h2 className="mb-4 border-b border-border pb-2 font-display text-2xl font-bold">{g.page}</h2>
+          <PictureGrid assets={g.keys.map((k) => byKey[k]).filter((a): a is (typeof siteAssets)[number] => !!a)} map={map} />
+        </section>
+      ))}
+    </div>
+  );
+}
+
+function PictureGrid({ assets, map }: { assets: typeof siteAssets; map: Record<string, string> }) {
+  const qc = useQueryClient();
   return (
     <div>
-      <p className="mb-6 text-sm text-muted-foreground">
-        Every picture and video on the website. Upload a new file to replace it everywhere it appears.
-      </p>
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-        {siteAssets.map((a) => {
+        {assets.map((a) => {
           const current = map[a.url];
           return (
             <div key={a.key} className="overflow-hidden rounded-lg border border-border bg-card">
               <Preview url={current ?? a.url} type={a.type} />
               <div className="space-y-2 p-3">
-                <p className="truncate text-xs font-medium">{a.key.replace(/-/g, " ")}</p>
+                <p className="truncate text-xs font-medium">{a.key.replace(/\.(jpg|mp4)$/, "").replace(/-/g, " ")}</p>
                 {current && <p className="text-[10px] text-primary uppercase">Replaced</p>}
                 <div className="flex flex-wrap gap-2">
                   <UploadButton

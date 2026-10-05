@@ -56,6 +56,12 @@ export function EngagementToasts() {
     let timer: number;
 
     const show = () => {
+      const path = window.location.pathname;
+      if (path.startsWith("/admin") || path.startsWith("/auth")) {
+        toast.dismiss();
+        timer = window.setTimeout(show, 24000);
+        return;
+      }
       const nudge = NUDGES[step.current % NUDGES.length]!;
       step.current += 1;
       toast(nudge.title, {
