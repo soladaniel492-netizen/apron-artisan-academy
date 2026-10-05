@@ -12,7 +12,7 @@ import { TRAINING_BANNER, TRAINING_FORM_URL, whatsappLink } from "@/lib/site";
 import ceoKitchenFit from "@/assets/ceo-kitchen-fit.mp4.asset.json";
 import teamSet from "@/assets/p-team-set.jpg.asset.json";
 import waitstaff from "@/assets/p-waitstaff.jpg.asset.json";
-import personalised from "@/assets/p-personalised.jpg.asset.json";
+import programFlyer from "@/assets/training-program-flyer.jpg.asset.json";
 
 /** Swap these two images to change the training banner. */
 const bannerSlides = [
@@ -291,10 +291,12 @@ function TrainingPage() {
             </div>
             <Reveal className="hover-lift overflow-hidden">
               <img
-                src={media(personalised.url)}
-                alt="Personalised Chef Store bib apron with embroidered name"
+                src={media(programFlyer.url)}
+                alt="Chef Store new training program flyer"
                 loading="lazy"
-                className="h-[420px] w-full object-cover object-top"
+                width={864}
+                height={1088}
+                className="mx-auto h-auto max-h-[560px] w-full rounded-sm object-contain"
               />
             </Reveal>
           </div>
