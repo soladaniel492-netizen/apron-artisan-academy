@@ -3,6 +3,7 @@ import { Clock, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { ContactForm } from "@/components/lead-forms";
 import { ADDRESS, whatsappLink } from "@/lib/site";
 
 export const Route = createFileRoute("/contact")({
@@ -30,7 +31,7 @@ function ContactPage() {
   return (
     <div className="min-h-screen bg-background font-sans text-foreground">
       <SiteHeader />
-      <main>
+      <main id="main-content">
         <section className="bg-cream">
           <div className="mx-auto max-w-3xl px-6 py-14 text-center">
             <p className="text-xs tracking-[0.35em] text-primary uppercase">Contact</p>
@@ -75,34 +76,7 @@ function ContactPage() {
               Chat on WhatsApp
             </a>
 
-            <form
-              className="mt-10 space-y-4"
-              onSubmit={(e) => e.preventDefault()}
-            >
-              <input
-                required
-                placeholder="Your name"
-                aria-label="Your name"
-                className="w-full border border-border bg-card px-4 py-3 text-sm outline-none focus:border-primary"
-              />
-              <input
-                type="email"
-                required
-                placeholder="Email address"
-                aria-label="Email address"
-                className="w-full border border-border bg-card px-4 py-3 text-sm outline-none focus:border-primary"
-              />
-              <textarea
-                required
-                rows={4}
-                placeholder="What do you need?"
-                aria-label="Message"
-                className="w-full border border-border bg-card px-4 py-3 text-sm outline-none focus:border-primary"
-              />
-              <button className="rounded-sm bg-primary px-8 py-3 text-xs tracking-[0.2em] text-primary-foreground uppercase">
-                Send message
-              </button>
-            </form>
+            <ContactForm />
           </div>
 
           <div>

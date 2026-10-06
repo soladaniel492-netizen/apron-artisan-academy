@@ -65,7 +65,7 @@ function Index() {
     <div className="min-h-screen bg-background font-sans text-foreground">
       <SiteHeader />
 
-      <main>
+      <main id="main-content">
         {/* Hero */}
         <section className="overflow-hidden bg-cream">
           <div className="mx-auto grid max-w-7xl items-center gap-8 px-6 py-12 md:grid-cols-2 md:py-16">

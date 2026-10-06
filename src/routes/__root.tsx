@@ -87,6 +87,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Handcrafted chef aprons, culinary tools and hands-on cooking training for professionals and home cooks.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "Chef Store" },
+      { name: "theme-color", content: "#F0892A" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
@@ -101,6 +103,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap",
       },
       { rel: "icon", href: "/favicon.png", type: "image/png" },
+      { rel: "apple-touch-icon", href: "/favicon.png" },
     ],
   }),
 
@@ -130,6 +133,12 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:rounded-sm focus:bg-primary focus:px-4 focus:py-2 focus:text-sm focus:text-primary-foreground"
+      >
+        Skip to content
+      </a>
       <Outlet />
       <Toaster position="bottom-left" richColors closeButton />
       <EngagementToasts />

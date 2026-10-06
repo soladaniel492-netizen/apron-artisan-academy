@@ -133,7 +133,7 @@ function KitchenPage() {
   return (
     <div className="min-h-screen bg-background font-sans text-foreground">
       <SiteHeader />
-      <main>
+      <main id="main-content">
         <section className="relative overflow-hidden bg-cream">
           <div className="mx-auto max-w-3xl px-6 py-24 text-center md:py-32">
             <p className="animate-fade-up text-[10px] tracking-[0.5em] text-primary uppercase">
