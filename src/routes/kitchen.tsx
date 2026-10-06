@@ -122,8 +122,10 @@ export const Route = createFileRoute("/kitchen")({
         content: "Local Nigerian classics and continental plates from our kitchen.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://apron-artisan-academy.lovable.app/kitchen" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: "https://apron-artisan-academy.lovable.app/kitchen" }],
   }),
   component: KitchenPage,
 });
@@ -133,7 +135,7 @@ function KitchenPage() {
   return (
     <div className="min-h-screen bg-background font-sans text-foreground">
       <SiteHeader />
-      <main>
+      <main id="main-content">
         <section className="relative overflow-hidden bg-cream">
           <div className="mx-auto max-w-3xl px-6 py-24 text-center md:py-32">
             <p className="animate-fade-up text-[10px] tracking-[0.5em] text-primary uppercase">

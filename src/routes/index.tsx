@@ -36,8 +36,10 @@ export const Route = createFileRoute("/")({
           "Chef jackets, aprons, uniforms and accessories made to order in Abuja. Nationwide delivery.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://apron-artisan-academy.lovable.app/" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: "https://apron-artisan-academy.lovable.app/" }],
   }),
   component: Index,
 });
@@ -65,7 +67,7 @@ function Index() {
     <div className="min-h-screen bg-background font-sans text-foreground">
       <SiteHeader />
 
-      <main>
+      <main id="main-content">
         {/* Hero */}
         <section className="overflow-hidden bg-cream">
           <div className="mx-auto grid max-w-7xl items-center gap-8 px-6 py-12 md:grid-cols-2 md:py-16">

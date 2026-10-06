@@ -7,7 +7,8 @@ import { SiteHeader } from "@/components/site-header";
 import { BannerCarousel } from "@/components/banner-carousel";
 import { ScrollGrow, ScrollShape } from "@/components/scroll-grow";
 import { Reveal } from "@/components/reveal";
-import { TRAINING_BANNER, TRAINING_FORM_URL, whatsappLink } from "@/lib/site";
+import { TrainingRegisterForm } from "@/components/lead-forms";
+import { TRAINING_BANNER, whatsappLink } from "@/lib/site";
 
 import ceoKitchenFit from "@/assets/ceo-kitchen-fit.mp4.asset.json";
 import teamSet from "@/assets/p-team-set.jpg.asset.json";
@@ -49,7 +50,7 @@ const courses = [
 
 const steps = [
   { n: "01", t: "Pick a class", d: "Choose the track that matches where you are." },
-  { n: "02", t: "Fill the form", d: "Register through the Google Form. It takes two minutes." },
+  { n: "02", t: "Fill the form", d: "Register with the form on this page. It takes two minutes." },
   { n: "03", t: "Get your slot", d: "We confirm on WhatsApp with dates and kit list." },
   { n: "04", t: "Cook every session", d: "You are on the line from day one, never on a stool." },
 ];
@@ -69,8 +70,10 @@ export const Route = createFileRoute("/training")({
         content: "Practical cooking classes taught by working chefs in Abuja.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://apron-artisan-academy.lovable.app/training" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: "https://apron-artisan-academy.lovable.app/training" }],
   }),
   component: TrainingPage,
 });
@@ -80,7 +83,7 @@ function TrainingPage() {
   return (
     <div className="min-h-screen overflow-x-clip bg-background font-sans text-foreground">
       <SiteHeader />
-      <main>
+      <main id="main-content">
         {/* Banner carousel */}
         <BannerCarousel
           slides={bannerSlides}
@@ -98,9 +101,7 @@ function TrainingPage() {
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a
-                href={TRAINING_FORM_URL}
-                target="_blank"
-                rel="noreferrer noopener"
+                href="#register"
                 className="group inline-flex items-center gap-2 rounded-sm bg-primary px-7 py-4 text-[11px] tracking-[0.2em] text-primary-foreground uppercase transition-transform duration-300 hover:scale-105"
               >
                 <ClipboardList className="h-4 w-4" aria-hidden />
@@ -191,9 +192,7 @@ function TrainingPage() {
                 <p className="mt-4 text-sm font-medium">{c.price}</p>
                 <div className="mt-6 flex flex-wrap gap-3">
                   <a
-                    href={TRAINING_FORM_URL}
-                    target="_blank"
-                    rel="noreferrer noopener"
+                    href="#register"
                     className="inline-flex items-center gap-2 rounded-sm bg-primary px-6 py-3 text-[11px] tracking-[0.2em] text-primary-foreground uppercase transition-transform duration-300 hover:scale-105"
                   >
                     <ClipboardList className="h-4 w-4" aria-hidden />
@@ -275,13 +274,11 @@ function TrainingPage() {
                 </h2>
               </ScrollGrow>
               <p className="mt-5 max-w-md text-sm leading-relaxed text-muted-foreground">
-                Registration runs through our Google Form so we can plan stations,
-                kits and aprons for every intake.
+                Register below so we can plan stations, kits and aprons for every
+                intake.
               </p>
               <a
-                href={TRAINING_FORM_URL}
-                target="_blank"
-                rel="noreferrer noopener"
+                href="#register"
                 className="group mt-8 inline-flex items-center gap-2 rounded-sm bg-primary px-8 py-4 text-[11px] tracking-[0.2em] text-primary-foreground uppercase transition-transform duration-300 hover:scale-105"
               >
                 <ClipboardList className="h-4 w-4" aria-hidden />
@@ -299,6 +296,17 @@ function TrainingPage() {
                 className="mx-auto h-auto max-h-[560px] w-full rounded-sm object-contain"
               />
             </Reveal>
+          </div>
+        </section>
+
+        <section id="register" className="scroll-mt-24 bg-cream py-20 md:py-24">
+          <div className="mx-auto max-w-3xl px-6">
+            <p className="text-xs tracking-[0.35em] text-primary uppercase">Registration</p>
+            <h2 className="mt-3 font-display text-4xl font-bold md:text-5xl">Save your seat</h2>
+            <p className="mt-3 mb-8 text-sm text-muted-foreground">
+              Fill in your details and we will confirm dates and your kit list on WhatsApp.
+            </p>
+            <TrainingRegisterForm programs={courses.map((c) => c.title)} />
           </div>
         </section>
       </main>

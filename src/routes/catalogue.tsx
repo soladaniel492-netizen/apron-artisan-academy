@@ -24,8 +24,10 @@ export const Route = createFileRoute("/catalogue")({
         content: "Aprons, knife rolls, chef whites and kitchen linens. Order on WhatsApp.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://apron-artisan-academy.lovable.app/catalogue" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: "https://apron-artisan-academy.lovable.app/catalogue" }],
   }),
   component: CataloguePage,
 });
@@ -36,7 +38,7 @@ function CataloguePage() {
   return (
     <div className="min-h-screen bg-background font-sans text-foreground">
       <SiteHeader />
-      <main>
+      <main id="main-content">
         <section className="bg-cream">
           <Reveal className="mx-auto max-w-7xl px-6 py-14 text-center" delay={120}>
             <p className="text-xs tracking-[0.35em] text-primary uppercase">
