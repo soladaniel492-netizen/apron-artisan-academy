@@ -24,8 +24,10 @@ export const Route = createFileRoute("/catalogue")({
         content: "Aprons, knife rolls, chef whites and kitchen linens. Order on WhatsApp.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://apron-artisan-academy.lovable.app/catalogue" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: "https://apron-artisan-academy.lovable.app/catalogue" }],
   }),
   component: CataloguePage,
 });

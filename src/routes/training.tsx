@@ -70,8 +70,10 @@ export const Route = createFileRoute("/training")({
         content: "Practical cooking classes taught by working chefs in Abuja.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://apron-artisan-academy.lovable.app/training" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: "https://apron-artisan-academy.lovable.app/training" }],
   }),
   component: TrainingPage,
 });

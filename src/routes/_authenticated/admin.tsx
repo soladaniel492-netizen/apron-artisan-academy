@@ -26,7 +26,7 @@ function AdminPage() {
   const { user } = Route.useRouteContext();
   const qc = useQueryClient();
   const navigate = useNavigate();
-  const [tab, setTab] = useState<"pictures" | "products" | "prices">("pictures");
+  const [tab, setTab] = useState<"pictures" | "products" | "prices" | "registrations" | "enquiries">("pictures");
 
   const roleQ = useQuery({
     queryKey: ["is_admin", user.id],
@@ -80,7 +80,7 @@ function AdminPage() {
   return (
     <Shell onSignOut={signOut}>
       <div className="mb-8 flex flex-wrap gap-2">
-        {(["pictures", "products", "prices"] as const).map((t) => (
+        {(["pictures", "products", "prices", "registrations", "enquiries"] as const).map((t) => (
           <button
             key={t}
             onClick={() => setTab(t)}
@@ -95,6 +95,8 @@ function AdminPage() {
       {tab === "pictures" && <PicturesTab />}
       {tab === "products" && <ProductsTab />}
       {tab === "prices" && <PricesTab />}
+      {tab === "registrations" && <LeadsTab kind="training_registrations" />}
+      {tab === "enquiries" && <LeadsTab kind="contact_enquiries" />}
     </Shell>
   );
 }
@@ -369,6 +371,82 @@ function PriceEditor({ row, refresh }: { row: PriceRow; refresh: () => void }) {
         await supabase.from("price_items").delete().eq("id", r.id);
         refresh();
       }}><Trash2 className="h-4 w-4" /></button>
+    </div>
+  );
+}
+
+function LeadsTab({ kind }: { kind: "training_registrations" | "contact_enquiries" }) {
+  const q = useQuery({
+    queryKey: ["leads", kind],
+    queryFn: async () => {
+      const { data, error } = await supabase.from(kind).select("*").order("created_at", { ascending: false });
+      if (error) throw error;
+      return (data ?? []) as Record<string, string | null>[];
+    },
+  });
+  const cols =
+    kind === "training_registrations"
+      ? ["name", "email", "phone", "program", "notes"]
+      : ["name", "email", "phone", "message"];
+  const rows = q.data ?? [];
+  const exportCsv = () => {
+    const head = ["date", ...cols];
+    const esc = (v: unknown) => `"${String(v ?? "").replace(/"/g, '""')}"`;
+    const csv = [head.join(","), ...rows.map((r) => [r.created_at, ...cols.map((c) => r[c])].map(esc).join(","))].join("\n");
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(new Blob([csv], { type: "text/csv" }));
+    a.download = `${kind}.csv`;
+    a.click();
+  };
+  if (q.isLoading) return <p>Loading…</p>;
+  if (q.error) return <p className="text-destructive">Could not load entries.</p>;
+  return (
+    <div>
+      <div className="mb-4 flex items-center justify-between">
+        <p className="text-sm text-muted-foreground">{rows.length} {kind === "training_registrations" ? "registrations" : "enquiries"}</p>
+        {rows.length > 0 && (
+          <button onClick={exportCsv} className="rounded-md bg-secondary px-4 py-2 text-xs uppercase tracking-[0.15em]">
+            Download spreadsheet
+          </button>
+        )}
+      </div>
+      {rows.length === 0 ? (
+        <p className="text-sm text-muted-foreground">Nothing yet.</p>
+      ) : (
+        <div className="overflow-x-auto border border-border">
+          <table className="w-full text-left text-sm">
+            <thead className="bg-secondary text-xs uppercase tracking-[0.1em]">
+              <tr>
+                <th className="p-3">Date</th>
+                {cols.map((c) => <th key={c} className="p-3">{c}</th>)}
+                <th className="p-3"><span className="sr-only">Actions</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              {rows.map((r) => (
+                <tr key={r.id!} className="border-t border-border align-top">
+                  <td className="p-3 whitespace-nowrap">{new Date(r.created_at!).toLocaleString()}</td>
+                  {cols.map((c) => <td key={c} className="p-3 whitespace-pre-wrap">{r[c] ?? ""}</td>)}
+                  <td className="p-3">
+                    <button
+                      aria-label="Delete entry"
+                      onClick={async () => {
+                        if (!confirm("Delete this entry?")) return;
+                        const { error } = await supabase.from(kind).delete().eq("id", r.id!);
+                        if (error) toast.error("Could not delete");
+                        else q.refetch();
+                      }}
+                      className="text-muted-foreground hover:text-destructive"
+                    >
+                      <Trash2 className="h-4 w-4" />
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
     </div>
   );
 }

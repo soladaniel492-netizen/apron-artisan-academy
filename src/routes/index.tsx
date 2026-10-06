@@ -36,8 +36,10 @@ export const Route = createFileRoute("/")({
           "Chef jackets, aprons, uniforms and accessories made to order in Abuja. Nationwide delivery.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://apron-artisan-academy.lovable.app/" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: "https://apron-artisan-academy.lovable.app/" }],
   }),
   component: Index,
 });
