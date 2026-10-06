@@ -392,7 +392,7 @@ function LeadsTab({ kind }: { kind: "training_registrations" | "contact_enquirie
   const exportCsv = () => {
     const head = ["date", ...cols];
     const esc = (v: unknown) => `"${String(v ?? "").replace(/"/g, '""')}"`;
-    const csv = [head.join(","), ...rows.map((r) => [r.created_at, ...cols.map((c) => r[c])].map(esc).join(","))].join("\n");
+    const csv = [head.join(","), ...rows.map((r) => [r["created_at"], ...cols.map((c) => r[c])].map(esc).join(","))].join("\n");
     const a = document.createElement("a");
     a.href = URL.createObjectURL(new Blob([csv], { type: "text/csv" }));
     a.download = `${kind}.csv`;
@@ -424,15 +424,15 @@ function LeadsTab({ kind }: { kind: "training_registrations" | "contact_enquirie
             </thead>
             <tbody>
               {rows.map((r) => (
-                <tr key={r.id!} className="border-t border-border align-top">
-                  <td className="p-3 whitespace-nowrap">{new Date(r.created_at!).toLocaleString()}</td>
+                <tr key={r["id"]!} className="border-t border-border align-top">
+                  <td className="p-3 whitespace-nowrap">{new Date(r["created_at"]!).toLocaleString()}</td>
                   {cols.map((c) => <td key={c} className="p-3 whitespace-pre-wrap">{r[c] ?? ""}</td>)}
                   <td className="p-3">
                     <button
                       aria-label="Delete entry"
                       onClick={async () => {
                         if (!confirm("Delete this entry?")) return;
-                        const { error } = await supabase.from(kind).delete().eq("id", r.id!);
+                        const { error } = await supabase.from(kind).delete().eq("id", r["id"]!);
                         if (error) toast.error("Could not delete");
                         else q.refetch();
                       }}

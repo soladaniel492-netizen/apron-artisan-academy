@@ -26,7 +26,7 @@ const registerSchema = z.object({
   notes: z.string().trim().max(1000, "Notes are too long"),
 });
 
-type Errors = Record<string, string | undefined>;
+type Errors = Partial<Record<"name" | "email" | "phone" | "message" | "program" | "notes", string>>;
 
 const inputCls =
   "w-full border border-border bg-card px-4 py-3 text-sm outline-none transition-colors focus:border-primary focus-visible:ring-2 focus-visible:ring-primary/40 aria-[invalid=true]:border-destructive";
@@ -39,7 +39,7 @@ function Field({
 }: {
   id: string;
   label: string;
-  error?: string;
+  error?: string | undefined;
   children: React.ReactNode;
 }) {
   return (
@@ -59,7 +59,7 @@ function Field({
 
 function errs(issues: z.ZodIssue[]): Errors {
   const e: Errors = {};
-  for (const i of issues) e[String(i.path[0])] ??= i.message;
+  for (const i of issues) e[String(i.path[0]) as keyof Errors] ??= i.message;
   return e;
 }
 
@@ -85,7 +85,7 @@ export function ContactForm() {
     setV({ name: "", email: "", phone: "", message: "" });
   };
 
-  const a = (k: string) => ({
+  const a = (k: keyof Errors) => ({
     id: `c-${k}`,
     "aria-invalid": !!e[k],
     "aria-describedby": e[k] ? `c-${k}-error` : undefined,
@@ -140,7 +140,7 @@ export function TrainingRegisterForm({ programs }: { programs: string[] }) {
     setV(empty);
   };
 
-  const a = (k: string) => ({
+  const a = (k: keyof Errors) => ({
     id: `r-${k}`,
     "aria-invalid": !!e[k],
     "aria-describedby": e[k] ? `r-${k}-error` : undefined,
