@@ -161,7 +161,7 @@ function Index() {
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {catalogue.slice(0, 4).map((item, i) => (
               <Reveal key={item.name} delay={i * 170}>
-                <CatalogueCard item={item} />
+                <CatalogueCard item={item} colorOnHover />
               </Reveal>
             ))}
           </div>
