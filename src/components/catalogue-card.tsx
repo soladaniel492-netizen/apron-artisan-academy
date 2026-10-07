@@ -4,7 +4,13 @@ import type { CatalogueItem } from "@/data/catalogue";
 import { orderLink } from "@/lib/site";
 import { useMedia } from "@/lib/media";
 
-export function CatalogueCard({ item }: { item: CatalogueItem }) {
+export function CatalogueCard({
+  item,
+  colorOnHover = false,
+}: {
+  item: CatalogueItem;
+  colorOnHover?: boolean;
+}) {
   const media = useMedia();
   return (
     <article className="group hover-lift flex h-full flex-col overflow-hidden rounded-lg border border-border bg-card">
@@ -15,7 +21,9 @@ export function CatalogueCard({ item }: { item: CatalogueItem }) {
           loading="lazy"
           width={700}
           height={900}
-          className="h-72 w-full object-cover transition-transform duration-[900ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-110"
+          className={`h-72 w-full object-cover transition-[transform,filter] duration-[900ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-110 ${
+            colorOnHover ? "grayscale group-hover:grayscale-0" : ""
+          }`}
         />
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-clay/35 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
       </div>
