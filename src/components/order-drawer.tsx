@@ -7,7 +7,7 @@ import { useOrderList } from "@/lib/order-list";
 import { whatsappLink } from "@/lib/site";
 
 export function OrderDrawer() {
-  const { lines, open, setOpen, remove, clear, total, count } = useOrderList();
+  const { lines, open, setOpen, remove, clear, total, count, message } = useOrderList();
   const media = useMedia();
 
   useEffect(() => {
@@ -20,7 +20,10 @@ export function OrderDrawer() {
   }, [open, setOpen]);
 
   return (
-    <div className={`fixed inset-0 z-95 ${open ? "" : "pointer-events-none"}`} aria-hidden={!open}>
+    <div
+      className={`fixed inset-0 z-[95] ${open ? "" : "pointer-events-none"}`}
+      aria-hidden={!open}
+    >
       <div
         onClick={() => setOpen(false)}
         className={`absolute inset-0 bg-clay/45 backdrop-blur-sm transition-opacity duration-500 ${
@@ -111,7 +114,7 @@ export function OrderDrawer() {
               <span className="font-display text-3xl">{total}</span>
             </div>
             <a
-              href={whatsappLink(useOrderListMessage())}
+              href={whatsappLink(message)}
               target="_blank"
               rel="noreferrer noopener"
               className="mt-4 flex w-full items-center justify-center gap-2 rounded-sm bg-primary px-6 py-3.5 text-[11px] tracking-[0.2em] text-primary-foreground uppercase transition-transform duration-300 hover:scale-[1.02]"

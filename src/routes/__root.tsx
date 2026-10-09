@@ -14,6 +14,7 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Toaster } from "@/components/ui/sonner";
 import { EngagementToasts } from "@/components/engagement-toasts";
+import { OrderListProvider } from "@/lib/order-list";
 
 function NotFoundComponent() {
   return (
