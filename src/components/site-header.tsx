@@ -1,9 +1,13 @@
-import { useMedia } from "@/lib/media";
+import { useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { Search, ShoppingBag, User } from "lucide-react";
+import { Search, ShoppingBag } from "lucide-react";
+
+import { OrderDrawer } from "@/components/order-drawer";
+import { SearchOverlay } from "@/components/search-overlay";
+import { useMedia } from "@/lib/media";
+import { useOrderList } from "@/lib/order-list";
 
 import logo from "@/assets/chef-store-logo.jpg.asset.json";
-
 
 const links = [
   { label: "Home", to: "/" },
@@ -15,6 +19,9 @@ const links = [
 
 export function SiteHeader() {
   const media = useMedia();
+  const { count, open, setOpen } = useOrderList();
+  const [searchOpen, setSearchOpen] = useState(false);
+
   return (
     <header>
       <div className="bg-clay py-2 text-center text-xs tracking-[0.2em] text-clay-foreground uppercase">
@@ -53,12 +60,40 @@ export function SiteHeader() {
             </li>
           ))}
         </ul>
-        <div className="flex items-center gap-5 text-muted-foreground">
-          <Search className="h-5 w-5" aria-hidden />
-          <User className="hidden h-5 w-5 sm:block" aria-hidden />
-          <Link to="/catalogue" aria-label="Catalogue">
+
+        <div className="flex items-center gap-3 text-muted-foreground">
+          <button
+            type="button"
+            onClick={() => setSearchOpen(true)}
+            aria-label="Search the catalogue"
+            aria-haspopup="dialog"
+            aria-expanded={searchOpen}
+            className="rounded-sm p-2 transition-transform duration-300 hover:scale-110 hover:text-primary focus-visible:ring-2 focus-visible:ring-ring"
+          >
+            <Search className="h-5 w-5" aria-hidden />
+          </button>
+          <button
+            type="button"
+            onClick={() => setOpen(!open)}
+            aria-label={
+              count
+                ? `Your order, ${count} item${count > 1 ? "s" : ""} saved`
+                : "Your order, nothing saved yet"
+            }
+            aria-haspopup="dialog"
+            aria-expanded={open}
+            className="relative rounded-sm p-2 transition-transform duration-300 hover:scale-110 hover:-rotate-6 focus-visible:ring-2 focus-visible:ring-ring"
+          >
             <ShoppingBag className="h-5 w-5 text-primary" aria-hidden />
-          </Link>
+            {count > 0 && (
+              <span
+                key={count}
+                className="animate-pop-in absolute top-0 right-0 flex h-4 min-w-4 items-center justify-center rounded-full bg-primary px-1 text-[10px] leading-none font-semibold text-primary-foreground"
+              >
+                {count}
+              </span>
+            )}
+          </button>
         </div>
       </nav>
       <ul className="flex items-center justify-center gap-6 border-t border-border py-3 text-xs tracking-wide md:hidden">
@@ -70,6 +105,9 @@ export function SiteHeader() {
           </li>
         ))}
       </ul>
+
+      <SearchOverlay open={searchOpen} onClose={() => setSearchOpen(false)} />
+      <OrderDrawer />
     </header>
   );
 }
