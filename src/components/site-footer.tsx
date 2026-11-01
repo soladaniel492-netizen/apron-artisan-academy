@@ -90,7 +90,7 @@ export function SiteFooter() {
           <h3 className="footer-heading text-xs tracking-[0.25em] uppercase opacity-60">Contact</h3>
           <ul className="mt-4 space-y-2 text-sm opacity-80">
             <li>hello@chefstore.ng</li>
-            <li>+234 801 234 5678</li>
+            <li>+234 705 134 9430</li>
             <li>{ADDRESS}</li>
           </ul>
         </Reveal>

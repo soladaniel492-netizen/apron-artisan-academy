@@ -57,7 +57,7 @@ function ContactPage() {
               </li>
               <li className="flex gap-3">
                 <Phone className="mt-0.5 h-5 w-5 shrink-0 text-primary" aria-hidden />
-                <span>+234 801 234 5678</span>
+                <span>+234 705 134 9430</span>
               </li>
               <li className="flex gap-3">
                 <Mail className="mt-0.5 h-5 w-5 shrink-0 text-primary" aria-hidden />
