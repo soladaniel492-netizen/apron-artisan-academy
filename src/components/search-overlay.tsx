@@ -51,7 +51,7 @@ export function SearchOverlay({ open, onClose }: { open: boolean; onClose: () =>
   const showEmpty = query.trim().length > 0 && results.length === 0;
 
   return (
-    <div className="fixed inset-0 z-90" role="dialog" aria-modal="true" aria-label="Search the catalogue">
+    <div className="fixed inset-0 z-[90]" role="dialog" aria-modal="true" aria-label="Search the catalogue">
       <button
         aria-label="Close search"
         onClick={onClose}
@@ -135,7 +135,7 @@ export function SearchOverlay({ open, onClose }: { open: boolean; onClose: () =>
           {showEmpty && (
             <p className="animate-fade-up px-1 py-6 text-center text-sm text-muted-foreground">
               Nothing matches "{query.trim()}". Try apron, jacket, uniform, tee or
-              accessory — or message us and we'll make it.
+              accessory, or message us and we'll make it.
             </p>
           )}
 
