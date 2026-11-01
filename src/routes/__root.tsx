@@ -133,16 +133,18 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <a
-        href="#main-content"
-        className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:rounded-sm focus:bg-primary focus:px-4 focus:py-2 focus:text-sm focus:text-primary-foreground"
-      >
-        Skip to content
-      </a>
-      <Outlet />
-      <Toaster position="bottom-left" richColors closeButton />
-      <EngagementToasts />
+      <OrderListProvider>
+        {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:rounded-sm focus:bg-primary focus:px-4 focus:py-2 focus:text-sm focus:text-primary-foreground"
+        >
+          Skip to content
+        </a>
+        <Outlet />
+        <Toaster position="bottom-left" richColors closeButton />
+        <EngagementToasts />
+      </OrderListProvider>
     </QueryClientProvider>
   );
 }
