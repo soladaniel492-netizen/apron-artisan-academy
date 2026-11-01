@@ -319,6 +319,57 @@
   }
 }
 
+@utility footer-heading {
+  position: relative;
+  display: inline-block;
+  width: fit-content;
+  transition: letter-spacing 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    height: 1px;
+    width: 100%;
+    background: var(--primary);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  &:hover {
+    letter-spacing: 0.34em;
+    opacity: 1;
+  }
+  &:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}
+
+@utility footer-brand {
+  display: inline-block;
+  transition: letter-spacing 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  &:hover {
+    letter-spacing: 0.09em;
+  }
+}
+
+@utility footer-sub {
+  transition: opacity 0.45s ease, letter-spacing 0.45s ease;
+  &:hover {
+    opacity: 1;
+    letter-spacing: 0.012em;
+  }
+}
+
+@utility footer-link {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), color 0.35s ease;
+  &:hover {
+    transform: translateX(5px);
+    color: var(--teal-bright);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
