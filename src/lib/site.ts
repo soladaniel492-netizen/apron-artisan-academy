@@ -1,4 +1,4 @@
-export const WHATSAPP_NUMBER = "2348012345678";
+export const WHATSAPP_NUMBER = "2347051349430";
 
 export const ADDRESS = "Road 16, House 15, Efab Estate, Lokogoma, Abuja";
 
