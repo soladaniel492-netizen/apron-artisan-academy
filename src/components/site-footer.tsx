@@ -18,7 +18,7 @@ export function SiteFooter() {
   return (
     <footer className="bg-foreground text-background">
       <div className="mx-auto grid max-w-7xl items-start gap-10 px-6 py-14 md:grid-cols-[1.5fr_1fr_1fr_1fr]">
-        <div>
+        <Reveal delay={0}>
           <img
             src={media(logo.url)}
             alt="Chef Store logo"
@@ -27,8 +27,8 @@ export function SiteFooter() {
             loading="lazy"
             className="h-14 w-14 rounded-sm object-contain"
           />
-          <p className="mt-3 font-display text-2xl">Chef Store</p>
-          <p className="mt-3 text-sm opacity-70">
+          <p className="footer-brand mt-3 font-display text-2xl">Chef Store</p>
+          <p className="footer-sub mt-3 text-sm opacity-70">
             Chef wears, service team uniforms, chef accessories and customized
             T shirts. Nationwide delivery from Abuja, Nigeria.
           </p>
@@ -43,14 +43,14 @@ export function SiteFooter() {
                   target="_blank"
                   rel="noreferrer noopener"
                   aria-label={s.name}
-                  className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-sm border border-background/25 leading-none transition-colors hover:bg-background hover:text-foreground"
+                  className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-sm border border-background/25 leading-none transition-all duration-300 hover:scale-110 hover:-rotate-6 hover:bg-background hover:text-foreground"
                 >
                   <Icon className="h-4 w-4" aria-hidden />
                 </a>
               );
             })}
           </div>
-        </div>
+        </Reveal>
         <div>
           <h3 className="text-xs tracking-[0.25em] uppercase opacity-60">Shop</h3>
           <ul className="mt-4 space-y-2 text-sm opacity-80">
