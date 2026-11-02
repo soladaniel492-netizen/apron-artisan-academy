@@ -13,6 +13,8 @@ export type CatalogueItem = {
   category: string;
   detail: string;
   img: string;
+  /** Wide items take two columns on the four column catalogue grid. */
+  wide?: boolean;
 };
 
 export const catalogue: CatalogueItem[] = [
@@ -80,4 +82,28 @@ export const catalogue: CatalogueItem[] = [
       "A matched pair of raw denim and deep red twill, both with leather strap tabs.",
     img: denimRed.url,
   },
+  {
+    name: "Nitrous Oxide Cream Charger",
+    price: "₦25,000",
+    category: "Chef Accessories",
+    detail:
+      "Stainless steel siphon with a set of cream charger cartridges, for silky whipped creams, mousses and espumas.",
+    img: "/img/tool-cream-charger.jpg",
+    wide: true,
+  },
+  {
+    name: "Oven Safe Silicone Molds",
+    price: "₦7,000 to ₦15,000",
+    category: "Kitchen Tools",
+    detail:
+      "Food grade silicone molds for muffins, loaves and fluted cakes. Non stick, easy release and safe at high oven temperatures.",
+    img: "/img/tool-silicone-molds.jpg",
+    wide: true,
+  },
 ];
+
+/** Products that span two columns on the catalogue grid (matched by name, so database rows widen too). */
+export const WIDE_PRODUCT_NAMES = new Set([
+  "Nitrous Oxide Cream Charger",
+  "Oven Safe Silicone Molds",
+]);
