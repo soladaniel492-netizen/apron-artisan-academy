@@ -65,7 +65,11 @@ function CataloguePage() {
         <section className="mx-auto max-w-7xl px-6 py-14">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {catalogue.map((item, i) => (
-              <Reveal key={item.name} delay={(i % 4) * 160}>
+              <Reveal
+                key={item.name}
+                delay={(i % 4) * 160}
+                className={item.wide ? "sm:col-span-2" : ""}
+              >
                 <CatalogueCard item={item} />
               </Reveal>
             ))}
