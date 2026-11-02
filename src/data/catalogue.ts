@@ -101,3 +101,9 @@ export const catalogue: CatalogueItem[] = [
     wide: true,
   },
 ];
+
+/** Products that span two columns on the catalogue grid (matched by name, so database rows widen too). */
+export const WIDE_PRODUCT_NAMES = new Set([
+  "Nitrous Oxide Cream Charger",
+  "Oven Safe Silicone Molds",
+]);

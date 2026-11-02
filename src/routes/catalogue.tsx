@@ -7,6 +7,7 @@ import { Reveal } from "@/components/reveal";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { useProducts } from "@/lib/media";
+import { WIDE_PRODUCT_NAMES } from "@/data/catalogue";
 import { whatsappLink } from "@/lib/site";
 
 export const Route = createFileRoute("/catalogue")({
@@ -68,7 +69,7 @@ function CataloguePage() {
               <Reveal
                 key={item.name}
                 delay={(i % 4) * 160}
-                className={item.wide ? "sm:col-span-2" : ""}
+                className={item.wide || WIDE_PRODUCT_NAMES.has(item.name) ? "sm:col-span-2" : ""}
               >
                 <CatalogueCard item={item} />
               </Reveal>
