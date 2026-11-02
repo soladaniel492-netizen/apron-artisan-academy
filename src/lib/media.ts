@@ -11,13 +11,20 @@ const assetModules = import.meta.glob<{ default: AssetPointer }>("/src/assets/*.
   eager: true,
 });
 
-export const siteAssets = Object.entries(assetModules)
-  .map(([path, mod]) => ({
+/** Product photos stored in public/img — also replaceable from the admin Pictures tab. */
+const publicImgAssets = [
+  { key: "tool-cream-charger.jpg", url: "/img/tool-cream-charger.jpg", type: "image/jpeg" },
+  { key: "tool-silicone-molds.jpg", url: "/img/tool-silicone-molds.jpg", type: "image/jpeg" },
+];
+
+export const siteAssets = [
+  ...Object.entries(assetModules).map(([path, mod]) => ({
     key: path.split("/").pop()!.replace(".asset.json", ""),
     url: mod.default.url,
     type: mod.default.content_type,
-  }))
-  .sort((a, b) => a.key.localeCompare(b.key));
+  })),
+  ...publicImgAssets,
+].sort((a, b) => a.key.localeCompare(b.key));
 
 export const mediaQueryKey = ["site_media"];
 
