@@ -13,6 +13,8 @@ export type CatalogueItem = {
   category: string;
   detail: string;
   img: string;
+  /** Wide items take two columns on the four column catalogue grid. */
+  wide?: boolean;
 };
 
 export const catalogue: CatalogueItem[] = [
