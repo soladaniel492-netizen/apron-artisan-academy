@@ -1,13 +1,12 @@
-import { useMedia } from "@/lib/media";
 import ceoVideo from "@/assets/ceo-kitchen-fit.mp4.asset.json";
+import { WIDE_PRODUCT_NAMES } from "@/data/catalogue";
 import { createFileRoute } from "@tanstack/react-router";
 
 import { CatalogueCard } from "@/components/catalogue-card";
 import { Reveal } from "@/components/reveal";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
-import { useProducts } from "@/lib/media";
-import { WIDE_PRODUCT_NAMES } from "@/data/catalogue";
+import { useMedia, useProducts } from "@/lib/media";
 import { whatsappLink } from "@/lib/site";
 
 export const Route = createFileRoute("/catalogue")({
