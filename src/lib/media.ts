@@ -1,30 +1,12 @@
 import { useQuery } from "@tanstack/react-query";
 
 import { supabase } from "@/integrations/supabase/client";
+import { SITE_IMAGES } from "@/data/site-images";
 import { catalogue, type CatalogueItem } from "@/data/catalogue";
 import { chefWearsPricing, type PriceGroup } from "@/data/pricing";
 
-type AssetPointer = { url: string; original_filename: string; content_type: string };
-
-/** Every picture/video bundled with the site — all are replaceable from the admin. */
-const assetModules = import.meta.glob<{ default: AssetPointer }>("/src/assets/*.asset.json", {
-  eager: true,
-});
-
-/** Product photos stored in public/img — also replaceable from the admin Pictures tab. */
-const publicImgAssets = [
-  { key: "tool-cream-charger.jpg", url: "/img/tool-cream-charger.jpg", type: "image/jpeg" },
-  { key: "tool-silicone-molds.jpg", url: "/img/tool-silicone-molds.jpg", type: "image/jpeg" },
-];
-
-export const siteAssets = [
-  ...Object.entries(assetModules).map(([path, mod]) => ({
-    key: path.split("/").pop()!.replace(".asset.json", ""),
-    url: mod.default.url,
-    type: mod.default.content_type,
-  })),
-  ...publicImgAssets,
-].sort((a, b) => a.key.localeCompare(b.key));
+/** Every picture and video bundled with the site — all are replaceable from the admin. */
+export const siteAssets = SITE_IMAGES;
 
 export const mediaQueryKey = ["site_media"];
 

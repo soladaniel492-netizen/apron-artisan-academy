@@ -2,53 +2,45 @@ import { useMedia } from "@/lib/media";
 import { useCallback, useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-import waitstaff from "@/assets/p-waitstaff.jpg.asset.json";
-import teamSet from "@/assets/p-team-set.jpg.asset.json";
-import denimWaist from "@/assets/p-denim-waist.jpg.asset.json";
-import personalised from "@/assets/p-personalised.jpg.asset.json";
-import burgundy from "@/assets/p-burgundy.jpg.asset.json";
-import crossback from "@/assets/p-crossback.jpg.asset.json";
-import denimRed from "@/assets/denim-red-aprons.jpg.asset.json";
-import leatherDetails from "@/assets/p-leather-details.jpg.asset.json";
 
 const slides = [
   {
-    img: teamSet.url,
+    img: "/images/other/team-uniform-set.jpg",
     title: "Uniforms for Service Teams",
     caption: "Branded tees and denim waist aprons for service teams.",
   },
   {
-    img: waitstaff.url,
+    img: "/images/other/wait-staff-uniform.jpg",
     title: "Style Meets Functionality",
     caption: "Wait staff sets designed for professionals who serve with confidence.",
   },
   {
-    img: personalised.url,
+    img: "/images/other/personalised-bib-apron.jpg",
     title: "Personalised Chef Aprons",
     caption: "Your name embroidered, adjustable straps, pockets trimmed with leather.",
   },
   {
-    img: burgundy.url,
+    img: "/images/other/burgundy-apron.jpg",
     title: "Colour Made to Order",
     caption: "Burgundy twill with brass eyelets and swivel clips.",
   },
   {
-    img: denimRed.url,
+    img: "/images/products/denim-red-aprons.jpg",
     title: "Denim & Twill Bibs",
     caption: "Comfortable crossed straps with leather tabs.",
   },
   {
-    img: crossback.url,
+    img: "/images/other/cross-back-apron.jpg",
     title: "Comfortable Crossed Straps",
     caption: "Weight off your neck through a full service.",
   },
   {
-    img: denimWaist.url,
+    img: "/images/other/denim-waist-aprons.jpg",
     title: "Denim Waist Aprons",
     caption: "Contrast stitching, twin pockets, service length.",
   },
   {
-    img: leatherDetails.url,
+    img: "/images/other/leather-trim-details.jpg",
     title: "The Details",
     caption: "Leather panels, tabs and hardware finished by hand.",
   },

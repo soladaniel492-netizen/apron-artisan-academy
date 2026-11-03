@@ -1,15 +1,10 @@
 import { useMedia } from "@/lib/media";
 import { useEffect, useState } from "react";
 
-import kitchenPass from "@/assets/kitchen-pass-new.jpg.asset.json";
-import egusiPacks from "@/assets/local-egusi-packs.jpg.asset.json";
-import jollofPan from "@/assets/local-jollof-pan.jpg.asset.json";
-import grilledChicken from "@/assets/dish-grilled-chicken.jpg.asset.json";
-import efoRiro from "@/assets/local-efo-riro.jpg.asset.json";
 
 const slides = [
   {
-    img: kitchenPass.url,
+    img: "/images/food/kitchen-pass-new.jpg",
     alt: "Fresh produce prepped on the kitchen counter",
     eyebrow: "On the pass",
     line: "Good food starts long before the fire",
@@ -17,7 +12,7 @@ const slides = [
     tint: "from-teal-deep/80 via-clay/70 to-clay/90",
   },
   {
-    img: jollofPan.url,
+    img: "/images/food/local-jollof-pan.jpg",
     alt: "Party jollof rice finishing in a cast iron pan",
     eyebrow: "Heat & patience",
     line: "Flavour is built slowly, layer by layer",
@@ -25,7 +20,7 @@ const slides = [
     tint: "from-primary/75 via-clay/70 to-clay/90",
   },
   {
-    img: grilledChicken.url,
+    img: "/images/food/dish-grilled-chicken.jpg",
     alt: "Herb roasted chicken resting on a board",
     eyebrow: "Standards",
     line: "Season with intention, plate with pride",
@@ -33,7 +28,7 @@ const slides = [
     tint: "from-teal-bright/70 via-clay/70 to-clay/90",
   },
   {
-    img: efoRiro.url,
+    img: "/images/food/local-efo-riro.jpg",
     alt: "Efo riro stew in a white serving dish",
     eyebrow: "Nourishment",
     line: "Great cooking is care you can taste",
@@ -41,7 +36,7 @@ const slides = [
     tint: "from-clay/70 via-primary/50 to-clay/90",
   },
   {
-    img: egusiPacks.url,
+    img: "/images/food/local-egusi-packs.jpg",
     alt: "Trays of egusi prepared for events",
     eyebrow: "Service",
     line: "From one plate to one thousand",

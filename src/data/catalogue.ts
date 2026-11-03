@@ -1,11 +1,3 @@
-import waitstaff from "@/assets/p-waitstaff.jpg.asset.json";
-import denimWaist from "@/assets/p-denim-waist.jpg.asset.json";
-import teamSet from "@/assets/p-team-set.jpg.asset.json";
-import crossback from "@/assets/p-crossback.jpg.asset.json";
-import personalised from "@/assets/p-personalised.jpg.asset.json";
-import leatherDetails from "@/assets/p-leather-details.jpg.asset.json";
-import burgundy from "@/assets/p-burgundy.jpg.asset.json";
-import denimRed from "@/assets/denim-red-aprons.jpg.asset.json";
 
 export type CatalogueItem = {
   name: string;
@@ -24,7 +16,7 @@ export const catalogue: CatalogueItem[] = [
     category: "Aprons",
     detail:
       "Tan cotton twill, adjustable straps with metal clips, embroidered with your name.",
-    img: personalised.url,
+    img: "/images/other/personalised-bib-apron.jpg",
   },
   {
     name: "Burgundy Twill Apron",
@@ -32,7 +24,7 @@ export const catalogue: CatalogueItem[] = [
     category: "Aprons",
     detail:
       "Rich burgundy twill with leather tabs, brass eyelets and a swivel clip.",
-    img: burgundy.url,
+    img: "/images/other/burgundy-apron.jpg",
   },
   {
     name: "Denim Waist Apron",
@@ -40,7 +32,7 @@ export const catalogue: CatalogueItem[] = [
     category: "Aprons",
     detail:
       "Raw denim service length with contrast stitching and twin front pockets.",
-    img: denimWaist.url,
+    img: "/images/other/denim-waist-aprons.jpg",
   },
   {
     name: "Cross Back Apron",
@@ -48,7 +40,7 @@ export const catalogue: CatalogueItem[] = [
     category: "Aprons",
     detail:
       "Comfortable crossed straps that keep the weight off your neck all shift.",
-    img: crossback.url,
+    img: "/images/other/cross-back-apron.jpg",
   },
   {
     name: "Leather Trim Detail Pack",
@@ -56,7 +48,7 @@ export const catalogue: CatalogueItem[] = [
     category: "Chef Accessories",
     detail:
       "Leather pocket panels, strap tabs and clips to finish a custom apron.",
-    img: leatherDetails.url,
+    img: "/images/other/leather-trim-details.jpg",
   },
   {
     name: "Wait Staff Uniform Set",
@@ -64,7 +56,7 @@ export const catalogue: CatalogueItem[] = [
     category: "Uniforms for Service Team",
     detail:
       "Branded tee with a denim waist apron, styled for service teams.",
-    img: waitstaff.url,
+    img: "/images/other/wait-staff-uniform.jpg",
   },
   {
     name: "Customized Branded T Shirt",
@@ -72,7 +64,7 @@ export const catalogue: CatalogueItem[] = [
     category: "Customized T Shirts",
     detail:
       "Soft cotton tee printed or embroidered with your restaurant's logo.",
-    img: teamSet.url,
+    img: "/images/other/team-uniform-set.jpg",
   },
   {
     name: "Denim & Twill Bib Set",
@@ -80,7 +72,7 @@ export const catalogue: CatalogueItem[] = [
     category: "Aprons",
     detail:
       "A matched pair of raw denim and deep red twill, both with leather strap tabs.",
-    img: denimRed.url,
+    img: "/images/products/denim-red-aprons.jpg",
   },
   {
     name: "Nitrous Oxide Cream Charger",
@@ -88,7 +80,7 @@ export const catalogue: CatalogueItem[] = [
     category: "Chef Accessories",
     detail:
       "Stainless steel siphon with a set of cream charger cartridges, for silky whipped creams, mousses and espumas.",
-    img: "/img/tool-cream-charger.jpg",
+    img: "/images/products/tool-cream-charger.jpg",
     wide: true,
   },
   {
@@ -97,7 +89,7 @@ export const catalogue: CatalogueItem[] = [
     category: "Kitchen Tools",
     detail:
       "Food grade silicone molds for muffins, loaves and fluted cakes. Non stick, easy release and safe at high oven temperatures.",
-    img: "/img/tool-silicone-molds.jpg",
+    img: "/images/products/tool-silicone-molds.jpg",
     wide: true,
   },
 ];

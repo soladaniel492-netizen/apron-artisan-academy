@@ -10,15 +10,11 @@ import { Reveal } from "@/components/reveal";
 import { TrainingRegisterForm } from "@/components/lead-forms";
 import { TRAINING_BANNER, whatsappLink } from "@/lib/site";
 
-import ceoKitchenFit from "@/assets/ceo-kitchen-fit.mp4.asset.json";
-import teamSet from "@/assets/p-team-set.jpg.asset.json";
-import waitstaff from "@/assets/p-waitstaff.jpg.asset.json";
-import programFlyer from "@/assets/training-program-flyer.jpg.asset.json";
 
 /** Swap these two images to change the training banner. */
 const bannerSlides = [
-  { img: teamSet.url, alt: "Chef Store service team uniforms" },
-  { img: waitstaff.url, alt: "Chef Store wait staff aprons" },
+  { img: "/images/other/team-uniform-set.jpg", alt: "Chef Store service team uniforms" },
+  { img: "/images/other/wait-staff-uniform.jpg", alt: "Chef Store wait staff aprons" },
 ] as const;
 
 const courses = [
@@ -245,7 +241,7 @@ function TrainingPage() {
             </div>
             <Reveal className="justify-self-center">
               <video
-                src={media(ceoKitchenFit.url)}
+                src={media("/images/videos/ceo-kitchen-fit.mp4")}
                 autoPlay
                 loop
                 muted
@@ -288,7 +284,7 @@ function TrainingPage() {
             </div>
             <Reveal className="hover-lift overflow-hidden">
               <img
-                src={media(programFlyer.url)}
+                src={media("/images/backgrounds/training-program-flyer.jpg")}
                 alt="Chef Store new training program flyer"
                 loading="lazy"
                 width={864}

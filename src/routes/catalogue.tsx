@@ -1,4 +1,3 @@
-import ceoVideo from "@/assets/ceo-kitchen-fit.mp4.asset.json";
 import { WIDE_PRODUCT_NAMES } from "@/data/catalogue";
 import { createFileRoute } from "@tanstack/react-router";
 
@@ -79,7 +78,7 @@ function CataloguePage() {
         <section className="bg-sand">
           <Reveal className="mx-auto grid max-w-7xl items-center gap-10 px-6 py-16 md:grid-cols-2">
             <video
-              src={media(ceoVideo.url)}
+              src={media("/images/videos/ceo-kitchen-fit.mp4")}
               controls
               loop
               muted
