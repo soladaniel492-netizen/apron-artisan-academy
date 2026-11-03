@@ -12,13 +12,6 @@ import { SiteHeader } from "@/components/site-header";
 import { useProducts } from "@/lib/media";
 import { whatsappLink } from "@/lib/site";
 
-import ceoHero from "@/assets/ceo-hero.mp4.asset.json";
-import apronConfidence from "@/assets/apron-confidence.mp4.asset.json";
-import platingKit from "@/assets/plating-kit.mp4.asset.json";
-import trend1 from "@/assets/p-personalised.jpg.asset.json";
-import trend2 from "@/assets/p-burgundy.jpg.asset.json";
-import trend3 from "@/assets/p-denim-waist.jpg.asset.json";
-import trend4 from "@/assets/p-waitstaff.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -45,10 +38,10 @@ export const Route = createFileRoute("/")({
 });
 
 const trends = [
-  { name: "Personalised Bib Apron", price: "₦28,000", img: trend1.url },
-  { name: "Burgundy Twill Apron", price: "₦30,000", img: trend2.url },
-  { name: "Denim Waist Apron", price: "₦18,000", img: trend3.url },
-  { name: "Wait Staff Uniform Set", price: "₦38,000", img: trend4.url },
+  { name: "Personalised Bib Apron", price: "₦28,000", img: "/images/other/personalised-bib-apron.jpg" },
+  { name: "Burgundy Twill Apron", price: "₦30,000", img: "/images/other/burgundy-apron.jpg" },
+  { name: "Denim Waist Apron", price: "₦18,000", img: "/images/other/denim-waist-aprons.jpg" },
+  { name: "Wait Staff Uniform Set", price: "₦38,000", img: "/images/other/wait-staff-uniform.jpg" },
 ];
 
 const services = [
@@ -115,7 +108,7 @@ function Index() {
             <div className="relative animate-fade-up [animation-delay:150ms]">
               <div className="absolute inset-x-6 top-10 bottom-0 animate-float rounded-t-full bg-sand" />
               <video
-                src={media(ceoHero.url)}
+                src={media("/images/videos/ceo-hero.mp4")}
                 autoPlay
                 loop
                 muted
@@ -180,7 +173,7 @@ function Index() {
           <div className="mx-auto grid max-w-7xl items-center gap-10 px-6 py-16 md:grid-cols-2">
             <Reveal>
               <video
-                src={media(apronConfidence.url)}
+                src={media("/images/videos/apron-confidence.mp4")}
                 autoPlay
                 loop
                 muted
@@ -284,7 +277,7 @@ function Index() {
           </Reveal>
           <Reveal delay={420}>
             <video
-              src={media(platingKit.url)}
+              src={media("/images/videos/plating-kit.mp4")}
               autoPlay
               loop
               muted

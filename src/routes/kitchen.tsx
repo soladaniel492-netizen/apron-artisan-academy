@@ -9,19 +9,6 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { whatsappLink } from "@/lib/site";
 
-import platingKit from "@/assets/plating-kit.mp4.asset.json";
-import egusi from "@/assets/local-egusi.jpg.asset.json";
-import efoRiro from "@/assets/local-efo-riro.jpg.asset.json";
-import jollofPlantain from "@/assets/local-jollof-plantain.jpg.asset.json";
-import jollofPan from "@/assets/local-jollof-pan.jpg.asset.json";
-import noodles from "@/assets/dish-noodles.jpg.asset.json";
-import grilledChicken from "@/assets/dish-grilled-chicken.jpg.asset.json";
-import salmon from "@/assets/dish-salmon.jpg.asset.json";
-import pasta from "@/assets/dish-pasta.jpg.asset.json";
-import zobo from "@/assets/drink-zobo.jpg.asset.json";
-import chapman from "@/assets/drink-chapman.jpg.asset.json";
-import kunu from "@/assets/drink-kunu.jpg.asset.json";
-import punch from "@/assets/drink-punch.jpg.asset.json";
 
 const menu = [
   {
@@ -31,22 +18,22 @@ const menu = [
     dishes: [
       {
         name: "Chilli Garlic Stir Fry Noodles",
-        img: noodles.url,
+        img: "/images/food/dish-noodles.jpg",
         detail: "Wok tossed noodles with spring onion, tomato and chilli oil.",
       },
       {
         name: "Herb Roasted Chicken",
-        img: grilledChicken.url,
+        img: "/images/food/dish-grilled-chicken.jpg",
         detail: "Marinated drumsticks roasted with garlic, lime and coriander.",
       },
       {
         name: "Seared Salmon, Beurre Blanc",
-        img: salmon.url,
+        img: "/images/food/dish-salmon.jpg",
         detail: "Crisp skin salmon with asparagus and a classic butter sauce.",
       },
       {
         name: "Hand Rolled Tagliatelle",
-        img: pasta.url,
+        img: "/images/food/dish-pasta.jpg",
         detail: "Fresh egg pasta with slow cooked tomato and basil sugo.",
       },
     ],
@@ -58,22 +45,22 @@ const menu = [
     dishes: [
       {
         name: "Egusi & Assorted Meat",
-        img: egusi.url,
+        img: "/images/food/local-egusi.jpg",
         detail: "Melon seed stew simmered with assorted meats, ponmo and shaki.",
       },
       {
         name: "Efo Riro",
-        img: efoRiro.url,
+        img: "/images/food/local-efo-riro.jpg",
         detail: "Rich spinach stew with peppers, locust bean and assorted cuts.",
       },
       {
         name: "Jollof, Plantain & Grilled Chicken",
-        img: jollofPlantain.url,
+        img: "/images/food/local-jollof-plantain.jpg",
         detail: "Smoky party jollof plated with sweet plantain and peppered chicken.",
       },
       {
         name: "Party Jollof in the Pan",
-        img: jollofPan.url,
+        img: "/images/food/local-jollof-pan.jpg",
         detail: "Long grain rice cooked over firewood heat with tender beef.",
       },
     ],
@@ -84,22 +71,22 @@ const menu = [
     dishes: [
       {
         name: "Chilled Zobo",
-        img: zobo.url,
+        img: "/images/food/drink-zobo.jpg",
         detail: "Hibiscus steeped with spice, served over ice with mint.",
       },
       {
         name: "Chapman",
-        img: chapman.url,
+        img: "/images/food/drink-chapman.jpg",
         detail: "The classic Nigerian cooler with citrus and cucumber.",
       },
       {
         name: "Kunu Aya",
-        img: kunu.url,
+        img: "/images/food/drink-kunu.jpg",
         detail: "Tiger nut milk blended with dates, chilled and smooth.",
       },
       {
         name: "House Fruit Punch",
-        img: punch.url,
+        img: "/images/food/drink-punch.jpg",
         detail: "Pineapple, citrus and mint over ice, made fresh daily.",
       },
     ],
@@ -219,7 +206,7 @@ function KitchenPage() {
           <div className="mx-auto grid max-w-7xl items-center gap-10 px-6 py-16 md:grid-cols-2">
             <Reveal>
               <video
-                src={media(platingKit.url)}
+                src={media("/images/videos/plating-kit.mp4")}
                 autoPlay
                 loop
                 muted

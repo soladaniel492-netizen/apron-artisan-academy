@@ -2,7 +2,6 @@ import { useMedia } from "@/lib/media";
 import { Link } from "@tanstack/react-router";
 import { AtSign, Facebook, Instagram, Linkedin } from "lucide-react";
 
-import logo from "@/assets/chef-store-logo.jpg.asset.json";
 import { Reveal } from "@/components/reveal";
 import { ADDRESS, SOCIALS } from "@/lib/site";
 
@@ -21,7 +20,7 @@ export function SiteFooter() {
       <div className="mx-auto grid max-w-7xl items-start gap-10 px-6 py-14 md:grid-cols-[1.5fr_1fr_1fr_1fr]">
         <Reveal delay={0}>
           <img
-            src={media(logo.url)}
+            src={media("/images/logos/chef-store-logo.jpg")}
             alt="Chef Store logo"
             width={56}
             height={56}

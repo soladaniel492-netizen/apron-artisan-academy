@@ -7,7 +7,6 @@ import { SearchOverlay } from "@/components/search-overlay";
 import { useMedia } from "@/lib/media";
 import { useOrderList } from "@/lib/order-list";
 
-import logo from "@/assets/chef-store-logo.jpg.asset.json";
 
 const links = [
   { label: "Home", to: "/" },
@@ -30,7 +29,7 @@ export function SiteHeader() {
       <nav className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-6 py-5">
         <Link to="/" className="flex items-center gap-3 leading-none">
           <img
-            src={media(logo.url)}
+            src={media("/images/logos/chef-store-logo.jpg")}
             alt="Chef Store logo"
             width={48}
             height={48}

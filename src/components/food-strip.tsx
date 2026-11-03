@@ -1,20 +1,13 @@
 import { useMedia } from "@/lib/media";
-import jollofPlantain from "@/assets/local-jollof-plantain.jpg.asset.json";
-import egusi from "@/assets/local-egusi.jpg.asset.json";
-import efoRiro from "@/assets/local-efo-riro.jpg.asset.json";
-import jollofPan from "@/assets/local-jollof-pan.jpg.asset.json";
-import noodles from "@/assets/dish-noodles.jpg.asset.json";
-import grilledChicken from "@/assets/dish-grilled-chicken.jpg.asset.json";
-import egusiPacks from "@/assets/local-egusi-packs.jpg.asset.json";
 
 const strip = [
-  { img: jollofPlantain.url, label: "Jollof & Plantain" },
-  { img: egusi.url, label: "Egusi" },
-  { img: efoRiro.url, label: "Efo Riro" },
-  { img: jollofPan.url, label: "Party Jollof" },
-  { img: noodles.url, label: "Stir Fry Noodles" },
-  { img: grilledChicken.url, label: "Roast Chicken" },
-  { img: egusiPacks.url, label: "Event Trays" },
+  { img: "/images/food/local-jollof-plantain.jpg", label: "Jollof & Plantain" },
+  { img: "/images/food/local-egusi.jpg", label: "Egusi" },
+  { img: "/images/food/local-efo-riro.jpg", label: "Efo Riro" },
+  { img: "/images/food/local-jollof-pan.jpg", label: "Party Jollof" },
+  { img: "/images/food/dish-noodles.jpg", label: "Stir Fry Noodles" },
+  { img: "/images/food/dish-grilled-chicken.jpg", label: "Roast Chicken" },
+  { img: "/images/food/local-egusi-packs.jpg", label: "Event Trays" },
 ];
 
 export function FoodStrip() {
