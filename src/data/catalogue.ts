@@ -80,7 +80,7 @@ export const catalogue: CatalogueItem[] = [
     category: "Chef Accessories",
     detail:
       "Stainless steel siphon with a set of cream charger cartridges, for silky whipped creams, mousses and espumas.",
-    img: "/img/tool-cream-charger.jpg",
+    img: "/images/products/tool-cream-charger.jpg",
     wide: true,
   },
   {
@@ -89,7 +89,7 @@ export const catalogue: CatalogueItem[] = [
     category: "Kitchen Tools",
     detail:
       "Food grade silicone molds for muffins, loaves and fluted cakes. Non stick, easy release and safe at high oven temperatures.",
-    img: "/img/tool-silicone-molds.jpg",
+    img: "/images/products/tool-silicone-molds.jpg",
     wide: true,
   },
 ];
