@@ -5,22 +5,22 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const slides = [
   {
-    img: "/images/other/team-uniform-set.jpg",
+    img: "/images/products/team-uniform-set.jpg",
     title: "Uniforms for Service Teams",
     caption: "Branded tees and denim waist aprons for service teams.",
   },
   {
-    img: "/images/other/wait-staff-uniform.jpg",
+    img: "/images/products/wait-staff-uniform.jpg",
     title: "Style Meets Functionality",
     caption: "Wait staff sets designed for professionals who serve with confidence.",
   },
   {
-    img: "/images/other/personalised-bib-apron.jpg",
+    img: "/images/products/personalised-bib-apron.jpg",
     title: "Personalised Chef Aprons",
     caption: "Your name embroidered, adjustable straps, pockets trimmed with leather.",
   },
   {
-    img: "/images/other/burgundy-apron.jpg",
+    img: "/images/products/burgundy-apron.jpg",
     title: "Colour Made to Order",
     caption: "Burgundy twill with brass eyelets and swivel clips.",
   },
@@ -30,17 +30,17 @@ const slides = [
     caption: "Comfortable crossed straps with leather tabs.",
   },
   {
-    img: "/images/other/cross-back-apron.jpg",
+    img: "/images/products/cross-back-apron.jpg",
     title: "Comfortable Crossed Straps",
     caption: "Weight off your neck through a full service.",
   },
   {
-    img: "/images/other/denim-waist-aprons.jpg",
+    img: "/images/products/denim-waist-aprons.jpg",
     title: "Denim Waist Aprons",
     caption: "Contrast stitching, twin pockets, service length.",
   },
   {
-    img: "/images/other/leather-trim-details.jpg",
+    img: "/images/products/leather-trim-details.jpg",
     title: "The Details",
     caption: "Leather panels, tabs and hardware finished by hand.",
   },

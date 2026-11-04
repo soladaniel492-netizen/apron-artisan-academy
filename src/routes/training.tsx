@@ -13,8 +13,8 @@ import { TRAINING_BANNER, whatsappLink } from "@/lib/site";
 
 /** Swap these two images to change the training banner. */
 const bannerSlides = [
-  { img: "/images/other/team-uniform-set.jpg", alt: "Chef Store service team uniforms" },
-  { img: "/images/other/wait-staff-uniform.jpg", alt: "Chef Store wait staff aprons" },
+  { img: "/images/products/team-uniform-set.jpg", alt: "Chef Store service team uniforms" },
+  { img: "/images/products/wait-staff-uniform.jpg", alt: "Chef Store wait staff aprons" },
 ] as const;
 
 const courses = [
