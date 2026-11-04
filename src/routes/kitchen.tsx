@@ -201,6 +201,8 @@ function KitchenPage() {
 
         <KitchenPass />
 
+        <InstagramWall />
+
 
 
         <section className="bg-sand">
