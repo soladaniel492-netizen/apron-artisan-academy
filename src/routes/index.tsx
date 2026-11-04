@@ -38,10 +38,10 @@ export const Route = createFileRoute("/")({
 });
 
 const trends = [
-  { name: "Personalised Bib Apron", price: "₦28,000", img: "/images/other/personalised-bib-apron.jpg" },
-  { name: "Burgundy Twill Apron", price: "₦30,000", img: "/images/other/burgundy-apron.jpg" },
-  { name: "Denim Waist Apron", price: "₦18,000", img: "/images/other/denim-waist-aprons.jpg" },
-  { name: "Wait Staff Uniform Set", price: "₦38,000", img: "/images/other/wait-staff-uniform.jpg" },
+  { name: "Personalised Bib Apron", price: "₦28,000", img: "/images/products/personalised-bib-apron.jpg" },
+  { name: "Burgundy Twill Apron", price: "₦30,000", img: "/images/products/burgundy-apron.jpg" },
+  { name: "Denim Waist Apron", price: "₦18,000", img: "/images/products/denim-waist-aprons.jpg" },
+  { name: "Wait Staff Uniform Set", price: "₦38,000", img: "/images/products/wait-staff-uniform.jpg" },
 ];
 
 const services = [

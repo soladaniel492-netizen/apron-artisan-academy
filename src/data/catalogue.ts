@@ -16,7 +16,7 @@ export const catalogue: CatalogueItem[] = [
     category: "Aprons",
     detail:
       "Tan cotton twill, adjustable straps with metal clips, embroidered with your name.",
-    img: "/images/other/personalised-bib-apron.jpg",
+    img: "/images/products/personalised-bib-apron.jpg",
   },
   {
     name: "Burgundy Twill Apron",
@@ -24,7 +24,7 @@ export const catalogue: CatalogueItem[] = [
     category: "Aprons",
     detail:
       "Rich burgundy twill with leather tabs, brass eyelets and a swivel clip.",
-    img: "/images/other/burgundy-apron.jpg",
+    img: "/images/products/burgundy-apron.jpg",
   },
   {
     name: "Denim Waist Apron",
@@ -32,7 +32,7 @@ export const catalogue: CatalogueItem[] = [
     category: "Aprons",
     detail:
       "Raw denim service length with contrast stitching and twin front pockets.",
-    img: "/images/other/denim-waist-aprons.jpg",
+    img: "/images/products/denim-waist-aprons.jpg",
   },
   {
     name: "Cross Back Apron",
@@ -40,7 +40,7 @@ export const catalogue: CatalogueItem[] = [
     category: "Aprons",
     detail:
       "Comfortable crossed straps that keep the weight off your neck all shift.",
-    img: "/images/other/cross-back-apron.jpg",
+    img: "/images/products/cross-back-apron.jpg",
   },
   {
     name: "Leather Trim Detail Pack",
@@ -48,7 +48,7 @@ export const catalogue: CatalogueItem[] = [
     category: "Chef Accessories",
     detail:
       "Leather pocket panels, strap tabs and clips to finish a custom apron.",
-    img: "/images/other/leather-trim-details.jpg",
+    img: "/images/products/leather-trim-details.jpg",
   },
   {
     name: "Wait Staff Uniform Set",
@@ -56,7 +56,7 @@ export const catalogue: CatalogueItem[] = [
     category: "Uniforms for Service Team",
     detail:
       "Branded tee with a denim waist apron, styled for service teams.",
-    img: "/images/other/wait-staff-uniform.jpg",
+    img: "/images/products/wait-staff-uniform.jpg",
   },
   {
     name: "Customized Branded T Shirt",
@@ -64,7 +64,7 @@ export const catalogue: CatalogueItem[] = [
     category: "Customized T Shirts",
     detail:
       "Soft cotton tee printed or embroidered with your restaurant's logo.",
-    img: "/images/other/team-uniform-set.jpg",
+    img: "/images/products/team-uniform-set.jpg",
   },
   {
     name: "Denim & Twill Bib Set",

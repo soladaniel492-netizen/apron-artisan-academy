@@ -3,8 +3,11 @@ import { createFileRoute } from "@tanstack/react-router";
 
 import { CatalogueCard } from "@/components/catalogue-card";
 import { Reveal } from "@/components/reveal";
+import { SizeGuide } from "@/components/size-guide";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { TeamQuote } from "@/components/team-quote";
+import { WhatsappFab } from "@/components/whatsapp-fab";
 import { useMedia, useProducts } from "@/lib/media";
 import { whatsappLink } from "@/lib/site";
 
@@ -109,8 +112,16 @@ function CataloguePage() {
             </div>
           </Reveal>
         </section>
+        <TeamQuote />
+
+        <SizeGuide />
+        <TeamQuote />
+
+        <SizeGuide />
       </main>
       <SiteFooter />
+      <WhatsappFab />
+      <WhatsappFab />
     </div>
   );
 }

@@ -3,6 +3,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { MessageCircle } from "lucide-react";
 
 import { FoodStrip } from "@/components/food-strip";
+import { InstagramWall } from "@/components/instagram-wall";
 import { KitchenPass } from "@/components/kitchen-pass";
 import { Reveal } from "@/components/reveal";
 import { SiteFooter } from "@/components/site-footer";
@@ -199,6 +200,8 @@ function KitchenPage() {
         </section>
 
         <KitchenPass />
+
+        <InstagramWall />
 
 
 
