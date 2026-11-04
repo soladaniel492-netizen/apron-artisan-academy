@@ -112,8 +112,12 @@ function CataloguePage() {
             </div>
           </Reveal>
         </section>
+        <TeamQuote />
+
+        <SizeGuide />
       </main>
       <SiteFooter />
+      <WhatsappFab />
     </div>
   );
 }
