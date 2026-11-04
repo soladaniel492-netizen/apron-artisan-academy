@@ -41,12 +41,8 @@ export function SizeGuide() {
             </tr>
           </thead>
           <tbody>
-            {rows.map((r, i) => (
-              <tr
-                key={r.size}
-                className="border-b border-border/60 transition-colors duration-300 hover:bg-sand/70"
-                style={{ transitionDelay: `${i * 20}ms` }}
-              >
+            {rows.map((r) => (
+              <tr key={r.size} className="border-b border-border/60 transition-colors duration-300 hover:bg-sand/70">
                 <th scope="row" className="py-4 pr-6 font-display text-lg font-semibold">
                   {r.size}
                 </th>
