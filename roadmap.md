@@ -9,4 +9,8 @@
 - [x] Instagram wall on the kitchen page (src/components/instagram-wall.tsx)
 - [x] Image portability: all assets under public/images/{logos,products,food,backgrounds,videos}; fixed leftover /images/other/ paths and pointed database product images at local paths
 - [x] IMAGE_MANIFEST.md at project root listing every image, its folder and where it is used
+- [ ] Replace informal WhatsApp-specific order wording with professional ordering language
+- [ ] Remove duplicate Team & Bulk Orders section from the catalogue page
+- [ ] Audit admin editing coverage for visible imagery and page sections; clearly report any limits
+- [ ] Verify final build, routes, and catalogue presentation before reporting readiness
 - [ ] Customer testimonials — waiting on real customer quotes and names from the user
