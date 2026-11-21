@@ -26,10 +26,10 @@ export const Route = createFileRoute("/catalogue")({
         content: "Aprons, knife rolls, chef whites and kitchen linens. Order on WhatsApp.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://apron-artisan-academy.lovable.app/catalogue" },
+      { property: "og:url", content: "https://chefstore.ng/catalogue" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "https://apron-artisan-academy.lovable.app/catalogue" }],
+    links: [{ rel: "canonical", href: "https://chefstore.ng/catalogue" }],
   }),
   component: CataloguePage,
 });
@@ -112,15 +112,11 @@ function CataloguePage() {
             </div>
           </Reveal>
         </section>
-        <TeamQuote />
 
-        <SizeGuide />
         <TeamQuote />
-
         <SizeGuide />
       </main>
       <SiteFooter />
-      <WhatsappFab />
       <WhatsappFab />
     </div>
   );
