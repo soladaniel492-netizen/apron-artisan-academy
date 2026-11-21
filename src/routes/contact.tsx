@@ -10,21 +10,14 @@ export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
       { title: "Contact & Studio Location | Chef Store" },
-      {
-        name: "description",
-        content:
-          "Visit our studio at Road 16, House 15, Efab Estate, Lokogoma, Abuja, or reach us on WhatsApp, phone and email.",
-      },
+      { name: "description", content: "Visit our studio at Road 16, House 15, Efab Estate, Lokogoma, Abuja, or reach us on WhatsApp, phone and email." },
       { property: "og:title", content: "Contact | Chef Store" },
-      {
-        property: "og:description",
-        content: "Studio at Road 16, House 15, Efab Estate, Lokogoma, Abuja.",
-      },
+      { property: "og:description", content: "Studio at Road 16, House 15, Efab Estate, Lokogoma, Abuja." },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://apron-artisan-academy.lovable.app/contact" },
+      { property: "og:url", content: "https://chefstore.ng/contact" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "https://apron-artisan-academy.lovable.app/contact" }],
+    links: [{ rel: "canonical", href: "https://chefstore.ng/contact" }],
   }),
   component: ContactPage,
 });
@@ -34,78 +27,9 @@ function ContactPage() {
     <div className="min-h-screen bg-background font-sans text-foreground">
       <SiteHeader />
       <main id="main-content">
-        <section className="bg-cream">
-          <div className="mx-auto max-w-3xl px-6 py-14 text-center">
-            <p className="text-xs tracking-[0.35em] text-primary uppercase">Contact</p>
-            <h1 className="mt-4 font-display text-5xl font-bold md:text-6xl">
-              Come to the Studio
-            </h1>
-            <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-              Fittings, pickups and class bookings happen at our Lokogoma studio.
-              Message ahead so we keep your size ready.
-            </p>
-          </div>
-        </section>
-
-        <section className="mx-auto grid max-w-7xl gap-10 px-6 py-14 md:grid-cols-2">
-          <div>
-            <h2 className="font-display text-3xl">Details</h2>
-            <ul className="mt-6 space-y-5 text-sm">
-              <li className="flex gap-3">
-                <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-primary" aria-hidden />
-                <span>{ADDRESS}</span>
-              </li>
-              <li className="flex gap-3">
-                <Phone className="mt-0.5 h-5 w-5 shrink-0 text-primary" aria-hidden />
-                <span>+234 705 134 9430</span>
-              </li>
-              <li className="flex gap-3">
-                <Mail className="mt-0.5 h-5 w-5 shrink-0 text-primary" aria-hidden />
-                <span>hello@chefstore.ng</span>
-              </li>
-              <li className="flex gap-3">
-                <Clock className="mt-0.5 h-5 w-5 shrink-0 text-primary" aria-hidden />
-                <span>Monday to Saturday, 9am to 6pm</span>
-              </li>
-            </ul>
-            <a
-              href={whatsappLink("Hello Chef Store, I'd like to visit the studio.")}
-              target="_blank"
-              rel="noreferrer noopener"
-              className="mt-8 inline-flex items-center gap-2 rounded-sm bg-teal-deep px-8 py-3 text-xs tracking-[0.2em] text-clay-foreground uppercase"
-            >
-              <MessageCircle className="h-4 w-4" aria-hidden />
-              Chat on WhatsApp
-            </a>
-
-            <ContactForm />
-          </div>
-
-          <div>
-            <h2 className="font-display text-3xl">Find Us</h2>
-            <div className="mt-6 overflow-hidden border border-border">
-              <iframe
-                title="Map to Chef Store studio, Road 16 House 15 Efab Estate Lokogoma"
-                src="https://www.google.com/maps?q=Efab%20Estate%20Lokogoma%20Abuja&output=embed"
-                width="100%"
-                height="480"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                style={{ border: 0 }}
-              />
-            </div>
-            <a
-              href="https://www.google.com/maps/search/?api=1&query=Efab+Estate+Lokogoma+Abuja"
-              target="_blank"
-              rel="noreferrer noopener"
-              className="mt-4 inline-block border-b border-foreground pb-1 text-xs tracking-[0.2em] uppercase"
-            >
-              Open in Google Maps
-            </a>
-          </div>
-        </section>
-      </main>
-      <SiteFooter />
+        <section className="bg-cream"><div className="mx-auto max-w-3xl px-6 py-14 text-center"><p className="text-xs tracking-[0.35em] text-primary uppercase">Contact</p><h1 className="mt-4 font-display text-5xl font-bold md:text-6xl">Come to the Studio</h1><p className="mt-4 text-sm leading-relaxed text-muted-foreground">Fittings, pickups and class bookings happen at our Lokogoma studio.</p></div></section>
+        <section className="mx-auto grid max-w-7xl gap-10 px-6 py-14 md:grid-cols-2"><div><h2 className="font-display text-3xl">Details</h2><ul className="mt-6 space-y-5 text-sm"><li className="flex gap-3"><MapPin className="mt-0.5 h-5 w-5 shrink-0 text-primary" /><span>{ADDRESS}</span></li><li className="flex gap-3"><Phone className="mt-0.5 h-5 w-5 shrink-0 text-primary" /><span>+234 705 134 9430</span></li><li className="flex gap-3"><Mail className="mt-0.5 h-5 w-5 shrink-0 text-primary" /><span>hello@chefstore.ng</span></li><li className="flex gap-3"><Clock className="mt-0.5 h-5 w-5 shrink-0 text-primary" /><span>Monday to Saturday, 9am to 6pm</span></li></ul><a href={whatsappLink("Hello Chef Store, I'd like to visit the studio.")} target="_blank" rel="noreferrer noopener" className="mt-8 inline-flex items-center gap-2 rounded-sm bg-teal-deep px-8 py-3 text-xs tracking-[0.2em] text-clay-foreground uppercase"><MessageCircle className="h-4 w-4" />Chat on WhatsApp</a><ContactForm /></div><div><h2 className="font-display text-3xl">Find Us</h2><div className="mt-6 overflow-hidden border border-border"><iframe title="Map to Chef Store studio" src="https://www.google.com/maps?q=Efab%20Estate%20Lokogoma%20Abuja&output=embed" width="100%" height="480" loading="lazy" referrerPolicy="no-referrer-when-downgrade" style={{ border: 0 }} /></div></div></section>
+      </main><SiteFooter />
     </div>
   );
 }
