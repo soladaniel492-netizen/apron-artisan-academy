@@ -12,7 +12,6 @@ import { SiteHeader } from "@/components/site-header";
 import { useProducts } from "@/lib/media";
 import { whatsappLink } from "@/lib/site";
 
-
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
@@ -29,10 +28,10 @@ export const Route = createFileRoute("/")({
           "Chef jackets, aprons, uniforms and accessories made to order in Abuja. Nationwide delivery.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://apron-artisan-academy.lovable.app/" },
+      { property: "og:url", content: "https://chefstore.ng/" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "https://apron-artisan-academy.lovable.app/" }],
+    links: [{ rel: "canonical", href: "https://chefstore.ng/" }],
   }),
   component: Index,
 });
@@ -52,273 +51,47 @@ const services = [
   "Nationwide Delivery",
 ];
 
-
 function Index() {
   const media = useMedia();
   const catalogue = useProducts();
   return (
     <div className="min-h-screen bg-background font-sans text-foreground">
       <SiteHeader />
-
       <main id="main-content">
-        {/* Hero */}
         <section className="overflow-hidden bg-cream">
           <div className="mx-auto grid max-w-7xl items-center gap-8 px-6 py-12 md:grid-cols-2 md:py-16">
             <div>
-              <p className="hero-eyebrow text-xs tracking-[0.35em] text-primary uppercase">
-                Chef wears · Uniforms · Accessories
-              </p>
+              <p className="hero-eyebrow text-xs tracking-[0.35em] text-primary uppercase">Chef wears · Uniforms · Accessories</p>
               <h1 className="mt-6 font-display text-6xl leading-[0.95] font-bold md:text-7xl">
                 <span className="sr-only">Elevate Your Kitchen.</span>
                 <AnimatedLine text="Elevate Your" start={0.25} />
                 <br />
-                <span className="relative inline-block text-primary">
-                  <AnimatedLine text="Kitchen." start={0.75} />
-                  <span
-                    aria-hidden
-                    className="hero-underline absolute -bottom-1 left-0 block h-[3px] w-full bg-primary"
-                    style={{ animationDelay: "1.5s" }}
-                  />
-                </span>
+                <span className="relative inline-block text-primary"><AnimatedLine text="Kitchen." start={0.75} /></span>
               </h1>
-              <p
-                className="hero-wipe mt-6 max-w-sm text-sm leading-relaxed text-muted-foreground"
-                style={{ animationDelay: "1.35s" }}
-              >
-                Chef jackets, aprons, service team uniforms and accessories,
-                cut, stitched and branded in Abuja, delivered nationwide.
+              <p className="hero-wipe mt-6 max-w-sm text-sm leading-relaxed text-muted-foreground">
+                Chef jackets, aprons, service team uniforms and accessories, cut, stitched and branded in Abuja, delivered nationwide.
               </p>
-              <div className="mt-8 flex animate-fade-up flex-wrap items-center gap-4 [animation-delay:1.7s]">
-                <Link
-                  to="/catalogue"
-                  className="hero-sheen rounded-sm bg-primary px-8 py-3 text-xs tracking-[0.2em] text-primary-foreground uppercase transition-transform duration-300 hover:scale-105"
-                >
-                  View Catalogue
-                </Link>
-                <a
-                  href={whatsappLink("Hello Chef Store, I'd like to place an order.")}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  className="underline-sweep pb-1 text-xs tracking-[0.2em] uppercase"
-                >
-                  Order on WhatsApp
-                </a>
+              <div className="mt-8 flex animate-fade-up flex-wrap items-center gap-4">
+                <Link to="/catalogue" className="hero-sheen rounded-sm bg-primary px-8 py-3 text-xs tracking-[0.2em] text-primary-foreground uppercase">View Catalogue</Link>
+                <a href={whatsappLink("Hello Chef Store, I'd like to place an order.")} target="_blank" rel="noreferrer noopener" className="underline-sweep pb-1 text-xs tracking-[0.2em] uppercase">Order on WhatsApp</a>
               </div>
             </div>
-            <div className="relative animate-fade-up [animation-delay:150ms]">
-              <div className="absolute inset-x-6 top-10 bottom-0 animate-float rounded-t-full bg-sand" />
-              <video
-                src={media("/images/videos/ceo-hero.mp4")}
-                autoPlay
-                loop
-                muted
-                playsInline
-                preload="metadata"
-                aria-label="Chef Store founder presenting chef uniforms, aprons and kitchen tools"
-                className="relative mx-auto aspect-[9/12] w-full max-w-md rounded-t-full object-cover shadow-2xl"
-              />
+            <div className="relative animate-fade-up">
+              <video src={media("/images/videos/ceo-hero.mp4")} autoPlay loop muted playsInline preload="metadata" aria-label="Chef Store founder presenting chef uniforms, aprons and kitchen tools" className="relative mx-auto aspect-[9/12] w-full max-w-md rounded-t-full object-cover shadow-2xl" />
             </div>
           </div>
         </section>
-
-        {/* Services marquee */}
-        <section className="overflow-hidden border-y border-border bg-clay py-4">
-          <div className="flex w-max animate-marquee gap-12 pr-12">
-            {[...services, ...services, ...services, ...services].map((s, i) => (
-              <span
-                key={`${s}-${i}`}
-                className="flex items-center gap-12 text-[11px] tracking-[0.3em] text-clay-foreground uppercase"
-              >
-                {s}
-                <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-              </span>
-            ))}
-          </div>
-        </section>
-
-        {/* Carousel */}
+        <section className="overflow-hidden border-y border-border bg-clay py-4"><div className="flex w-max animate-marquee gap-12 pr-12">{[...services, ...services, ...services, ...services].map((s, i) => <span key={`${s}-${i}`} className="flex items-center gap-12 text-[11px] tracking-[0.3em] text-clay-foreground uppercase">{s}<span className="h-1.5 w-1.5 rounded-full bg-primary" /></span>)}</div></section>
         <PhotoCarousel />
-
-        {/* Catalogue preview */}
         <section className="mx-auto max-w-7xl px-6 py-16">
-          <Reveal>
-            <h2 className="text-center font-display text-3xl tracking-[0.15em] uppercase">
-              Catalogue
-            </h2>
-            <div className="mx-auto mt-2 h-px w-16 bg-primary" />
-            <p className="mx-auto mt-4 max-w-lg text-center text-sm text-muted-foreground">
-              Every piece is made to order. Tap any item to send us one WhatsApp
-              message.
-            </p>
-          </Reveal>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {catalogue.slice(0, 4).map((item, i) => (
-              <Reveal key={item.name} delay={i * 170}>
-                <CatalogueCard item={item} colorOnHover />
-              </Reveal>
-            ))}
-          </div>
-          <Reveal className="mt-10 text-center" delay={420}>
-            <Link
-              to="/catalogue"
-              className="inline-block border border-foreground px-8 py-3 text-xs tracking-[0.2em] uppercase transition-colors duration-300 hover:bg-foreground hover:text-background"
-            >
-              See the full catalogue
-            </Link>
-          </Reveal>
+          <Reveal><h2 className="text-center font-display text-3xl tracking-[0.15em] uppercase">Catalogue</h2><p className="mx-auto mt-4 max-w-lg text-center text-sm text-muted-foreground">Every piece is made to order. Tap any item to send us one WhatsApp message.</p></Reveal>
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">{catalogue.slice(0, 4).map((item, i) => <Reveal key={item.name} delay={i * 170}><CatalogueCard item={item} colorOnHover /></Reveal>)}</div>
         </section>
-
-        {/* Promo — apron film */}
-        <section className="bg-sand">
-          <div className="mx-auto grid max-w-7xl items-center gap-10 px-6 py-16 md:grid-cols-2">
-            <Reveal>
-              <video
-                src={media("/images/videos/apron-confidence.mp4")}
-                autoPlay
-                loop
-                muted
-                playsInline
-                preload="metadata"
-                aria-label="Chef Store aprons in use"
-                className="aspect-[9/16] w-full max-w-sm rounded-sm object-cover shadow-xl md:justify-self-center"
-              />
-            </Reveal>
-            <Reveal delay={420}>
-              <p className="text-xs tracking-[0.3em] text-primary uppercase">
-                Made for the line
-              </p>
-              <h2 className="mt-4 font-display text-4xl leading-tight font-bold md:text-5xl">
-                The right apron doesn't
-                <br />
-                just complete your look.
-              </h2>
-              <p className="mt-4 max-w-md text-sm leading-relaxed text-muted-foreground">
-                It helps you work with confidence, comfort and control:
-                adjustable straps, leather trims, deep pockets and fabric that
-                survives real service.
-              </p>
-              <a
-                href={whatsappLink("Hello Chef Store, I'd like to order an apron.")}
-                target="_blank"
-                rel="noreferrer noopener"
-                className="mt-7 inline-flex items-center gap-2 rounded-sm bg-clay px-8 py-3 text-xs tracking-[0.2em] text-clay-foreground uppercase transition-transform duration-300 hover:scale-105"
-              >
-                <MessageCircle className="h-4 w-4" aria-hidden />
-                Order yours
-              </a>
-            </Reveal>
-          </div>
-        </section>
-
-        {/* Trends */}
-        <section className="mx-auto max-w-7xl px-6 py-16">
-          <Reveal>
-            <h2 className="text-center font-display text-3xl tracking-[0.15em] uppercase">
-              Worn in the Kitchen
-            </h2>
-            <div className="mx-auto mt-2 h-px w-16 bg-primary" />
-          </Reveal>
-          <div className="mt-10 grid grid-cols-2 gap-6 lg:grid-cols-4">
-            {trends.map((t, i) => (
-              <Reveal key={t.name} delay={i * 170} className="text-center">
-                <div className="hover-lift overflow-hidden bg-secondary">
-                  <img
-                    src={media(t.img)}
-                    alt={t.name}
-                    loading="lazy"
-                    className="h-72 w-full object-cover object-top transition-transform duration-700 hover:scale-105"
-                  />
-                </div>
-                <h3 className="mt-4 font-display text-lg">{t.name}</h3>
-                <div className="mt-1 flex items-center justify-center gap-1 text-primary">
-                  {Array.from({ length: 5 }).map((_, s) => (
-                    <Star key={s} className="h-3 w-3 fill-current" aria-hidden />
-                  ))}
-                </div>
-                <p className="mt-2 text-sm text-muted-foreground">{t.price}</p>
-                <a
-                  href={whatsappLink(`Hello Chef Store, I'd like to order the ${t.name}.`)}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  className="mt-3 inline-block border border-foreground px-6 py-2 text-[10px] tracking-[0.2em] uppercase transition-colors duration-300 hover:bg-foreground hover:text-background"
-                >
-                  Order on WhatsApp
-                </a>
-              </Reveal>
-            ))}
-          </div>
-        </section>
-
-        {/* Price list */}
-        <div className="bg-cream">
-          <PriceList />
-        </div>
-
-        {/* Plating kit */}
-        <section className="mx-auto grid max-w-7xl items-center gap-10 px-6 py-16 md:grid-cols-2">
-          <Reveal>
-            <p className="text-xs tracking-[0.3em] text-primary uppercase">
-              Chef Accessories
-            </p>
-            <h2 className="mt-4 font-display text-4xl leading-tight font-bold md:text-5xl">
-              Precision on the plate
-            </h2>
-            <p className="mt-4 max-w-md text-sm leading-relaxed text-muted-foreground">
-              Our professional chef plating kit is made for chefs who believe
-              presentation is part of the cooking: tweezers, spoons, brushes and
-              moulds in one roll.
-            </p>
-            <Link
-              to="/kitchen"
-              className="mt-7 inline-block rounded-sm bg-teal-deep px-8 py-3 text-xs tracking-[0.2em] text-clay-foreground uppercase transition-transform duration-300 hover:scale-105"
-            >
-              Into our kitchen
-            </Link>
-          </Reveal>
-          <Reveal delay={420}>
-            <video
-              src={media("/images/videos/plating-kit.mp4")}
-              autoPlay
-              loop
-              muted
-              playsInline
-              preload="metadata"
-              aria-label="Professional chef plating kit"
-              className="aspect-[9/16] w-full max-w-sm rounded-sm object-cover shadow-xl md:justify-self-center"
-            />
-          </Reveal>
-        </section>
-
-        {/* Newsletter */}
-        <section className="bg-clay">
-          <div className="mx-auto max-w-3xl px-6 py-16 text-center">
-            <Reveal>
-              <h2 className="font-display text-4xl text-clay-foreground">
-                Stay in the loop
-              </h2>
-              <p className="mt-4 text-sm leading-relaxed text-clay-foreground/75">
-                New drops, restocks and price updates. One message a month.
-              </p>
-              <form
-                className="mt-8 flex flex-col gap-3 sm:flex-row"
-                onSubmit={(e) => e.preventDefault()}
-              >
-                <input
-                  type="email"
-                  required
-                  placeholder="Your email address"
-                  aria-label="Email address"
-                  className="flex-1 border border-clay-foreground/25 bg-transparent px-4 py-3 text-sm text-clay-foreground outline-none transition-colors focus:border-primary"
-                />
-                <button className="rounded-sm bg-primary px-8 py-3 text-xs tracking-[0.2em] text-primary-foreground uppercase transition-transform duration-300 hover:scale-105">
-                  Subscribe
-                </button>
-              </form>
-            </Reveal>
-          </div>
-        </section>
+        <section className="bg-sand"><div className="mx-auto grid max-w-7xl items-center gap-10 px-6 py-16 md:grid-cols-2"><Reveal><video src={media("/images/videos/apron-confidence.mp4")} autoPlay loop muted playsInline preload="metadata" aria-label="Chef Store aprons in use" className="aspect-[9/16] w-full max-w-sm rounded-sm object-cover shadow-xl md:justify-self-center" /></Reveal><Reveal delay={420}><h2 className="mt-4 font-display text-4xl leading-tight font-bold md:text-5xl">The right apron doesn't just complete your look.</h2><a href={whatsappLink("Hello Chef Store, I'd like to order an apron.")} target="_blank" rel="noreferrer noopener" className="mt-7 inline-flex items-center gap-2 rounded-sm bg-clay px-8 py-3 text-xs tracking-[0.2em] text-clay-foreground uppercase"><MessageCircle className="h-4 w-4" />Order yours</a></Reveal></div></section>
+        <section className="mx-auto max-w-7xl px-6 py-16"><div className="mt-10 grid grid-cols-2 gap-6 lg:grid-cols-4">{trends.map((t, i) => <Reveal key={t.name} delay={i * 170} className="text-center"><img src={media(t.img)} alt={t.name} loading="lazy" className="h-72 w-full object-cover object-top" /><h3 className="mt-4 font-display text-lg">{t.name}</h3><div className="mt-1 flex items-center justify-center gap-1 text-primary">{Array.from({ length: 5 }).map((_, s) => <Star key={s} className="h-3 w-3 fill-current" />)}</div><p className="mt-2 text-sm text-muted-foreground">{t.price}</p><a href={whatsappLink(`Hello Chef Store, I'd like to order the ${t.name}.`)} target="_blank" rel="noreferrer noopener" className="mt-3 inline-block border border-foreground px-6 py-2 text-[10px] tracking-[0.2em] uppercase">Order on WhatsApp</a></Reveal>)}</div></section>
+        <div className="bg-cream"><PriceList /></div>
+        <section className="mx-auto grid max-w-7xl items-center gap-10 px-6 py-16 md:grid-cols-2"><Reveal><h2 className="mt-4 font-display text-4xl leading-tight font-bold md:text-5xl">Precision on the plate</h2><Link to="/kitchen" className="mt-7 inline-block rounded-sm bg-teal-deep px-8 py-3 text-xs tracking-[0.2em] text-clay-foreground uppercase">Into our kitchen</Link></Reveal><Reveal><video src={media("/images/videos/plating-kit.mp4")} autoPlay loop muted playsInline preload="metadata" aria-label="Professional chef plating kit" className="aspect-[9/16] w-full max-w-sm rounded-sm object-cover shadow-xl md:justify-self-center" /></Reveal></section>
       </main>
-
       <SiteFooter />
     </div>
   );
